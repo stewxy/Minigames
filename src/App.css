@@ -1,3 +1,8 @@
 h1{
     text-align: center;
 }
+
+.mainHeading{
+    font-size: 100px;
+    padding-top: 50px;
+}

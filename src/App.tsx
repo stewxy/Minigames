@@ -30,7 +30,7 @@ function App() {
     // </div>
     <div>
       <Navbar></Navbar>
-      <h1 style={{ fontSize: 100, paddingTop: 50 }}>Minigames</h1>
+      <h1 className="mainHeading">Minigames</h1>
       {alertVisible && (
         <Alert onClose={() => setAlertVisibility(false)}>My Alert</Alert>
       )}
