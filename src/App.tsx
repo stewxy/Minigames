@@ -5,6 +5,7 @@ import { useState } from "react";
 import Alert from "./components/Alert";
 import Button from "./components/Button";
 import "./App.css";
+import Navbar from "./components/Navbar";
 
 function App() {
   // let items = ["New York", "San Francisco", "Tokyo", "Paris"];
@@ -28,7 +29,8 @@ function App() {
     //   </Alert>
     // </div>
     <div>
-      <h1>Minigames</h1>
+      <Navbar></Navbar>
+      <h1 style={{ fontSize: 100, paddingTop: 50 }}>Minigames</h1>
       {alertVisible && (
         <Alert onClose={() => setAlertVisibility(false)}>My Alert</Alert>
       )}
