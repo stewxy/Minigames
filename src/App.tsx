@@ -6,6 +6,7 @@ import Alert from "./components/Alert";
 import Button from "./components/Button";
 import "./App.css";
 import Navbar from "./components/Navbar";
+import Grid from "./components/Grid";
 
 function App() {
   // let items = ["New York", "San Francisco", "Tokyo", "Paris"];
@@ -31,6 +32,9 @@ function App() {
     <div>
       <Navbar></Navbar>
       <h1 className="mainHeading">Minigames</h1>
+
+      <Grid></Grid>
+
       {alertVisible && (
         <Alert onClose={() => setAlertVisibility(false)}>My Alert</Alert>
       )}
