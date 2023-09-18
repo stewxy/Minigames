@@ -14,7 +14,10 @@ h1{
     border-color: black;
     border-style: solid;
     width: 100px !important;
-    
+    cursor:pointer;
+}
+.col:hover{
+    opacity: 70%;
 }
 
 .clickable{
