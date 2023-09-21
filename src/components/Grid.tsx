@@ -17,74 +17,92 @@ const Grid = () => {
 
   function handleClick1() {
     //setValue1("X");
-    if (xNext) {
+    if (xNext && value1 == "") {
       setValue1("X");
     } else {
-      setValue1("O");
+      if (value1 == "") {
+        setValue1("O");
+      }
     }
     setXNext(!xNext);
   }
   function handleClick2() {
-    if (xNext) {
+    if (xNext && value2 == "") {
       setValue2("X");
     } else {
-      setValue2("O");
+      if (value2 == "") {
+        setValue2("O");
+      }
     }
     setXNext(!xNext);
   }
   function handleClick3() {
-    if (xNext) {
+    if (xNext && value3 == "") {
       setValue3("X");
     } else {
-      setValue3("O");
+      if (value3 == "") {
+        setValue3("O");
+      }
     }
     setXNext(!xNext);
   }
   function handleClick4() {
-    if (xNext) {
+    if (xNext && value4 == "") {
       setValue4("X");
     } else {
-      setValue4("O");
+      if (value4 == "") {
+        setValue4("O");
+      }
     }
     setXNext(!xNext);
   }
   function handleClick5() {
-    if (xNext) {
+    if (xNext && value5 == "") {
       setValue5("X");
     } else {
-      setValue5("O");
+      if (value5 == "") {
+        setValue5("O");
+      }
     }
     setXNext(!xNext);
   }
   function handleClick6() {
-    if (xNext) {
+    if (xNext && value6 == "") {
       setValue6("X");
     } else {
-      setValue6("O");
+      if (value6 == "") {
+        setValue6("O");
+      }
     }
     setXNext(!xNext);
   }
   function handleClick7() {
-    if (xNext) {
+    if (xNext && value7 == "") {
       setValue7("X");
     } else {
-      setValue7("O");
+      if (value7 == "") {
+        setValue7("O");
+      }
     }
     setXNext(!xNext);
   }
   function handleClick8() {
-    if (xNext) {
+    if (xNext && value8 == "") {
       setValue8("X");
     } else {
-      setValue8("O");
+      if (value8 == "") {
+        setValue8("O");
+      }
     }
     setXNext(!xNext);
   }
   function handleClick9() {
-    if (xNext) {
+    if (xNext && value9 == "") {
       setValue9("X");
     } else {
-      setValue9("O");
+      if (value9 == "") {
+        setValue9("O");
+      }
     }
     setXNext(!xNext);
   }
@@ -92,35 +110,71 @@ const Grid = () => {
   return (
     <div className="container text-center">
       <div className="row row-cols-3 ">
-        <div className="col" onClick={handleClick1}>
+        <div
+          className="col"
+          onClick={handleClick1}
+          style={{ fontSize: 50, paddingTop: 5 }}
+        >
           {value1}
         </div>
-        <div className="col" onClick={handleClick2}>
+        <div
+          className="col"
+          onClick={handleClick2}
+          style={{ fontSize: 50, paddingTop: 5 }}
+        >
           {value2}
         </div>
-        <div className="col" onClick={handleClick3}>
+        <div
+          className="col"
+          onClick={handleClick3}
+          style={{ fontSize: 50, paddingTop: 5 }}
+        >
           {value3}
         </div>
       </div>
       <div className="row row-cols-3 ">
-        <div className="col" onClick={handleClick4}>
+        <div
+          className="col"
+          onClick={handleClick4}
+          style={{ fontSize: 50, paddingTop: 5 }}
+        >
           {value4}
         </div>
-        <div className="col" onClick={handleClick5}>
+        <div
+          className="col"
+          onClick={handleClick5}
+          style={{ fontSize: 50, paddingTop: 5 }}
+        >
           {value5}
         </div>
-        <div className="col" onClick={handleClick6}>
+        <div
+          className="col"
+          onClick={handleClick6}
+          style={{ fontSize: 50, paddingTop: 5 }}
+        >
           {value6}
         </div>
       </div>
       <div className="row row-cols-3 ">
-        <div className="col" onClick={handleClick7}>
+        <div
+          className="col"
+          onClick={handleClick7}
+          style={{ fontSize: 50, paddingTop: 5 }}
+        >
           {value7}
         </div>
-        <div className="col" onClick={handleClick8}>
+        <div
+          className="col"
+          onClick={handleClick8}
+          style={{ fontSize: 50, paddingTop: 5 }}
+        >
           {value8}
         </div>
-        <div className="col" onClick={handleClick9}>
+        <div
+          className="col"
+          onClick={handleClick9}
+          style={{ fontSize: 50, paddingTop: 5 }}
+        >
           {value9}
         </div>
       </div>
