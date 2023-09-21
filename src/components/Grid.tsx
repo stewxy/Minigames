@@ -15,96 +15,144 @@ const Grid = () => {
 
   const [xNext, setXNext] = useState(true);
 
+  let arr = ["", "", "", "", "", "", "", "", ""];
+  const winLines = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6],
+  ];
+
+  function winCondition(checkList: string[]) {
+    for (let i = 0; i < winLines.length; i++) {
+      if ((arr[i][0] && arr[i][1] && arr[i][2]) == "X") {
+        console.log("X is the Winner");
+      }
+      console.log(arr[i][0], arr[i][1], arr[i][2]);
+    }
+  }
+
   function handleClick1() {
     //setValue1("X");
     if (xNext && value1 == "") {
       setValue1("X");
+      setXNext(!xNext);
+      arr[0] = "X";
     } else {
       if (value1 == "") {
         setValue1("O");
+        setXNext(!xNext);
+        arr[0] = "O";
       }
     }
-    setXNext(!xNext);
   }
   function handleClick2() {
     if (xNext && value2 == "") {
       setValue2("X");
+      setXNext(!xNext);
+      arr[1] = "X";
     } else {
       if (value2 == "") {
         setValue2("O");
+        setXNext(!xNext);
+        arr[1] = "O";
       }
     }
-    setXNext(!xNext);
   }
   function handleClick3() {
     if (xNext && value3 == "") {
       setValue3("X");
+      setXNext(!xNext);
+      arr[2] = "X";
     } else {
       if (value3 == "") {
         setValue3("O");
+        setXNext(!xNext);
+        arr[2] = "O";
       }
     }
-    setXNext(!xNext);
   }
   function handleClick4() {
     if (xNext && value4 == "") {
       setValue4("X");
+      setXNext(!xNext);
+      arr[3] = "X";
     } else {
       if (value4 == "") {
         setValue4("O");
+        setXNext(!xNext);
+        arr[3] = "O";
       }
     }
-    setXNext(!xNext);
   }
   function handleClick5() {
     if (xNext && value5 == "") {
       setValue5("X");
+      setXNext(!xNext);
+      arr[4] = "X";
     } else {
       if (value5 == "") {
         setValue5("O");
+        setXNext(!xNext);
+        arr[4] = "O";
       }
     }
-    setXNext(!xNext);
   }
   function handleClick6() {
     if (xNext && value6 == "") {
       setValue6("X");
+      setXNext(!xNext);
+      arr[5] = "X";
     } else {
       if (value6 == "") {
         setValue6("O");
+        setXNext(!xNext);
+        arr[5] = "O";
       }
     }
-    setXNext(!xNext);
   }
   function handleClick7() {
     if (xNext && value7 == "") {
       setValue7("X");
+      setXNext(!xNext);
+      arr[6] = "X";
     } else {
       if (value7 == "") {
         setValue7("O");
+        setXNext(!xNext);
+        arr[6] = "X";
       }
     }
-    setXNext(!xNext);
   }
   function handleClick8() {
     if (xNext && value8 == "") {
       setValue8("X");
+      setXNext(!xNext);
+      arr[7] = "X";
     } else {
       if (value8 == "") {
         setValue8("O");
+        setXNext(!xNext);
+        arr[7] = "X";
       }
     }
-    setXNext(!xNext);
   }
   function handleClick9() {
     if (xNext && value9 == "") {
       setValue9("X");
+      setXNext(!xNext);
+      arr[8] = "X";
     } else {
       if (value9 == "") {
         setValue9("O");
+        setXNext(!xNext);
+        arr[8] = "X";
       }
     }
-    setXNext(!xNext);
   }
 
   return (
