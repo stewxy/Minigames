@@ -2,6 +2,8 @@ import React from "react";
 import "../App.css";
 import { useState } from "react";
 
+let arr = ["", "", "", "", "", "", "", "", ""];
+
 const Grid = () => {
   const [value1, setValue1] = useState("");
   const [value2, setValue2] = useState("");
@@ -15,7 +17,6 @@ const Grid = () => {
 
   const [xNext, setXNext] = useState(true);
 
-  let arr = ["", "", "", "", "", "", "", "", ""];
   const winLines = [
     [0, 1, 2],
     [3, 4, 5],
@@ -29,15 +30,24 @@ const Grid = () => {
 
   function winCondition(checkList: string[]) {
     for (let i = 0; i < winLines.length; i++) {
-      if ((arr[i][0] && arr[i][1] && arr[i][2]) == "X") {
+      if (
+        arr[winLines[i][0]] == "X" &&
+        arr[winLines[i][1]] == "X" &&
+        arr[winLines[i][2]] == "X"
+      ) {
         console.log("X is the Winner");
       }
-      console.log(arr[i][0], arr[i][1], arr[i][2]);
+      if (
+        arr[winLines[i][0]] == "O" &&
+        arr[winLines[i][1]] == "O" &&
+        arr[winLines[i][2]] == "O"
+      ) {
+        console.log("O is the Winner");
+      }
     }
   }
 
   function handleClick1() {
-    //setValue1("X");
     if (xNext && value1 == "") {
       setValue1("X");
       setXNext(!xNext);
@@ -49,6 +59,7 @@ const Grid = () => {
         arr[0] = "O";
       }
     }
+    winCondition(arr);
   }
   function handleClick2() {
     if (xNext && value2 == "") {
@@ -62,6 +73,7 @@ const Grid = () => {
         arr[1] = "O";
       }
     }
+    winCondition(arr);
   }
   function handleClick3() {
     if (xNext && value3 == "") {
@@ -75,6 +87,7 @@ const Grid = () => {
         arr[2] = "O";
       }
     }
+    winCondition(arr);
   }
   function handleClick4() {
     if (xNext && value4 == "") {
@@ -88,6 +101,7 @@ const Grid = () => {
         arr[3] = "O";
       }
     }
+    winCondition(arr);
   }
   function handleClick5() {
     if (xNext && value5 == "") {
@@ -101,6 +115,7 @@ const Grid = () => {
         arr[4] = "O";
       }
     }
+    winCondition(arr);
   }
   function handleClick6() {
     if (xNext && value6 == "") {
@@ -114,6 +129,7 @@ const Grid = () => {
         arr[5] = "O";
       }
     }
+    winCondition(arr);
   }
   function handleClick7() {
     if (xNext && value7 == "") {
@@ -124,9 +140,10 @@ const Grid = () => {
       if (value7 == "") {
         setValue7("O");
         setXNext(!xNext);
-        arr[6] = "X";
+        arr[6] = "O";
       }
     }
+    winCondition(arr);
   }
   function handleClick8() {
     if (xNext && value8 == "") {
@@ -137,9 +154,10 @@ const Grid = () => {
       if (value8 == "") {
         setValue8("O");
         setXNext(!xNext);
-        arr[7] = "X";
+        arr[7] = "O";
       }
     }
+    winCondition(arr);
   }
   function handleClick9() {
     if (xNext && value9 == "") {
@@ -150,9 +168,10 @@ const Grid = () => {
       if (value9 == "") {
         setValue9("O");
         setXNext(!xNext);
-        arr[8] = "X";
+        arr[8] = "O";
       }
     }
+    winCondition(arr);
   }
 
   return (
