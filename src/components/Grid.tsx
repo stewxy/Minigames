@@ -1,6 +1,7 @@
 import React from "react";
 import "../App.css";
 import { useState } from "react";
+import Button from "./Button";
 
 let arr = ["", "", "", "", "", "", "", "", ""];
 
@@ -28,6 +29,9 @@ const Grid = () => {
     [2, 4, 6],
   ];
 
+  const [winPopup, setWinPopup] = useState("");
+  const [alertVisible, setAlertVisibility] = useState(false);
+
   function winCondition(checkList: string[]) {
     for (let i = 0; i < winLines.length; i++) {
       if (
@@ -36,6 +40,8 @@ const Grid = () => {
         arr[winLines[i][2]] == "X"
       ) {
         console.log("X is the Winner");
+        setWinPopup("X");
+        setAlertVisibility(true);
       }
       if (
         arr[winLines[i][0]] == "O" &&
@@ -43,6 +49,8 @@ const Grid = () => {
         arr[winLines[i][2]] == "O"
       ) {
         console.log("O is the Winner");
+        setWinPopup("O");
+        setAlertVisibility(true);
       }
     }
   }
@@ -245,6 +253,11 @@ const Grid = () => {
           {value9}
         </div>
       </div>
+      {alertVisible && (
+        <Button onClick={() => setAlertVisibility(false)}>
+          {winPopup + " IS THE WINNER (RESET BUTTON)"}
+        </Button>
+      )}
     </div>
   );
 };
