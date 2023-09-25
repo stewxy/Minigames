@@ -30,20 +30,20 @@ const Navbar = () => {
               href="#"
               style={{ color: "white" }}
             >
-              Home
+              NA
             </a>
             <a className="nav-link" href="#" style={{ color: "white" }}>
-              Features
+              NA
             </a>
             <a className="nav-link" href="#" style={{ color: "white" }}>
-              Pricing
+              NA
             </a>
             <a
               className="nav-link disabled"
               aria-disabled="true"
               style={{ color: "white" }}
             >
-              Disabled
+              NA
             </a>
           </div>
         </div>

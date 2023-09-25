@@ -30,17 +30,18 @@ function App() {
     //   </Alert>
     // </div>
     <div>
-      <Navbar></Navbar>
-      <h1 className="mainHeading">Minigames</h1>
+      {/* <Navbar></Navbar> 
+      <h1 className="mainHeading">Minigames</h1>*/}
+      <h1 className="mainHeading">TicTacToe</h1>
 
       <Grid></Grid>
 
       {alertVisible && (
         <Alert onClose={() => setAlertVisibility(false)}>My Alert</Alert>
       )}
-      <Button color="primary" onClick={() => setAlertVisibility(true)}>
+      {/* <Button color="primary" onClick={() => setAlertVisibility(true)}>
         MyButton
-      </Button>
+      </Button> */}
     </div>
   );
 }
