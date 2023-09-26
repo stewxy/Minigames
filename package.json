@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "http://github.com/stewxy/Minigames",
+  "homepage": "http://stewxy.github.io/Minigames",
   "scripts": {
     "dev": "vite",
     "predeploy" : "npm run build",
