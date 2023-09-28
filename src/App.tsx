@@ -7,6 +7,7 @@ import Button from "./components/Button";
 import "./App.css";
 import Navbar from "./components/Navbar";
 import Grid from "./components/Grid";
+import AllBoards from "./components/AllBoards";
 
 function App() {
   // let items = ["New York", "San Francisco", "Tokyo", "Paris"];
@@ -42,6 +43,8 @@ function App() {
       {/* <Button color="primary" onClick={() => setAlertVisibility(true)}>
         MyButton
       </Button> */}
+
+      <AllBoards></AllBoards>
     </div>
   );
 }
