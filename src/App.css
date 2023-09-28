@@ -22,11 +22,28 @@ h1{
 }
 
 .container{
-    padding-left: 27.4% !important;
+    /* padding-left: 27.4% !important; */
+    width: 300px !important;
     margin-top: 100px;
+    /* width: 100px; */
+    /* background-color: green; */
 }
 
 .resetButtonCont{
     text-align: center;
     font-size: 35px;
 }
+
+.row{
+    /* background-color: blue; */
+}
+.tictactoecont{
+    /* background-color: red; */
+}
+
+@media screen and (zoom: 200%) {
+    .col{
+        width:50px !important;
+        background-color: green;
+    }
+ }
