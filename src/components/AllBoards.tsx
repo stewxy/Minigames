@@ -1,4 +1,5 @@
 import React from "react";
+import "../App.css";
 
 interface Props {
   value: String;
@@ -10,50 +11,50 @@ function Square({ value }: Props) {
 
 function SingleBoard() {
   return (
-    <>
-      <div className="GridRow">
+    <div className="oneBoard">
+      <div className="squareRow">
         <Square value={"1"} />
         <Square value={"2"} />
         <Square value={"3"} />
       </div>
-      <div className="GridRow">
+      <div className="squareRow">
         <Square value={"4"} />
         <Square value={"5"} />
         <Square value={"6"} />
       </div>
-      <div className="GridRow">
+      <div className="squareRow">
         <Square value={"7"} />
         <Square value={"8"} />
         <Square value={"9"} />
       </div>
-    </>
+    </div>
   );
 }
 
 function UltimateSquare() {
   return (
-    <>
-      <div className="UltimateRow">
+    <div className="fullBoard">
+      <div className="ultimateRow">
         <SingleBoard />
         <SingleBoard />
         <SingleBoard />
       </div>
-      <div className="UltimateRow">
+      <div className="ultimateRow">
         <SingleBoard />
         <SingleBoard />
         <SingleBoard />
       </div>
-      <div className="UltimateRow">
+      <div className="ultimateRow">
         <SingleBoard />
         <SingleBoard />
         <SingleBoard />
       </div>
-    </>
+    </div>
   );
 }
 
 const AllBoards = () => {
-  return <div>{UltimateSquare()}</div>;
+  return UltimateSquare();
 };
 
 export default AllBoards;

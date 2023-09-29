@@ -7,6 +7,7 @@ h1{
     padding-top: 50px;
 }
 
+/* === TicTacToe === */
 .col{
     background-color: lightgray;
     opacity: 100%;
@@ -22,11 +23,8 @@ h1{
 }
 
 .container{
-    /* padding-left: 27.4% !important; */
     width: 300px !important;
     margin-top: 100px;
-    /* width: 100px; */
-    /* background-color: green; */
 }
 
 .resetButtonCont{
@@ -34,16 +32,21 @@ h1{
     font-size: 35px;
 }
 
-.row{
-    /* background-color: blue; */
-}
-.tictactoecont{
-    /* background-color: red; */
+/* === Ultimate TicTacToe === */
+.fullBoard{
+    background-color: blue;
+    text-align: center;
 }
 
-@media screen and (zoom: 200%) {
-    .col{
-        width:50px !important;
-        background-color: green;
-    }
- }
+.oneBoard{
+    background: rgba(233, 14, 6, 0.2);
+    display: inline-block;
+    padding: 10px;
+    border-style: solid;
+    border-color: black;
+}
+
+.Grid{
+    width:50px;
+    height: 50px;
+}
