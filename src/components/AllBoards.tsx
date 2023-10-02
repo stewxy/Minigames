@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import "../App.css";
+
+const [click, setClicked] = useState(false);
 
 interface Props {
   value: String;
@@ -52,6 +54,8 @@ function UltimateSquare() {
     </div>
   );
 }
+
+function handleClick() {}
 
 const AllBoards = () => {
   return UltimateSquare();
