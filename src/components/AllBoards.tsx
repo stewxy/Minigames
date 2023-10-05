@@ -7,9 +7,12 @@ interface Props {
 
 const AllBoards = () => {
   //const [click, setClicked] = useState(false);
-  const [value, setValue] = useState("");
 
   function Square() {
+    const [value, setValue] = useState("");
+    function handleClick() {
+      setValue("X");
+    }
     return (
       <button className="Grid" onClick={handleClick}>
         {value}
@@ -61,9 +64,6 @@ const AllBoards = () => {
     );
   }
 
-  function handleClick() {
-    setValue("X");
-  }
   return UltimateSquare();
 };
 
