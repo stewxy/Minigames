@@ -10,9 +10,12 @@ const AllBoards = () => {
 
   function Square() {
     const [value, setValue] = useState("");
+    const [square, setSquare] = useState(Array(9).fill(null));
+
     function handleClick() {
       setValue("X");
     }
+
     return (
       <button className="Grid" onClick={handleClick}>
         {value}
@@ -43,6 +46,7 @@ const AllBoards = () => {
   }
 
   function UltimateSquare() {
+    const [uSquare, setUSquare] = useState(Array(9).fill(null));
     return (
       <div className="fullBoard">
         <div className="ultimateRow">
