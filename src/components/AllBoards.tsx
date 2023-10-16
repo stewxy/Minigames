@@ -14,6 +14,7 @@ const AllBoards = () => {
 
     function handleClick() {
       setValue("X");
+      console.log(square);
     }
 
     return (
