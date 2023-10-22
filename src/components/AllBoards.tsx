@@ -4,37 +4,37 @@ import "../App.css";
 const AllBoards = () => {
   //const [click, setClicked] = useState(false);
   //const [value, setValue] = useState("");
-  const [xIsNext, setXIsNext] = useState(true);
-  const [squares, setSquares] = useState(Array(9).fill(null));
-  function handleClick(i: number) {
-    if (squares[i] != null) {
-      return;
-    }
-    const nextSquares = squares.slice();
-    if (xIsNext) {
-      nextSquares[i] = "X";
-    } else {
-      nextSquares[i] = "O";
-    }
-    setSquares(nextSquares);
-    setXIsNext(!xIsNext);
-  }
-
-  function Square({
-    value,
-    onSquareClick,
-  }: {
-    value: any;
-    onSquareClick: any;
-  }) {
-    return (
-      <button className="Grid" onClick={onSquareClick}>
-        {value}
-      </button>
-    );
-  }
 
   function SingleBoard() {
+    const [xIsNext, setXIsNext] = useState(true);
+    const [squares, setSquares] = useState(Array(9).fill(null));
+    function handleClick(i: number) {
+      if (squares[i] != null) {
+        return;
+      }
+      const nextSquares = squares.slice();
+      if (xIsNext) {
+        nextSquares[i] = "X";
+      } else {
+        nextSquares[i] = "O";
+      }
+      setSquares(nextSquares);
+      setXIsNext(!xIsNext);
+    }
+
+    function Square({
+      value,
+      onSquareClick,
+    }: {
+      value: any;
+      onSquareClick: any;
+    }) {
+      return (
+        <button className="Grid" onClick={onSquareClick}>
+          {value}
+        </button>
+      );
+    }
     return (
       <div className="oneBoard">
         <div className="squareRow">
