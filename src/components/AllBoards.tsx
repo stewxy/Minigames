@@ -20,9 +20,8 @@ const AllBoards = () => {
       }
       setSquares(nextSquares);
       setXIsNext(!xIsNext);
-      console.log(i);
-      console.log(uValue);
-      console.log(squares);
+      console.log("i: " + i);
+      console.log("uValue: " + uValue);
     }
 
     function Square({
@@ -38,6 +37,7 @@ const AllBoards = () => {
         </button>
       );
     }
+    //console.log(squares);
     return (
       <div className="oneBoard">
         <div className="squareRow">
@@ -64,19 +64,19 @@ const AllBoards = () => {
     return (
       <div className="fullBoard">
         <div className="ultimateRow">
-          <SingleBoard uValue={uSquare[0]} />
-          <SingleBoard uValue={uSquare[1]} />
-          <SingleBoard uValue={uSquare[2]} />
+          <SingleBoard uValue={0} />
+          <SingleBoard uValue={1} />
+          <SingleBoard uValue={2} />
         </div>
         <div className="ultimateRow">
-          <SingleBoard uValue={uSquare[3]} />
-          <SingleBoard uValue={uSquare[4]} />
-          <SingleBoard uValue={uSquare[5]} />
+          <SingleBoard uValue={3} />
+          <SingleBoard uValue={4} />
+          <SingleBoard uValue={5} />
         </div>
         <div className="ultimateRow">
-          <SingleBoard uValue={uSquare[6]} />
-          <SingleBoard uValue={uSquare[7]} />
-          <SingleBoard uValue={uSquare[8]} />
+          <SingleBoard uValue={6} />
+          <SingleBoard uValue={7} />
+          <SingleBoard uValue={8} />
         </div>
       </div>
     );
