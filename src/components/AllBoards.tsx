@@ -5,7 +5,7 @@ const AllBoards = () => {
   //const [click, setClicked] = useState(false);
   //const [value, setValue] = useState("");
 
-  function SingleBoard() {
+  function SingleBoard({ uValue }: { uValue: any }) {
     const [xIsNext, setXIsNext] = useState(true);
     const [squares, setSquares] = useState(Array(9).fill(null));
     function handleClick(i: number) {
@@ -20,6 +20,9 @@ const AllBoards = () => {
       }
       setSquares(nextSquares);
       setXIsNext(!xIsNext);
+      console.log(i);
+      console.log(uValue);
+      console.log(squares);
     }
 
     function Square({
@@ -61,19 +64,19 @@ const AllBoards = () => {
     return (
       <div className="fullBoard">
         <div className="ultimateRow">
-          <SingleBoard />
-          <SingleBoard />
-          <SingleBoard />
+          <SingleBoard uValue={uSquare[0]} />
+          <SingleBoard uValue={uSquare[1]} />
+          <SingleBoard uValue={uSquare[2]} />
         </div>
         <div className="ultimateRow">
-          <SingleBoard />
-          <SingleBoard />
-          <SingleBoard />
+          <SingleBoard uValue={uSquare[3]} />
+          <SingleBoard uValue={uSquare[4]} />
+          <SingleBoard uValue={uSquare[5]} />
         </div>
         <div className="ultimateRow">
-          <SingleBoard />
-          <SingleBoard />
-          <SingleBoard />
+          <SingleBoard uValue={uSquare[6]} />
+          <SingleBoard uValue={uSquare[7]} />
+          <SingleBoard uValue={uSquare[8]} />
         </div>
       </div>
     );
