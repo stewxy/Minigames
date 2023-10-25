@@ -64,19 +64,37 @@ const AllBoards = () => {
     return (
       <div className="fullBoard">
         <div className="ultimateRow">
-          <SingleBoard uValue={0} />
-          <SingleBoard uValue={1} />
-          <SingleBoard uValue={2} />
+          <div className="u0">
+            <SingleBoard uValue={0} />
+          </div>
+          <div className="u1">
+            <SingleBoard uValue={1} />
+          </div>
+          <div className="u2">
+            <SingleBoard uValue={2} />
+          </div>
         </div>
         <div className="ultimateRow">
-          <SingleBoard uValue={3} />
-          <SingleBoard uValue={4} />
-          <SingleBoard uValue={5} />
+          <div className="u3">
+            <SingleBoard uValue={3} />
+          </div>
+          <div className="u4">
+            <SingleBoard uValue={4} />
+          </div>
+          <div className="u5">
+            <SingleBoard uValue={5} />
+          </div>
         </div>
         <div className="ultimateRow">
-          <SingleBoard uValue={6} />
-          <SingleBoard uValue={7} />
-          <SingleBoard uValue={8} />
+          <div className="u6">
+            <SingleBoard uValue={6} />
+          </div>
+          <div className="u7">
+            <SingleBoard uValue={7} />
+          </div>
+          <div className="u8">
+            <SingleBoard uValue={8} />
+          </div>
         </div>
       </div>
     );
