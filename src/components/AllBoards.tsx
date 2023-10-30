@@ -4,10 +4,20 @@ import "../App.css";
 const AllBoards = () => {
   //const [click, setClicked] = useState(false);
   //const [value, setValue] = useState("");
+  const [active0, setActive0] = useState(false);
+  const [active1, setActive1] = useState(false);
+  const [active2, setActive2] = useState(false);
+  const [active3, setActive3] = useState(false);
+  const [active4, setActive4] = useState(false);
+  const [active5, setActive5] = useState(false);
+  const [active6, setActive6] = useState(false);
+  const [active7, setActive7] = useState(false);
+  const [active8, setActive8] = useState(false);
 
   function SingleBoard({ uValue }: { uValue: any }) {
     const [xIsNext, setXIsNext] = useState(true);
     const [squares, setSquares] = useState(Array(9).fill(null));
+
     function handleClick(i: number) {
       if (squares[i] != null) {
         return;
@@ -22,6 +32,16 @@ const AllBoards = () => {
       setXIsNext(!xIsNext);
       console.log("i: " + i);
       console.log("uValue: " + uValue);
+
+      if (i == 0) {
+        setActive0(true);
+        setActive1(false);
+      }
+      if (i == 1) {
+        setActive0(false);
+        setActive1(true);
+      }
+      //setActive0(false);
     }
 
     function Square({
@@ -64,10 +84,16 @@ const AllBoards = () => {
     return (
       <div className="fullBoard">
         <div className="ultimateRow">
-          <div className="u0">
+          <div
+            className="u0"
+            style={{ backgroundColor: active0 ? "green" : "blue" }}
+          >
             <SingleBoard uValue={0} />
           </div>
-          <div className="u1">
+          <div
+            className="u1"
+            style={{ backgroundColor: active1 ? "green" : "blue" }}
+          >
             <SingleBoard uValue={1} />
           </div>
           <div className="u2">
