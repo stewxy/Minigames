@@ -8,6 +8,7 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import Grid from "./components/Grid";
 import AllBoards from "./components/AllBoards";
+import TestAllBoards from "./components/testAllBoards";
 
 function App() {
   // let items = ["New York", "San Francisco", "Tokyo", "Paris"];
@@ -44,7 +45,8 @@ function App() {
         MyButton
       </Button> */}
 
-      <AllBoards></AllBoards>
+      {/* <AllBoards></AllBoards> */}
+      <TestAllBoards></TestAllBoards>
     </div>
   );
 }
