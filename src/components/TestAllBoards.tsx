@@ -21,10 +21,25 @@ const TestAllBoards = () => {
   // const [active6, setActive6] = useState(false);
   // const [active7, setActive7] = useState(false);
   // const [active8, setActive8] = useState(false);
-  let x = document.getElementsByClassName(
-    "u0"
-  ) as HTMLCollectionOf<HTMLElement>;
-  console.log(x);
+
+  // let style0 = document.getElementsByClassName(
+  //   "u0"
+  // ) as HTMLCollectionOf<HTMLElement>;
+
+  let [style0, style1, style2, style3, style4, style5, style6, style7, style8] =
+    [
+      document.getElementsByClassName("u0") as HTMLCollectionOf<HTMLElement>,
+      document.getElementsByClassName("u1") as HTMLCollectionOf<HTMLElement>,
+      document.getElementsByClassName("u2") as HTMLCollectionOf<HTMLElement>,
+      document.getElementsByClassName("u3") as HTMLCollectionOf<HTMLElement>,
+      document.getElementsByClassName("u4") as HTMLCollectionOf<HTMLElement>,
+      document.getElementsByClassName("u5") as HTMLCollectionOf<HTMLElement>,
+      document.getElementsByClassName("u6") as HTMLCollectionOf<HTMLElement>,
+      document.getElementsByClassName("u7") as HTMLCollectionOf<HTMLElement>,
+      document.getElementsByClassName("u8") as HTMLCollectionOf<HTMLElement>,
+    ];
+
+  //console.log(x);
 
   function SingleBoard({ uValue }: { uValue: any }) {
     const [xIsNext, setXIsNext] = useState(true);
@@ -48,12 +63,47 @@ const TestAllBoards = () => {
       if (i == 0) {
         //setActive0(true);
         //setActive1(false);
-        x[0].style.backgroundColor = "red";
+        style0[0].style.backgroundColor = "red";
       }
       if (i == 1) {
         //setActive0(false);
         //setActive1(true);
-        x[0].style.backgroundColor = "green";
+        style1[0].style.backgroundColor = "red";
+      }
+      if (i == 2) {
+        //setActive0(false);
+        //setActive1(true);
+        style2[0].style.backgroundColor = "red";
+      }
+      if (i == 3) {
+        //setActive0(false);
+        //setActive1(true);
+        style3[0].style.backgroundColor = "red";
+      }
+      if (i == 4) {
+        //setActive0(false);
+        //setActive1(true);
+        style4[0].style.backgroundColor = "red";
+      }
+      if (i == 5) {
+        //setActive0(false);
+        //setActive1(true);
+        style5[0].style.backgroundColor = "red";
+      }
+      if (i == 6) {
+        //setActive0(false);
+        //setActive1(true);
+        style6[0].style.backgroundColor = "red";
+      }
+      if (i == 7) {
+        //setActive0(false);
+        //setActive1(true);
+        style7[0].style.backgroundColor = "red";
+      }
+      if (i == 8) {
+        //setActive0(false);
+        //setActive1(true);
+        style8[0].style.backgroundColor = "red";
       }
       //setActive0(false);
     }
