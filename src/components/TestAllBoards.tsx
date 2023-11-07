@@ -64,46 +64,118 @@ const TestAllBoards = () => {
         //setActive0(true);
         //setActive1(false);
         style0[0].style.backgroundColor = "red";
+        style1[0].style.backgroundColor = "blue";
+        style2[0].style.backgroundColor = "blue";
+        style3[0].style.backgroundColor = "blue";
+        style4[0].style.backgroundColor = "blue";
+        style5[0].style.backgroundColor = "blue";
+        style6[0].style.backgroundColor = "blue";
+        style7[0].style.backgroundColor = "blue";
+        style8[0].style.backgroundColor = "blue";
       }
       if (i == 1) {
         //setActive0(false);
         //setActive1(true);
         style1[0].style.backgroundColor = "red";
+        style0[0].style.backgroundColor = "blue";
+        style2[0].style.backgroundColor = "blue";
+        style3[0].style.backgroundColor = "blue";
+        style4[0].style.backgroundColor = "blue";
+        style5[0].style.backgroundColor = "blue";
+        style6[0].style.backgroundColor = "blue";
+        style7[0].style.backgroundColor = "blue";
+        style8[0].style.backgroundColor = "blue";
       }
       if (i == 2) {
         //setActive0(false);
         //setActive1(true);
         style2[0].style.backgroundColor = "red";
+        style0[0].style.backgroundColor = "blue";
+        style1[0].style.backgroundColor = "blue";
+        style3[0].style.backgroundColor = "blue";
+        style4[0].style.backgroundColor = "blue";
+        style5[0].style.backgroundColor = "blue";
+        style6[0].style.backgroundColor = "blue";
+        style7[0].style.backgroundColor = "blue";
+        style8[0].style.backgroundColor = "blue";
       }
       if (i == 3) {
         //setActive0(false);
         //setActive1(true);
         style3[0].style.backgroundColor = "red";
+        style0[0].style.backgroundColor = "blue";
+        style1[0].style.backgroundColor = "blue";
+        style2[0].style.backgroundColor = "blue";
+        style4[0].style.backgroundColor = "blue";
+        style5[0].style.backgroundColor = "blue";
+        style6[0].style.backgroundColor = "blue";
+        style7[0].style.backgroundColor = "blue";
+        style8[0].style.backgroundColor = "blue";
       }
       if (i == 4) {
         //setActive0(false);
         //setActive1(true);
         style4[0].style.backgroundColor = "red";
+        style0[0].style.backgroundColor = "blue";
+        style1[0].style.backgroundColor = "blue";
+        style2[0].style.backgroundColor = "blue";
+        style3[0].style.backgroundColor = "blue";
+        style5[0].style.backgroundColor = "blue";
+        style6[0].style.backgroundColor = "blue";
+        style7[0].style.backgroundColor = "blue";
+        style8[0].style.backgroundColor = "blue";
       }
       if (i == 5) {
         //setActive0(false);
         //setActive1(true);
         style5[0].style.backgroundColor = "red";
+        style0[0].style.backgroundColor = "blue";
+        style1[0].style.backgroundColor = "blue";
+        style2[0].style.backgroundColor = "blue";
+        style3[0].style.backgroundColor = "blue";
+        style4[0].style.backgroundColor = "blue";
+        style6[0].style.backgroundColor = "blue";
+        style7[0].style.backgroundColor = "blue";
+        style8[0].style.backgroundColor = "blue";
       }
       if (i == 6) {
         //setActive0(false);
         //setActive1(true);
         style6[0].style.backgroundColor = "red";
+        style0[0].style.backgroundColor = "blue";
+        style1[0].style.backgroundColor = "blue";
+        style2[0].style.backgroundColor = "blue";
+        style3[0].style.backgroundColor = "blue";
+        style4[0].style.backgroundColor = "blue";
+        style5[0].style.backgroundColor = "blue";
+        style7[0].style.backgroundColor = "blue";
+        style8[0].style.backgroundColor = "blue";
       }
       if (i == 7) {
         //setActive0(false);
         //setActive1(true);
         style7[0].style.backgroundColor = "red";
+        style0[0].style.backgroundColor = "blue";
+        style1[0].style.backgroundColor = "blue";
+        style2[0].style.backgroundColor = "blue";
+        style3[0].style.backgroundColor = "blue";
+        style4[0].style.backgroundColor = "blue";
+        style5[0].style.backgroundColor = "blue";
+        style6[0].style.backgroundColor = "blue";
+        style8[0].style.backgroundColor = "blue";
       }
       if (i == 8) {
         //setActive0(false);
         //setActive1(true);
         style8[0].style.backgroundColor = "red";
+        style0[0].style.backgroundColor = "blue";
+        style1[0].style.backgroundColor = "blue";
+        style2[0].style.backgroundColor = "blue";
+        style3[0].style.backgroundColor = "blue";
+        style4[0].style.backgroundColor = "blue";
+        style5[0].style.backgroundColor = "blue";
+        style6[0].style.backgroundColor = "blue";
+        style7[0].style.backgroundColor = "blue";
       }
       //setActive0(false);
     }
