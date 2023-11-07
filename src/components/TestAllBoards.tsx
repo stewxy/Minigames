@@ -3,7 +3,7 @@ import "../App.css";
 
 function Square({ value, onSquareClick }: { value: any; onSquareClick: any }) {
   return (
-    <button className="Grid" onClick={onSquareClick}>
+    <button className="Grid" onClick={onSquareClick} disabled={false}>
       {value}
     </button>
   );
@@ -61,8 +61,6 @@ const TestAllBoards = () => {
       console.log("uValue: " + uValue);
 
       if (i == 0) {
-        //setActive0(true);
-        //setActive1(false);
         style0[0].style.backgroundColor = "red";
         style1[0].style.backgroundColor = "blue";
         style2[0].style.backgroundColor = "blue";
@@ -72,10 +70,28 @@ const TestAllBoards = () => {
         style6[0].style.backgroundColor = "blue";
         style7[0].style.backgroundColor = "blue";
         style8[0].style.backgroundColor = "blue";
+
+        style0[0].style.pointerEvents = "auto";
+        style1[0].style.pointerEvents = "none";
+        style2[0].style.pointerEvents = "none";
+        style3[0].style.pointerEvents = "none";
+        style4[0].style.pointerEvents = "none";
+        style5[0].style.pointerEvents = "none";
+        style6[0].style.pointerEvents = "none";
+        style7[0].style.pointerEvents = "none";
+        style8[0].style.pointerEvents = "none";
+
+        style0[0].style.opacity = "1";
+        style1[0].style.opacity = "0.8";
+        style2[0].style.opacity = "0.8";
+        style3[0].style.opacity = "0.8";
+        style4[0].style.opacity = "0.8";
+        style5[0].style.opacity = "0.8";
+        style6[0].style.opacity = "0.8";
+        style7[0].style.opacity = "0.8";
+        style8[0].style.opacity = "0.8";
       }
       if (i == 1) {
-        //setActive0(false);
-        //setActive1(true);
         style1[0].style.backgroundColor = "red";
         style0[0].style.backgroundColor = "blue";
         style2[0].style.backgroundColor = "blue";
@@ -85,10 +101,28 @@ const TestAllBoards = () => {
         style6[0].style.backgroundColor = "blue";
         style7[0].style.backgroundColor = "blue";
         style8[0].style.backgroundColor = "blue";
+
+        style0[0].style.pointerEvents = "none";
+        style1[0].style.pointerEvents = "auto";
+        style2[0].style.pointerEvents = "none";
+        style3[0].style.pointerEvents = "none";
+        style4[0].style.pointerEvents = "none";
+        style5[0].style.pointerEvents = "none";
+        style6[0].style.pointerEvents = "none";
+        style7[0].style.pointerEvents = "none";
+        style8[0].style.pointerEvents = "none";
+
+        style0[0].style.opacity = "0.8";
+        style1[0].style.opacity = "1";
+        style2[0].style.opacity = "0.8";
+        style3[0].style.opacity = "0.8";
+        style4[0].style.opacity = "0.8";
+        style5[0].style.opacity = "0.8";
+        style6[0].style.opacity = "0.8";
+        style7[0].style.opacity = "0.8";
+        style8[0].style.opacity = "0.8";
       }
       if (i == 2) {
-        //setActive0(false);
-        //setActive1(true);
         style2[0].style.backgroundColor = "red";
         style0[0].style.backgroundColor = "blue";
         style1[0].style.backgroundColor = "blue";
@@ -98,10 +132,28 @@ const TestAllBoards = () => {
         style6[0].style.backgroundColor = "blue";
         style7[0].style.backgroundColor = "blue";
         style8[0].style.backgroundColor = "blue";
+
+        style0[0].style.pointerEvents = "none";
+        style1[0].style.pointerEvents = "none";
+        style2[0].style.pointerEvents = "auto";
+        style3[0].style.pointerEvents = "none";
+        style4[0].style.pointerEvents = "none";
+        style5[0].style.pointerEvents = "none";
+        style6[0].style.pointerEvents = "none";
+        style7[0].style.pointerEvents = "none";
+        style8[0].style.pointerEvents = "none";
+
+        style0[0].style.opacity = "0.8";
+        style1[0].style.opacity = "0.8";
+        style2[0].style.opacity = "1";
+        style3[0].style.opacity = "0.8";
+        style4[0].style.opacity = "0.8";
+        style5[0].style.opacity = "0.8";
+        style6[0].style.opacity = "0.8";
+        style7[0].style.opacity = "0.8";
+        style8[0].style.opacity = "0.8";
       }
       if (i == 3) {
-        //setActive0(false);
-        //setActive1(true);
         style3[0].style.backgroundColor = "red";
         style0[0].style.backgroundColor = "blue";
         style1[0].style.backgroundColor = "blue";
@@ -111,10 +163,28 @@ const TestAllBoards = () => {
         style6[0].style.backgroundColor = "blue";
         style7[0].style.backgroundColor = "blue";
         style8[0].style.backgroundColor = "blue";
+
+        style0[0].style.pointerEvents = "none";
+        style1[0].style.pointerEvents = "none";
+        style2[0].style.pointerEvents = "none";
+        style3[0].style.pointerEvents = "auto";
+        style4[0].style.pointerEvents = "none";
+        style5[0].style.pointerEvents = "none";
+        style6[0].style.pointerEvents = "none";
+        style7[0].style.pointerEvents = "none";
+        style8[0].style.pointerEvents = "none";
+
+        style0[0].style.opacity = "0.8";
+        style1[0].style.opacity = "0.8";
+        style2[0].style.opacity = "0.8";
+        style3[0].style.opacity = "1";
+        style4[0].style.opacity = "0.8";
+        style5[0].style.opacity = "0.8";
+        style6[0].style.opacity = "0.8";
+        style7[0].style.opacity = "0.8";
+        style8[0].style.opacity = "0.8";
       }
       if (i == 4) {
-        //setActive0(false);
-        //setActive1(true);
         style4[0].style.backgroundColor = "red";
         style0[0].style.backgroundColor = "blue";
         style1[0].style.backgroundColor = "blue";
@@ -124,10 +194,28 @@ const TestAllBoards = () => {
         style6[0].style.backgroundColor = "blue";
         style7[0].style.backgroundColor = "blue";
         style8[0].style.backgroundColor = "blue";
+
+        style0[0].style.pointerEvents = "none";
+        style1[0].style.pointerEvents = "none";
+        style2[0].style.pointerEvents = "none";
+        style3[0].style.pointerEvents = "none";
+        style4[0].style.pointerEvents = "auto";
+        style5[0].style.pointerEvents = "none";
+        style6[0].style.pointerEvents = "none";
+        style7[0].style.pointerEvents = "none";
+        style8[0].style.pointerEvents = "none";
+
+        style0[0].style.opacity = "0.8";
+        style1[0].style.opacity = "0.8";
+        style2[0].style.opacity = "0.8";
+        style3[0].style.opacity = "0.8";
+        style4[0].style.opacity = "1";
+        style5[0].style.opacity = "0.8";
+        style6[0].style.opacity = "0.8";
+        style7[0].style.opacity = "0.8";
+        style8[0].style.opacity = "0.8";
       }
       if (i == 5) {
-        //setActive0(false);
-        //setActive1(true);
         style5[0].style.backgroundColor = "red";
         style0[0].style.backgroundColor = "blue";
         style1[0].style.backgroundColor = "blue";
@@ -137,10 +225,28 @@ const TestAllBoards = () => {
         style6[0].style.backgroundColor = "blue";
         style7[0].style.backgroundColor = "blue";
         style8[0].style.backgroundColor = "blue";
+
+        style0[0].style.pointerEvents = "none";
+        style1[0].style.pointerEvents = "none";
+        style2[0].style.pointerEvents = "none";
+        style3[0].style.pointerEvents = "none";
+        style4[0].style.pointerEvents = "none";
+        style5[0].style.pointerEvents = "auto";
+        style6[0].style.pointerEvents = "none";
+        style7[0].style.pointerEvents = "none";
+        style8[0].style.pointerEvents = "none";
+
+        style0[0].style.opacity = "0.8";
+        style1[0].style.opacity = "0.8";
+        style2[0].style.opacity = "0.8";
+        style3[0].style.opacity = "0.8";
+        style4[0].style.opacity = "0.8";
+        style5[0].style.opacity = "1";
+        style6[0].style.opacity = "0.8";
+        style7[0].style.opacity = "0.8";
+        style8[0].style.opacity = "0.8";
       }
       if (i == 6) {
-        //setActive0(false);
-        //setActive1(true);
         style6[0].style.backgroundColor = "red";
         style0[0].style.backgroundColor = "blue";
         style1[0].style.backgroundColor = "blue";
@@ -150,10 +256,28 @@ const TestAllBoards = () => {
         style5[0].style.backgroundColor = "blue";
         style7[0].style.backgroundColor = "blue";
         style8[0].style.backgroundColor = "blue";
+
+        style0[0].style.pointerEvents = "none";
+        style1[0].style.pointerEvents = "none";
+        style2[0].style.pointerEvents = "none";
+        style3[0].style.pointerEvents = "none";
+        style4[0].style.pointerEvents = "none";
+        style5[0].style.pointerEvents = "none";
+        style6[0].style.pointerEvents = "auto";
+        style7[0].style.pointerEvents = "none";
+        style8[0].style.pointerEvents = "none";
+
+        style0[0].style.opacity = "0.8";
+        style1[0].style.opacity = "0.8";
+        style2[0].style.opacity = "0.8";
+        style3[0].style.opacity = "0.8";
+        style4[0].style.opacity = "0.8";
+        style5[0].style.opacity = "0.8";
+        style6[0].style.opacity = "1";
+        style7[0].style.opacity = "0.8";
+        style8[0].style.opacity = "0.8";
       }
       if (i == 7) {
-        //setActive0(false);
-        //setActive1(true);
         style7[0].style.backgroundColor = "red";
         style0[0].style.backgroundColor = "blue";
         style1[0].style.backgroundColor = "blue";
@@ -163,10 +287,28 @@ const TestAllBoards = () => {
         style5[0].style.backgroundColor = "blue";
         style6[0].style.backgroundColor = "blue";
         style8[0].style.backgroundColor = "blue";
+
+        style0[0].style.pointerEvents = "none";
+        style1[0].style.pointerEvents = "none";
+        style2[0].style.pointerEvents = "none";
+        style3[0].style.pointerEvents = "none";
+        style4[0].style.pointerEvents = "none";
+        style5[0].style.pointerEvents = "none";
+        style6[0].style.pointerEvents = "none";
+        style7[0].style.pointerEvents = "auto";
+        style8[0].style.pointerEvents = "none";
+
+        style0[0].style.opacity = "0.8";
+        style1[0].style.opacity = "0.8";
+        style2[0].style.opacity = "0.8";
+        style3[0].style.opacity = "0.8";
+        style4[0].style.opacity = "0.8";
+        style5[0].style.opacity = "0.8";
+        style6[0].style.opacity = "0.8";
+        style7[0].style.opacity = "1";
+        style8[0].style.opacity = "0.8";
       }
       if (i == 8) {
-        //setActive0(false);
-        //setActive1(true);
         style8[0].style.backgroundColor = "red";
         style0[0].style.backgroundColor = "blue";
         style1[0].style.backgroundColor = "blue";
@@ -176,8 +318,27 @@ const TestAllBoards = () => {
         style5[0].style.backgroundColor = "blue";
         style6[0].style.backgroundColor = "blue";
         style7[0].style.backgroundColor = "blue";
+
+        style0[0].style.pointerEvents = "none";
+        style1[0].style.pointerEvents = "none";
+        style2[0].style.pointerEvents = "none";
+        style3[0].style.pointerEvents = "none";
+        style4[0].style.pointerEvents = "none";
+        style5[0].style.pointerEvents = "none";
+        style6[0].style.pointerEvents = "none";
+        style7[0].style.pointerEvents = "none";
+        style8[0].style.pointerEvents = "auto";
+
+        style0[0].style.opacity = "0.8";
+        style1[0].style.opacity = "0.8";
+        style2[0].style.opacity = "0.8";
+        style3[0].style.opacity = "0.8";
+        style4[0].style.opacity = "0.8";
+        style5[0].style.opacity = "0.8";
+        style6[0].style.opacity = "0.8";
+        style7[0].style.opacity = "0.8";
+        style8[0].style.opacity = "1";
       }
-      //setActive0(false);
     }
 
     //console.log(squares);
@@ -203,7 +364,6 @@ const TestAllBoards = () => {
       </>
     );
   }
-
   //function UltimateBoard(){}
   const [uSquare, setUSquare] = useState(Array(9).fill(null));
   return (
