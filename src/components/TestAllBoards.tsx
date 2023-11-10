@@ -9,23 +9,26 @@ function Square({ value, onSquareClick }: { value: any; onSquareClick: any }) {
   );
 }
 
+function calculateWinner(squares: any) {
+  const lines = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6],
+  ];
+  for (let i = 0; i < lines.length; i++) {
+    const [a, b, c] = lines[i];
+    if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
+      console.log(squares[a] + " is the Winner");
+    }
+  }
+}
+
 const TestAllBoards = () => {
-  //const [click, setClicked] = useState(false);
-  //const [value, setValue] = useState("");
-  // const [active0, setActive0] = useState(false);
-  // const [active1, setActive1] = useState(false);
-  // const [active2, setActive2] = useState(false);
-  // const [active3, setActive3] = useState(false);
-  // const [active4, setActive4] = useState(false);
-  // const [active5, setActive5] = useState(false);
-  // const [active6, setActive6] = useState(false);
-  // const [active7, setActive7] = useState(false);
-  // const [active8, setActive8] = useState(false);
-
-  // let style0 = document.getElementsByClassName(
-  //   "u0"
-  // ) as HTMLCollectionOf<HTMLElement>;
-
   let [style0, style1, style2, style3, style4, style5, style6, style7, style8] =
     [
       document.getElementsByClassName("u0") as HTMLCollectionOf<HTMLElement>,
@@ -38,8 +41,6 @@ const TestAllBoards = () => {
       document.getElementsByClassName("u7") as HTMLCollectionOf<HTMLElement>,
       document.getElementsByClassName("u8") as HTMLCollectionOf<HTMLElement>,
     ];
-
-  //console.log(x);
 
   function SingleBoard({ uValue }: { uValue: any }) {
     const [xIsNext, setXIsNext] = useState(true);
@@ -342,6 +343,7 @@ const TestAllBoards = () => {
     }
 
     //console.log(squares);
+    calculateWinner(squares);
     return (
       <>
         <div className="oneBoard">
@@ -364,22 +366,16 @@ const TestAllBoards = () => {
       </>
     );
   }
-  //function UltimateBoard(){}
+
   const [uSquare, setUSquare] = useState(Array(9).fill(null));
   return (
     <>
       <div className="fullBoard">
         <div className="ultimateRow">
-          <div
-            className="u0"
-            //style={{ backgroundColor: active0 ? "green" : "blue" }}
-          >
+          <div className="u0">
             <SingleBoard uValue={0} />
           </div>
-          <div
-            className="u1"
-            //style={{ backgroundColor: active1 ? "green" : "blue" }}
-          >
+          <div className="u1">
             <SingleBoard uValue={1} />
           </div>
           <div className="u2">

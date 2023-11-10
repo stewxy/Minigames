@@ -8,7 +8,7 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import Grid from "./components/Grid";
 import AllBoards from "./components/AllBoards";
-import TestAllBoards from "./components/testAllBoards";
+import TestAllBoards from "./components/TestAllBoards";
 
 function App() {
   // let items = ["New York", "San Francisco", "Tokyo", "Paris"];
