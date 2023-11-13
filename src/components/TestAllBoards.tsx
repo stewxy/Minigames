@@ -74,7 +74,7 @@ const TestAllBoards = () => {
       console.log("i: " + i);
       console.log("uValue: " + uValue);
 
-      if (i == 0) {
+      if (i == 0 && uSquareArray[i] == null) {
         style0[0].style.backgroundColor = "red";
         style1[0].style.backgroundColor = "blue";
         style2[0].style.backgroundColor = "blue";
@@ -104,8 +104,7 @@ const TestAllBoards = () => {
         style6[0].style.opacity = "0.8";
         style7[0].style.opacity = "0.8";
         style8[0].style.opacity = "0.8";
-      }
-      if (i == 1) {
+      } else if (i == 1 && uSquareArray[i] == null) {
         style1[0].style.backgroundColor = "red";
         style0[0].style.backgroundColor = "blue";
         style2[0].style.backgroundColor = "blue";
@@ -135,8 +134,7 @@ const TestAllBoards = () => {
         style6[0].style.opacity = "0.8";
         style7[0].style.opacity = "0.8";
         style8[0].style.opacity = "0.8";
-      }
-      if (i == 2) {
+      } else if (i == 2 && uSquareArray[i] == null) {
         style2[0].style.backgroundColor = "red";
         style0[0].style.backgroundColor = "blue";
         style1[0].style.backgroundColor = "blue";
@@ -166,8 +164,7 @@ const TestAllBoards = () => {
         style6[0].style.opacity = "0.8";
         style7[0].style.opacity = "0.8";
         style8[0].style.opacity = "0.8";
-      }
-      if (i == 3) {
+      } else if (i == 3 && uSquareArray[i] == null) {
         style3[0].style.backgroundColor = "red";
         style0[0].style.backgroundColor = "blue";
         style1[0].style.backgroundColor = "blue";
@@ -197,8 +194,7 @@ const TestAllBoards = () => {
         style6[0].style.opacity = "0.8";
         style7[0].style.opacity = "0.8";
         style8[0].style.opacity = "0.8";
-      }
-      if (i == 4) {
+      } else if (i == 4 && uSquareArray[i] == null) {
         style4[0].style.backgroundColor = "red";
         style0[0].style.backgroundColor = "blue";
         style1[0].style.backgroundColor = "blue";
@@ -228,8 +224,7 @@ const TestAllBoards = () => {
         style6[0].style.opacity = "0.8";
         style7[0].style.opacity = "0.8";
         style8[0].style.opacity = "0.8";
-      }
-      if (i == 5) {
+      } else if (i == 5 && uSquareArray[i] == null) {
         style5[0].style.backgroundColor = "red";
         style0[0].style.backgroundColor = "blue";
         style1[0].style.backgroundColor = "blue";
@@ -259,8 +254,7 @@ const TestAllBoards = () => {
         style6[0].style.opacity = "0.8";
         style7[0].style.opacity = "0.8";
         style8[0].style.opacity = "0.8";
-      }
-      if (i == 6) {
+      } else if (i == 6 && uSquareArray[i] == null) {
         style6[0].style.backgroundColor = "red";
         style0[0].style.backgroundColor = "blue";
         style1[0].style.backgroundColor = "blue";
@@ -290,8 +284,7 @@ const TestAllBoards = () => {
         style6[0].style.opacity = "1";
         style7[0].style.opacity = "0.8";
         style8[0].style.opacity = "0.8";
-      }
-      if (i == 7) {
+      } else if (i == 7 && uSquareArray[i] == null) {
         style7[0].style.backgroundColor = "red";
         style0[0].style.backgroundColor = "blue";
         style1[0].style.backgroundColor = "blue";
@@ -321,8 +314,7 @@ const TestAllBoards = () => {
         style6[0].style.opacity = "0.8";
         style7[0].style.opacity = "1";
         style8[0].style.opacity = "0.8";
-      }
-      if (i == 8) {
+      } else if (i == 8 && uSquareArray[i] == null) {
         style8[0].style.backgroundColor = "red";
         style0[0].style.backgroundColor = "blue";
         style1[0].style.backgroundColor = "blue";
@@ -352,6 +344,8 @@ const TestAllBoards = () => {
         style6[0].style.opacity = "0.8";
         style7[0].style.opacity = "0.8";
         style8[0].style.opacity = "1";
+      } else {
+        console.log("THAT BOARD ALREADY HAS A WINNER");
       }
 
       // if (calculateWinner(squares, uValue) !== null) {
