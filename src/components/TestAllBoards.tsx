@@ -360,7 +360,7 @@ const TestAllBoards = () => {
 
         for (let i = 0; i < x.length; i++) {
           if (uSquareArray[i] == null) {
-            x[i][0].style.backgroundColor = "blue";
+            x[i][0].style.backgroundColor = "red";
             x[i][0].style.pointerEvents = "auto";
             x[i][0].style.opacity = "1";
           }
