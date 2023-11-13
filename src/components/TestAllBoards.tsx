@@ -73,6 +73,17 @@ const TestAllBoards = () => {
       setXIsNext(!xIsNext);
       console.log("i: " + i);
       console.log("uValue: " + uValue);
+      let x = [
+        style0,
+        style1,
+        style2,
+        style3,
+        style4,
+        style5,
+        style6,
+        style7,
+        style8,
+      ];
 
       if (i == 0 && uSquareArray[i] == null) {
         style0[0].style.backgroundColor = "red";
@@ -346,6 +357,14 @@ const TestAllBoards = () => {
         style8[0].style.opacity = "1";
       } else {
         console.log("THAT BOARD ALREADY HAS A WINNER");
+
+        for (let i = 0; i < x.length; i++) {
+          if (uSquareArray[i] == null) {
+            x[i][0].style.backgroundColor = "blue";
+            x[i][0].style.pointerEvents = "auto";
+            x[i][0].style.opacity = "1";
+          }
+        }
       }
 
       // if (calculateWinner(squares, uValue) !== null) {
