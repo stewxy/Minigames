@@ -9,26 +9,39 @@ function Square({ value, onSquareClick }: { value: any; onSquareClick: any }) {
   );
 }
 
-function calculateWinner(squares: any) {
-  const lines = [
-    [0, 1, 2],
-    [3, 4, 5],
-    [6, 7, 8],
-    [0, 3, 6],
-    [1, 4, 7],
-    [2, 5, 8],
-    [0, 4, 8],
-    [2, 4, 6],
-  ];
-  for (let i = 0; i < lines.length; i++) {
-    const [a, b, c] = lines[i];
-    if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
-      console.log(squares[a] + " is the Winner");
-    }
-  }
-}
-
 const TestAllBoards = () => {
+  const [uSquare, setUSquare] = useState(Array(9).fill(null));
+  let uSquareArray = [null, null, null, null, null, null, null, null, null];
+
+  function calculateWinner(squares: any, uValue: any) {
+    const lines = [
+      [0, 1, 2],
+      [3, 4, 5],
+      [6, 7, 8],
+      [0, 3, 6],
+      [1, 4, 7],
+      [2, 5, 8],
+      [0, 4, 8],
+      [2, 4, 6],
+    ];
+    for (let i = 0; i < lines.length; i++) {
+      const [a, b, c] = lines[i];
+      if (
+        squares[a] &&
+        squares[a] === squares[b] &&
+        squares[a] === squares[c]
+      ) {
+        console.log(squares[a] + " is the Winner" + uValue);
+        uSquareArray[uValue] = squares[a];
+
+        if (uValue == 0) {
+          style0[0].style.backgroundColor = "yellow";
+        }
+        return squares[a], uValue;
+      }
+    }
+    console.log(uSquareArray + " ####");
+  }
   let [style0, style1, style2, style3, style4, style5, style6, style7, style8] =
     [
       document.getElementsByClassName("u0") as HTMLCollectionOf<HTMLElement>,
@@ -42,7 +55,7 @@ const TestAllBoards = () => {
       document.getElementsByClassName("u8") as HTMLCollectionOf<HTMLElement>,
     ];
 
-  function SingleBoard({ uValue }: { uValue: any }) {
+  function SingleBoard({ value, uValue }: { value: any; uValue: any }) {
     const [xIsNext, setXIsNext] = useState(true);
     const [squares, setSquares] = useState(Array(9).fill(null));
 
@@ -340,10 +353,14 @@ const TestAllBoards = () => {
         style7[0].style.opacity = "0.8";
         style8[0].style.opacity = "1";
       }
+
+      // if (calculateWinner(squares, uValue) !== null) {
+      //   let x = calculateWinner(squares, uValue);
+      // }
     }
 
     //console.log(squares);
-    calculateWinner(squares);
+    calculateWinner(squares, uValue);
     return (
       <>
         <div className="oneBoard">
@@ -367,41 +384,40 @@ const TestAllBoards = () => {
     );
   }
 
-  const [uSquare, setUSquare] = useState(Array(9).fill(null));
   return (
     <>
       <div className="fullBoard">
         <div className="ultimateRow">
           <div className="u0">
-            <SingleBoard uValue={0} />
+            <SingleBoard value={uSquare[0]} uValue={0} />
           </div>
           <div className="u1">
-            <SingleBoard uValue={1} />
+            <SingleBoard value={uSquare[1]} uValue={1} />
           </div>
           <div className="u2">
-            <SingleBoard uValue={2} />
+            <SingleBoard value={uSquare[2]} uValue={2} />
           </div>
         </div>
         <div className="ultimateRow">
           <div className="u3">
-            <SingleBoard uValue={3} />
+            <SingleBoard value={uSquare[3]} uValue={3} />
           </div>
           <div className="u4">
-            <SingleBoard uValue={4} />
+            <SingleBoard value={uSquare[4]} uValue={4} />
           </div>
           <div className="u5">
-            <SingleBoard uValue={5} />
+            <SingleBoard value={uSquare[5]} uValue={5} />
           </div>
         </div>
         <div className="ultimateRow">
           <div className="u6">
-            <SingleBoard uValue={6} />
+            <SingleBoard value={uSquare[6]} uValue={6} />
           </div>
           <div className="u7">
-            <SingleBoard uValue={7} />
+            <SingleBoard value={uSquare[7]} uValue={7} />
           </div>
           <div className="u8">
-            <SingleBoard uValue={8} />
+            <SingleBoard value={uSquare[8]} uValue={8} />
           </div>
         </div>
       </div>
