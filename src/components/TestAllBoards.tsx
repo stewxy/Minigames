@@ -402,6 +402,7 @@ const TestAllBoards = () => {
       <div className="fullBoard">
         <div className="ultimateRow">
           <div className="u0">
+            <div className="test">X</div>
             <SingleBoard value={uSquare[0]} uValue={0} />
           </div>
           <div className="u1">
