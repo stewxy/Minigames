@@ -12,7 +12,17 @@ function Square({ value, onSquareClick }: { value: any; onSquareClick: any }) {
 const TestAllBoards = () => {
   const [uSquare, setUSquare] = useState(Array(9).fill(null));
   let uSquareArray = [null, null, null, null, null, null, null, null, null];
-
+  let [winB0, winB1, winB2, winB3, winB4, winB5, winB6, winB7, winB8] = [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+  ];
   function calculateWinner(squares: any, uValue: any) {
     const lines = [
       [0, 1, 2],
@@ -34,8 +44,11 @@ const TestAllBoards = () => {
         console.log(squares[a] + " is the Winner" + uValue);
         uSquareArray[uValue] = squares[a];
 
+        //winner = squares[a];
+
         if (uValue == 0) {
           style0[0].style.backgroundColor = "yellow";
+          getWinB0[0].innerHTML = "X";
         }
         return squares[a], uValue;
       }
@@ -397,40 +410,88 @@ const TestAllBoards = () => {
     );
   }
 
+  let [
+    getWinB0,
+    getWinB1,
+    getWinB2,
+    getWinB3,
+    getWinB4,
+    getWinB5,
+    getWinB6,
+    getWinB7,
+    getWinB8,
+  ] = [
+    document.getElementsByClassName(
+      "styleWinB0"
+    ) as HTMLCollectionOf<HTMLElement>,
+    document.getElementsByClassName(
+      "styleWinB1"
+    ) as HTMLCollectionOf<HTMLElement>,
+    document.getElementsByClassName(
+      "styleWinB2"
+    ) as HTMLCollectionOf<HTMLElement>,
+    document.getElementsByClassName(
+      "styleWinB3"
+    ) as HTMLCollectionOf<HTMLElement>,
+    document.getElementsByClassName(
+      "styleWinB4"
+    ) as HTMLCollectionOf<HTMLElement>,
+    document.getElementsByClassName(
+      "styleWinB5"
+    ) as HTMLCollectionOf<HTMLElement>,
+    document.getElementsByClassName(
+      "styleWinB6"
+    ) as HTMLCollectionOf<HTMLElement>,
+    document.getElementsByClassName(
+      "styleWinB7"
+    ) as HTMLCollectionOf<HTMLElement>,
+    document.getElementsByClassName(
+      "styleWinB8"
+    ) as HTMLCollectionOf<HTMLElement>,
+  ];
+
   return (
     <>
       <div className="fullBoard">
         <div className="ultimateRow">
           <div className="u0">
-            <div className="test">X</div>
+            <div className="styleWinB0">{winB0}</div>
             <SingleBoard value={uSquare[0]} uValue={0} />
           </div>
           <div className="u1">
+            <div className="styleWinB1">{winB1}</div>
             <SingleBoard value={uSquare[1]} uValue={1} />
           </div>
           <div className="u2">
+            <div className="styleWinB2">{winB2}</div>
             <SingleBoard value={uSquare[2]} uValue={2} />
           </div>
         </div>
         <div className="ultimateRow">
           <div className="u3">
+            <div className="styleWinB3">{winB3}</div>
             <SingleBoard value={uSquare[3]} uValue={3} />
           </div>
           <div className="u4">
+            <div className="styleWinB4">{winB4}</div>
             <SingleBoard value={uSquare[4]} uValue={4} />
           </div>
           <div className="u5">
+            <div className="styleWinB5">{winB5}</div>
             <SingleBoard value={uSquare[5]} uValue={5} />
           </div>
         </div>
         <div className="ultimateRow">
           <div className="u6">
+            <div className="styleWinB6">{winB6}</div>
             <SingleBoard value={uSquare[6]} uValue={6} />
           </div>
           <div className="u7">
+            <div className="styleWinB7">{winB7}</div>
             <SingleBoard value={uSquare[7]} uValue={7} />
           </div>
           <div className="u8">
+            <div className="styleWinB8">{winB8}</div>
             <SingleBoard value={uSquare[8]} uValue={8} />
           </div>
         </div>
