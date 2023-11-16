@@ -66,11 +66,15 @@ h1{
     background-color: rgb(0, 128, 0) !important;
 } */
 
-.styleWinB0, .styleWinB1, .styleWinB3,.styleWinB4,.styleWinB5,.styleWinB6,.styleWinB7,.styleWinB8{
+.styleWinB0, .styleWinB1, .styleWinB2, .styleWinB3, .styleWinB4, .styleWinB5, .styleWinB6, .styleWinB7, .styleWinB8{
     position: absolute;
     background-color: pink;
     margin-top: 10px;
     margin-left: 50px;
     font-size: 80px;
 
+}
+
+.startText{
+    
 }

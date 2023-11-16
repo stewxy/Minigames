@@ -10,30 +10,41 @@ function Square({ value, onSquareClick }: { value: any; onSquareClick: any }) {
 }
 
 const TestAllBoards = () => {
+  let xCounter = 0;
+  const lines = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6],
+  ];
   const [uSquare, setUSquare] = useState(Array(9).fill(null));
   let uSquareArray = [null, null, null, null, null, null, null, null, null];
-  let [winB0, winB1, winB2, winB3, winB4, winB5, winB6, winB7, winB8] = [
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-  ];
+  const [alertVisible, setAlertVisibility] = useState(false);
+  const [winPopup, setWinPopup] = useState("");
+
+  function resetBoard() {
+    console.log("reset");
+  }
+  function checkUltimateWinner() {
+    console.log("CHECKING FOR ULTIMATE WINNER");
+    for (let i = 0; i < lines.length; i++) {
+      const [a, b, c] = lines[i];
+      if (
+        uSquareArray[a] &&
+        uSquareArray[a] === uSquareArray[b] &&
+        uSquareArray[a] === uSquareArray[c]
+      ) {
+        console.log(uSquareArray[a] + " is the ULTIMATE Winner");
+        return uSquareArray[a];
+      }
+    }
+  }
+
   function calculateWinner(squares: any, uValue: any) {
-    const lines = [
-      [0, 1, 2],
-      [3, 4, 5],
-      [6, 7, 8],
-      [0, 3, 6],
-      [1, 4, 7],
-      [2, 5, 8],
-      [0, 4, 8],
-      [2, 4, 6],
-    ];
     for (let i = 0; i < lines.length; i++) {
       const [a, b, c] = lines[i];
       if (
@@ -44,11 +55,32 @@ const TestAllBoards = () => {
         console.log(squares[a] + " is the Winner" + uValue);
         uSquareArray[uValue] = squares[a];
 
-        //winner = squares[a];
-
         if (uValue == 0) {
-          style0[0].style.backgroundColor = "yellow";
-          getWinB0[0].innerHTML = "X";
+          getWinB0[0].innerHTML = squares[a];
+        }
+        if (uValue == 1) {
+          getWinB1[0].innerHTML = squares[a];
+        }
+        if (uValue == 2) {
+          getWinB2[0].innerHTML = squares[a];
+        }
+        if (uValue == 3) {
+          getWinB3[0].innerHTML = squares[a];
+        }
+        if (uValue == 4) {
+          getWinB4[0].innerHTML = squares[a];
+        }
+        if (uValue == 5) {
+          getWinB5[0].innerHTML = squares[a];
+        }
+        if (uValue == 6) {
+          getWinB6[0].innerHTML = squares[a];
+        }
+        if (uValue == 7) {
+          getWinB7[0].innerHTML = squares[a];
+        }
+        if (uValue == 8) {
+          getWinB8[0].innerHTML = squares[a];
         }
         return squares[a], uValue;
       }
@@ -71,19 +103,38 @@ const TestAllBoards = () => {
   function SingleBoard({ value, uValue }: { value: any; uValue: any }) {
     const [xIsNext, setXIsNext] = useState(true);
     const [squares, setSquares] = useState(Array(9).fill(null));
+    const [xNext, setXNext] = "X";
 
     function handleClick(i: number) {
       if (squares[i] != null) {
         return;
       }
       const nextSquares = squares.slice();
-      if (xIsNext) {
+      // if (xIsNext) {
+      //   nextSquares[i] = "X";
+      // } else {
+      //   nextSquares[i] = "O";
+      // }
+
+      if (xCounter % 2 == 0) {
         nextSquares[i] = "X";
+        (
+          document.getElementsByClassName(
+            "innerText"
+          ) as HTMLCollectionOf<HTMLElement>
+        )[0].innerHTML = "O's Turn";
       } else {
         nextSquares[i] = "O";
+        (
+          document.getElementsByClassName(
+            "innerText"
+          ) as HTMLCollectionOf<HTMLElement>
+        )[0].innerHTML = "X's Turn";
       }
+      xCounter++;
       setSquares(nextSquares);
       setXIsNext(!xIsNext);
+      console.log(xIsNext + " *****");
       console.log("i: " + i);
       console.log("uValue: " + uValue);
       let x = [
@@ -379,14 +430,11 @@ const TestAllBoards = () => {
           }
         }
       }
-
-      // if (calculateWinner(squares, uValue) !== null) {
-      //   let x = calculateWinner(squares, uValue);
-      // }
     }
 
     //console.log(squares);
     calculateWinner(squares, uValue);
+    checkUltimateWinner();
     return (
       <>
         <div className="oneBoard">
@@ -455,46 +503,54 @@ const TestAllBoards = () => {
       <div className="fullBoard">
         <div className="ultimateRow">
           <div className="u0">
-            <div className="styleWinB0">{winB0}</div>
+            <div className="styleWinB0"></div>
             <SingleBoard value={uSquare[0]} uValue={0} />
           </div>
           <div className="u1">
-            <div className="styleWinB1">{winB1}</div>
+            <div className="styleWinB1"></div>
             <SingleBoard value={uSquare[1]} uValue={1} />
           </div>
           <div className="u2">
-            <div className="styleWinB2">{winB2}</div>
+            <div className="styleWinB2"></div>
             <SingleBoard value={uSquare[2]} uValue={2} />
           </div>
         </div>
         <div className="ultimateRow">
           <div className="u3">
-            <div className="styleWinB3">{winB3}</div>
+            <div className="styleWinB3"></div>
             <SingleBoard value={uSquare[3]} uValue={3} />
           </div>
           <div className="u4">
-            <div className="styleWinB4">{winB4}</div>
+            <div className="styleWinB4"></div>
             <SingleBoard value={uSquare[4]} uValue={4} />
           </div>
           <div className="u5">
-            <div className="styleWinB5">{winB5}</div>
+            <div className="styleWinB5"></div>
             <SingleBoard value={uSquare[5]} uValue={5} />
           </div>
         </div>
         <div className="ultimateRow">
           <div className="u6">
-            <div className="styleWinB6">{winB6}</div>
+            <div className="styleWinB6"></div>
             <SingleBoard value={uSquare[6]} uValue={6} />
           </div>
           <div className="u7">
-            <div className="styleWinB7">{winB7}</div>
+            <div className="styleWinB7"></div>
             <SingleBoard value={uSquare[7]} uValue={7} />
           </div>
           <div className="u8">
-            <div className="styleWinB8">{winB8}</div>
+            <div className="styleWinB8"></div>
             <SingleBoard value={uSquare[8]} uValue={8} />
           </div>
         </div>
+      </div>
+      <div className="startText">
+        {!alertVisible && <p className="innerText">X's Turn</p>}
+        {alertVisible && (
+          <button onClick={resetBoard}>
+            {winPopup + " Winner! (Reset Board)"}
+          </button>
+        )}
       </div>
     </>
   );
