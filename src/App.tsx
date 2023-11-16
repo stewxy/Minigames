@@ -31,7 +31,7 @@ function App() {
     //     Hello <span>World</span>
     //   </Alert>
     // </div>
-    <div>
+    <div className="main">
       {/* <Navbar></Navbar> 
       <h1 className="mainHeading">Minigames</h1>*/}
       <h1 className="mainHeading">TicTacToe</h1>
