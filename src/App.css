@@ -1,7 +1,8 @@
-
 h1{
     text-align: center;
 }
+
+
 
 .mainHeading{
     font-size: 100px;
@@ -34,13 +35,12 @@ h1{
 }
 
 /* === Ultimate TicTacToe === */
-.fullBoard{
-    /* background-color: blue; */
+.htmlUTicTacToe{
     text-align: center;
-    /* CODE TO MAKE BOARD NOT CHANGE WHEN ZOOMED IN
-    width: 500px;
+    /* CODE TO MAKE BOARD NOT CHANGE WHEN ZOOMED IN */
+    width: 1000px;
     height: 500px;
-    margin-left: 37%; */
+    margin-left: 24%; 
 }   
 
 .oneBoard{
@@ -64,9 +64,6 @@ h1{
     display: inline-block;
 }
 
-/* .u0{
-    background-color: rgb(0, 128, 0) !important;
-} */
 
 .styleWinB0, .styleWinB1, .styleWinB2, .styleWinB3, .styleWinB4, .styleWinB5, .styleWinB6, .styleWinB7, .styleWinB8{
     position: absolute;
@@ -82,8 +79,9 @@ h1{
     font-size: 35px;
     padding-top: 10px;
     padding-bottom: 10px;
+    
 }
 
-/* html{
-    background-color: blue !important;
+/* .main{
+    background-color: green;
 } */

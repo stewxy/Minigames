@@ -4,7 +4,7 @@ import { useState } from "react";
 
 let arr = ["", "", "", "", "", "", "", "", ""];
 
-const Grid = () => {
+const TicTacToe = () => {
   const [value1, setValue1] = useState("");
   const [value2, setValue2] = useState("");
   const [value3, setValue3] = useState("");
@@ -302,4 +302,4 @@ const Grid = () => {
   );
 };
 
-export default Grid;
+export default TicTacToe;

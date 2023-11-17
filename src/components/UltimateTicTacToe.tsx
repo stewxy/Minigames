@@ -11,7 +11,7 @@ function Square({ value, onSquareClick }: { value: any; onSquareClick: any }) {
   );
 }
 
-const TestAllBoards = () => {
+const UltimateTicTacToe = () => {
   let temp = 0;
 
   function resetBoard() {
@@ -575,17 +575,17 @@ const TestAllBoards = () => {
             <SingleBoard value={uSquare[8]} uValue={8} />
           </div>
         </div>
-      </div>
-      <div className="startText">
-        {!alertVisible && <p className="innerText">X's Turn</p>}
-        {alertVisible && (
-          <button onClick={resetBoard}>
-            {winPopup + " Winner! (Reset Board)"}
-          </button>
-        )}
+        <div className="startText">
+          {!alertVisible && <p className="innerText">X's Turn</p>}
+          {alertVisible && (
+            <button onClick={resetBoard}>
+              {winPopup + " Winner! (Reset Board)"}
+            </button>
+          )}
+        </div>
       </div>
     </>
   );
 };
 
-export default TestAllBoards;
+export default UltimateTicTacToe;
