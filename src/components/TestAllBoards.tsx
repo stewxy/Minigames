@@ -12,6 +12,8 @@ function Square({ value, onSquareClick }: { value: any; onSquareClick: any }) {
 }
 
 const TestAllBoards = () => {
+  let temp = 0;
+
   function resetBoard() {
     window.location.reload();
   }
@@ -33,7 +35,6 @@ const TestAllBoards = () => {
   const [winPopup, setWinPopup] = useState("");
 
   function checkUltimateWinner() {
-    console.log("CHECKING FOR ULTIMATE WINNER");
     for (let i = 0; i < lines.length; i++) {
       const [a, b, c] = lines[i];
       if (
@@ -41,7 +42,6 @@ const TestAllBoards = () => {
         uSquareArray[a] === uSquareArray[b] &&
         uSquareArray[a] === uSquareArray[c]
       ) {
-        console.log(uSquareArray[a] + " is the ULTIMATE Winner");
         setWinPopup(uSquareArray[a] + " is the");
         setAlertVisibility(true);
         style0[0].style.pointerEvents = "none";
@@ -53,6 +53,20 @@ const TestAllBoards = () => {
         style6[0].style.pointerEvents = "none";
         style7[0].style.pointerEvents = "none";
         style8[0].style.pointerEvents = "none";
+      } else {
+        if (uSquareArray.every((element) => element !== null)) {
+          setWinPopup("There is no");
+          setAlertVisibility(true);
+          style0[0].style.pointerEvents = "none";
+          style1[0].style.pointerEvents = "none";
+          style2[0].style.pointerEvents = "none";
+          style3[0].style.pointerEvents = "none";
+          style4[0].style.pointerEvents = "none";
+          style5[0].style.pointerEvents = "none";
+          style6[0].style.pointerEvents = "none";
+          style7[0].style.pointerEvents = "none";
+          style8[0].style.pointerEvents = "none";
+        }
       }
     }
   }
@@ -65,7 +79,6 @@ const TestAllBoards = () => {
         squares[a] === squares[b] &&
         squares[a] === squares[c]
       ) {
-        console.log(squares[a] + " is the Winner" + uValue);
         uSquareArray[uValue] = squares[a];
 
         if (uValue == 0) {
@@ -95,10 +108,21 @@ const TestAllBoards = () => {
         if (uValue == 8) {
           getWinB8[0].innerHTML = squares[a];
         }
+        if (uValue == temp) {
+          for (let j = 0; j < x.length; j++) {
+            if (uSquareArray[j] == null) {
+              x[j][0].style.backgroundColor = "red";
+              x[j][0].style.pointerEvents = "auto";
+              x[j][0].style.opacity = "1";
+            }
+          }
+        }
+        x[uValue][0].style.backgroundColor = "white";
+        x[uValue][0].style.pointerEvents = "none";
+        x[uValue][0].style.opacity = "0.8";
         return squares[a], uValue;
       }
     }
-    console.log(uSquareArray + " ####");
   }
   let [style0, style1, style2, style3, style4, style5, style6, style7, style8] =
     [
@@ -112,6 +136,17 @@ const TestAllBoards = () => {
       document.getElementsByClassName("u7") as HTMLCollectionOf<HTMLElement>,
       document.getElementsByClassName("u8") as HTMLCollectionOf<HTMLElement>,
     ];
+  let x = [
+    style0,
+    style1,
+    style2,
+    style3,
+    style4,
+    style5,
+    style6,
+    style7,
+    style8,
+  ];
 
   function SingleBoard({ value, uValue }: { value: any; uValue: any }) {
     const [xIsNext, setXIsNext] = useState(true);
@@ -119,6 +154,7 @@ const TestAllBoards = () => {
     const [xNext, setXNext] = "X";
 
     function handleClick(i: number) {
+      temp = i;
       if (squares[i] != null) {
         return;
       }
@@ -147,20 +183,6 @@ const TestAllBoards = () => {
       xCounter++;
       setSquares(nextSquares);
       setXIsNext(!xIsNext);
-      console.log(xIsNext + " *****");
-      console.log("i: " + i);
-      console.log("uValue: " + uValue);
-      let x = [
-        style0,
-        style1,
-        style2,
-        style3,
-        style4,
-        style5,
-        style6,
-        style7,
-        style8,
-      ];
 
       if (i == 0 && uSquareArray[i] == null) {
         style0[0].style.backgroundColor = "red";
@@ -433,8 +455,6 @@ const TestAllBoards = () => {
         style7[0].style.opacity = "0.8";
         style8[0].style.opacity = "1";
       } else {
-        console.log("THAT BOARD ALREADY HAS A WINNER");
-
         for (let i = 0; i < x.length; i++) {
           if (uSquareArray[i] == null) {
             x[i][0].style.backgroundColor = "red";
@@ -445,7 +465,6 @@ const TestAllBoards = () => {
       }
     }
 
-    //console.log(squares);
     calculateWinner(squares, uValue);
     checkUltimateWinner();
     return (
@@ -560,7 +579,9 @@ const TestAllBoards = () => {
       <div className="startText">
         {!alertVisible && <p className="innerText">X's Turn</p>}
         {alertVisible && (
-          <button onClick={resetBoard}>{winPopup + " Winner! (Reload)"}</button>
+          <button onClick={resetBoard}>
+            {winPopup + " Winner! (Reset Board)"}
+          </button>
         )}
       </div>
     </>
