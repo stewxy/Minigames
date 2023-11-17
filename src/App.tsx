@@ -6,7 +6,9 @@ import Alert from "./components/Alert";
 import Button from "./components/Button";
 import "./App.css";
 import Navbar from "./components/Navbar";
-import Grid from "./components/Grid";
+import TicTacToe from "./components/TicTacToe";
+import AllBoards from "./components/AllBoards";
+import UltimateTicTacToe from "./components/UltimateTicTacToe";
 
 function App() {
   // let items = ["New York", "San Francisco", "Tokyo", "Paris"];
@@ -29,20 +31,27 @@ function App() {
     //     Hello <span>World</span>
     //   </Alert>
     // </div>
-    <div>
-      {/* <Navbar></Navbar> 
+    <>
+      <div className="main">
+        {/* <Navbar></Navbar> 
       <h1 className="mainHeading">Minigames</h1>*/}
-      <h1 className="mainHeading">TicTacToe</h1>
 
-      <Grid></Grid>
+        {/* <TicTacToe></TicTacToe> */}
 
-      {alertVisible && (
-        <Alert onClose={() => setAlertVisibility(false)}>My Alert</Alert>
-      )}
-      {/* <Button color="primary" onClick={() => setAlertVisibility(true)}>
+        {alertVisible && (
+          <Alert onClose={() => setAlertVisibility(false)}>My Alert</Alert>
+        )}
+        {/* <Button color="primary" onClick={() => setAlertVisibility(true)}>
         MyButton
       </Button> */}
-    </div>
+
+        {/* <AllBoards></AllBoards> */}
+        <div className="htmlUTicTacToe">
+          <h1 className="mainHeading">Ultimate TicTacToe</h1>
+          <UltimateTicTacToe></UltimateTicTacToe>
+        </div>
+      </div>
+    </>
   );
 }
 
