@@ -12,9 +12,8 @@ function Square({ value, onSquareClick }: { value: any; onSquareClick: any }) {
 }
 
 const TestAllBoards = () => {
-  const [r, setR] = useState(true);
   function resetBoard() {
-    setR(!render);
+    window.location.reload();
   }
 
   let xCounter = 0;
@@ -561,9 +560,7 @@ const TestAllBoards = () => {
       <div className="startText">
         {!alertVisible && <p className="innerText">X's Turn</p>}
         {alertVisible && (
-          <button onClick={resetBoard}>
-            {winPopup + " Winner! (Reset Board)"}
-          </button>
+          <button onClick={resetBoard}>{winPopup + " Winner! (Reload)"}</button>
         )}
       </div>
     </>
