@@ -111,22 +111,22 @@ const UltimateTicTacToe = () => {
   function setWinGridText(value: number, squares: any) {
     getWinList[value][0].innerHTML = squares;
     if (value == temp) {
-      for (let j = 0; j < x.length; j++) {
-        if (uSquareArray[j] == null) {
-          x[j][0].style.backgroundColor = "red";
-          x[j][0].style.pointerEvents = "auto";
-          x[j][0].style.opacity = "1";
+      for (let i = 0; i < x.length; i++) {
+        if (uSquareArray[i] == null) {
+          x[i][0].style.backgroundColor = "red";
+          x[i][0].style.pointerEvents = "auto";
+          x[i][0].style.opacity = "1";
         }
       }
     }
   }
 
-  function modifyGridColor(i: number) {
-    x[i][0].style.backgroundColor = "red";
-    x[i][0].style.pointerEvents = "auto";
-    x[i][0].style.opacity = "1";
+  function modifyGridColor(value: number) {
+    x[value][0].style.backgroundColor = "red";
+    x[value][0].style.pointerEvents = "auto";
+    x[value][0].style.opacity = "1";
     for (let j = 0; j < x.length; j++) {
-      if (j !== i) {
+      if (j !== value) {
         x[j][0].style.backgroundColor = "white";
         x[j][0].style.pointerEvents = "none";
         x[j][0].style.opacity = "0.8";
