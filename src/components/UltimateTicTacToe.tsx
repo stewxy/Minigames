@@ -13,12 +13,8 @@ function Square({ value, onSquareClick }: { value: any; onSquareClick: any }) {
 
 const UltimateTicTacToe = () => {
   let temp = 0;
-
-  function resetBoard() {
-    window.location.reload();
-  }
-
   let xCounter = 0;
+
   const lines = [
     [0, 1, 2],
     [3, 4, 5],
@@ -30,9 +26,32 @@ const UltimateTicTacToe = () => {
     [2, 4, 6],
   ];
   const [uSquare, setUSquare] = useState(Array(9).fill(null));
-  let uSquareArray = [null, null, null, null, null, null, null, null, null];
   const [alertVisible, setAlertVisibility] = useState(false);
   const [winPopup, setWinPopup] = useState("");
+  let uSquareArray = [null, null, null, null, null, null, null, null, null];
+  let [style0, style1, style2, style3, style4, style5, style6, style7, style8] =
+    [
+      document.getElementsByClassName("u0") as HTMLCollectionOf<HTMLElement>,
+      document.getElementsByClassName("u1") as HTMLCollectionOf<HTMLElement>,
+      document.getElementsByClassName("u2") as HTMLCollectionOf<HTMLElement>,
+      document.getElementsByClassName("u3") as HTMLCollectionOf<HTMLElement>,
+      document.getElementsByClassName("u4") as HTMLCollectionOf<HTMLElement>,
+      document.getElementsByClassName("u5") as HTMLCollectionOf<HTMLElement>,
+      document.getElementsByClassName("u6") as HTMLCollectionOf<HTMLElement>,
+      document.getElementsByClassName("u7") as HTMLCollectionOf<HTMLElement>,
+      document.getElementsByClassName("u8") as HTMLCollectionOf<HTMLElement>,
+    ];
+  let x = [
+    style0,
+    style1,
+    style2,
+    style3,
+    style4,
+    style5,
+    style6,
+    style7,
+    style8,
+  ];
   let [
     getWinB0,
     getWinB1,
@@ -85,6 +104,10 @@ const UltimateTicTacToe = () => {
     getWinB8,
   ];
 
+  function resetBoard() {
+    window.location.reload();
+  }
+
   function setWinGridText(value: number, squares: any) {
     getWinList[value][0].innerHTML = squares;
     if (value == temp) {
@@ -94,6 +117,19 @@ const UltimateTicTacToe = () => {
           x[j][0].style.pointerEvents = "auto";
           x[j][0].style.opacity = "1";
         }
+      }
+    }
+  }
+
+  function modifyGridColor(i: number) {
+    x[i][0].style.backgroundColor = "red";
+    x[i][0].style.pointerEvents = "auto";
+    x[i][0].style.opacity = "1";
+    for (let j = 0; j < x.length; j++) {
+      if (j !== i) {
+        x[j][0].style.backgroundColor = "white";
+        x[j][0].style.pointerEvents = "none";
+        x[j][0].style.opacity = "0.8";
       }
     }
   }
@@ -108,28 +144,16 @@ const UltimateTicTacToe = () => {
       ) {
         setWinPopup(uSquareArray[a] + " is the");
         setAlertVisibility(true);
-        style0[0].style.pointerEvents = "none";
-        style1[0].style.pointerEvents = "none";
-        style2[0].style.pointerEvents = "none";
-        style3[0].style.pointerEvents = "none";
-        style4[0].style.pointerEvents = "none";
-        style5[0].style.pointerEvents = "none";
-        style6[0].style.pointerEvents = "none";
-        style7[0].style.pointerEvents = "none";
-        style8[0].style.pointerEvents = "none";
+        for (let i = 0; i < x.length; i++) {
+          x[i][0].style.pointerEvents = "none";
+        }
       } else {
         if (uSquareArray.every((element) => element !== null)) {
           setWinPopup("There is no");
           setAlertVisibility(true);
-          style0[0].style.pointerEvents = "none";
-          style1[0].style.pointerEvents = "none";
-          style2[0].style.pointerEvents = "none";
-          style3[0].style.pointerEvents = "none";
-          style4[0].style.pointerEvents = "none";
-          style5[0].style.pointerEvents = "none";
-          style6[0].style.pointerEvents = "none";
-          style7[0].style.pointerEvents = "none";
-          style8[0].style.pointerEvents = "none";
+          for (let i = 0; i < x.length; i++) {
+            x[i][0].style.pointerEvents = "none";
+          }
         }
       }
     }
@@ -152,29 +176,6 @@ const UltimateTicTacToe = () => {
       }
     }
   }
-  let [style0, style1, style2, style3, style4, style5, style6, style7, style8] =
-    [
-      document.getElementsByClassName("u0") as HTMLCollectionOf<HTMLElement>,
-      document.getElementsByClassName("u1") as HTMLCollectionOf<HTMLElement>,
-      document.getElementsByClassName("u2") as HTMLCollectionOf<HTMLElement>,
-      document.getElementsByClassName("u3") as HTMLCollectionOf<HTMLElement>,
-      document.getElementsByClassName("u4") as HTMLCollectionOf<HTMLElement>,
-      document.getElementsByClassName("u5") as HTMLCollectionOf<HTMLElement>,
-      document.getElementsByClassName("u6") as HTMLCollectionOf<HTMLElement>,
-      document.getElementsByClassName("u7") as HTMLCollectionOf<HTMLElement>,
-      document.getElementsByClassName("u8") as HTMLCollectionOf<HTMLElement>,
-    ];
-  let x = [
-    style0,
-    style1,
-    style2,
-    style3,
-    style4,
-    style5,
-    style6,
-    style7,
-    style8,
-  ];
 
   function SingleBoard({ value, uValue }: { value: any; uValue: any }) {
     const [xIsNext, setXIsNext] = useState(true);
@@ -187,11 +188,6 @@ const UltimateTicTacToe = () => {
         return;
       }
       const nextSquares = squares.slice();
-      // if (xIsNext) {
-      //   nextSquares[i] = "X";
-      // } else {
-      //   nextSquares[i] = "O";
-      // }
 
       if (xCounter % 2 == 0) {
         nextSquares[i] = "X";
@@ -221,19 +217,6 @@ const UltimateTicTacToe = () => {
             x[i][0].style.pointerEvents = "auto";
             x[i][0].style.opacity = "1";
           }
-        }
-      }
-    }
-
-    function modifyGridColor(i: number) {
-      x[i][0].style.backgroundColor = "red";
-      x[i][0].style.pointerEvents = "auto";
-      x[i][0].style.opacity = "1";
-      for (let j = 0; j < x.length; j++) {
-        if (j !== i) {
-          x[j][0].style.backgroundColor = "white";
-          x[j][0].style.pointerEvents = "none";
-          x[j][0].style.opacity = "0.8";
         }
       }
     }
