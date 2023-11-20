@@ -73,6 +73,31 @@ const UltimateTicTacToe = () => {
     ) as HTMLCollectionOf<HTMLElement>,
   ];
 
+  let getWinList = [
+    getWinB0,
+    getWinB1,
+    getWinB2,
+    getWinB3,
+    getWinB4,
+    getWinB5,
+    getWinB6,
+    getWinB7,
+    getWinB8,
+  ];
+
+  function setWinGridText(value: number, squares: any) {
+    getWinList[value][0].innerHTML = squares;
+    if (value == temp) {
+      for (let j = 0; j < x.length; j++) {
+        if (uSquareArray[j] == null) {
+          x[j][0].style.backgroundColor = "red";
+          x[j][0].style.pointerEvents = "auto";
+          x[j][0].style.opacity = "1";
+        }
+      }
+    }
+  }
+
   function checkUltimateWinner() {
     for (let i = 0; i < lines.length; i++) {
       const [a, b, c] = lines[i];
@@ -119,43 +144,7 @@ const UltimateTicTacToe = () => {
         squares[a] === squares[c]
       ) {
         uSquareArray[uValue] = squares[a];
-
-        if (uValue == 0) {
-          getWinB0[0].innerHTML = squares[a];
-        }
-        if (uValue == 1) {
-          getWinB1[0].innerHTML = squares[a];
-        }
-        if (uValue == 2) {
-          getWinB2[0].innerHTML = squares[a];
-        }
-        if (uValue == 3) {
-          getWinB3[0].innerHTML = squares[a];
-        }
-        if (uValue == 4) {
-          getWinB4[0].innerHTML = squares[a];
-        }
-        if (uValue == 5) {
-          getWinB5[0].innerHTML = squares[a];
-        }
-        if (uValue == 6) {
-          getWinB6[0].innerHTML = squares[a];
-        }
-        if (uValue == 7) {
-          getWinB7[0].innerHTML = squares[a];
-        }
-        if (uValue == 8) {
-          getWinB8[0].innerHTML = squares[a];
-        }
-        if (uValue == temp) {
-          for (let j = 0; j < x.length; j++) {
-            if (uSquareArray[j] == null) {
-              x[j][0].style.backgroundColor = "red";
-              x[j][0].style.pointerEvents = "auto";
-              x[j][0].style.opacity = "1";
-            }
-          }
-        }
+        setWinGridText(uValue, squares[a]);
         x[uValue][0].style.backgroundColor = "white";
         x[uValue][0].style.pointerEvents = "none";
         x[uValue][0].style.opacity = "0.8";
