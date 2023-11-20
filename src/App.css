@@ -2,11 +2,11 @@ h1{
     text-align: center;
 }
 
-
-
 .mainHeading{
     font-size: 100px;
     padding-top: 50px;
+    color: white;
+    font-family: Inter;
 }
 
 /* === TicTacToe === */
@@ -44,7 +44,7 @@ h1{
 }   
 
 .oneBoard{
-    background: rgba(206, 206, 206, 0.253);
+    background: #ffffff2f;
     display: inline-block;
     padding: 10px;
     border-style: solid;
@@ -58,7 +58,9 @@ h1{
     vertical-align: top;
     color: black;
 }
-
+.Grid:hover{
+    background-color: #D08F53;
+}
 
 .u0, .u1, .u2,.u3, .u4, .u5,.u6, .u7, .u8{
     display: inline-block;
@@ -74,14 +76,21 @@ h1{
 
 }
 
+/* === Ultimate TicTacToe Turn/Reset Text === */
 .startText{
     text-align: center;
     font-size: 35px;
     padding-top: 10px;
     padding-bottom: 10px;
-    
+    color: white;
+    font-family: Inter;
 }
 
-/* .main{
-    background-color: green;
-} */
+/* === Ultimate TicTacToe Page Styling === */
+.main{
+    background-color: #3D3D3D;
+}
+
+html{
+    background-color: #3D3D3D;
+} 

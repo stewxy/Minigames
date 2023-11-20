@@ -33,6 +33,45 @@ const UltimateTicTacToe = () => {
   let uSquareArray = [null, null, null, null, null, null, null, null, null];
   const [alertVisible, setAlertVisibility] = useState(false);
   const [winPopup, setWinPopup] = useState("");
+  let [
+    getWinB0,
+    getWinB1,
+    getWinB2,
+    getWinB3,
+    getWinB4,
+    getWinB5,
+    getWinB6,
+    getWinB7,
+    getWinB8,
+  ] = [
+    document.getElementsByClassName(
+      "styleWinB0"
+    ) as HTMLCollectionOf<HTMLElement>,
+    document.getElementsByClassName(
+      "styleWinB1"
+    ) as HTMLCollectionOf<HTMLElement>,
+    document.getElementsByClassName(
+      "styleWinB2"
+    ) as HTMLCollectionOf<HTMLElement>,
+    document.getElementsByClassName(
+      "styleWinB3"
+    ) as HTMLCollectionOf<HTMLElement>,
+    document.getElementsByClassName(
+      "styleWinB4"
+    ) as HTMLCollectionOf<HTMLElement>,
+    document.getElementsByClassName(
+      "styleWinB5"
+    ) as HTMLCollectionOf<HTMLElement>,
+    document.getElementsByClassName(
+      "styleWinB6"
+    ) as HTMLCollectionOf<HTMLElement>,
+    document.getElementsByClassName(
+      "styleWinB7"
+    ) as HTMLCollectionOf<HTMLElement>,
+    document.getElementsByClassName(
+      "styleWinB8"
+    ) as HTMLCollectionOf<HTMLElement>,
+  ];
 
   function checkUltimateWinner() {
     for (let i = 0; i < lines.length; i++) {
@@ -184,276 +223,8 @@ const UltimateTicTacToe = () => {
       setSquares(nextSquares);
       setXIsNext(!xIsNext);
 
-      if (i == 0 && uSquareArray[i] == null) {
-        style0[0].style.backgroundColor = "red";
-        style1[0].style.backgroundColor = "white";
-        style2[0].style.backgroundColor = "white";
-        style3[0].style.backgroundColor = "white";
-        style4[0].style.backgroundColor = "white";
-        style5[0].style.backgroundColor = "white";
-        style6[0].style.backgroundColor = "white";
-        style7[0].style.backgroundColor = "white";
-        style8[0].style.backgroundColor = "white";
-
-        style0[0].style.pointerEvents = "auto";
-        style1[0].style.pointerEvents = "none";
-        style2[0].style.pointerEvents = "none";
-        style3[0].style.pointerEvents = "none";
-        style4[0].style.pointerEvents = "none";
-        style5[0].style.pointerEvents = "none";
-        style6[0].style.pointerEvents = "none";
-        style7[0].style.pointerEvents = "none";
-        style8[0].style.pointerEvents = "none";
-
-        style0[0].style.opacity = "1";
-        style1[0].style.opacity = "0.8";
-        style2[0].style.opacity = "0.8";
-        style3[0].style.opacity = "0.8";
-        style4[0].style.opacity = "0.8";
-        style5[0].style.opacity = "0.8";
-        style6[0].style.opacity = "0.8";
-        style7[0].style.opacity = "0.8";
-        style8[0].style.opacity = "0.8";
-      } else if (i == 1 && uSquareArray[i] == null) {
-        style1[0].style.backgroundColor = "red";
-        style0[0].style.backgroundColor = "white";
-        style2[0].style.backgroundColor = "white";
-        style3[0].style.backgroundColor = "white";
-        style4[0].style.backgroundColor = "white";
-        style5[0].style.backgroundColor = "white";
-        style6[0].style.backgroundColor = "white";
-        style7[0].style.backgroundColor = "white";
-        style8[0].style.backgroundColor = "white";
-
-        style0[0].style.pointerEvents = "none";
-        style1[0].style.pointerEvents = "auto";
-        style2[0].style.pointerEvents = "none";
-        style3[0].style.pointerEvents = "none";
-        style4[0].style.pointerEvents = "none";
-        style5[0].style.pointerEvents = "none";
-        style6[0].style.pointerEvents = "none";
-        style7[0].style.pointerEvents = "none";
-        style8[0].style.pointerEvents = "none";
-
-        style0[0].style.opacity = "0.8";
-        style1[0].style.opacity = "1";
-        style2[0].style.opacity = "0.8";
-        style3[0].style.opacity = "0.8";
-        style4[0].style.opacity = "0.8";
-        style5[0].style.opacity = "0.8";
-        style6[0].style.opacity = "0.8";
-        style7[0].style.opacity = "0.8";
-        style8[0].style.opacity = "0.8";
-      } else if (i == 2 && uSquareArray[i] == null) {
-        style2[0].style.backgroundColor = "red";
-        style0[0].style.backgroundColor = "white";
-        style1[0].style.backgroundColor = "white";
-        style3[0].style.backgroundColor = "white";
-        style4[0].style.backgroundColor = "white";
-        style5[0].style.backgroundColor = "white";
-        style6[0].style.backgroundColor = "white";
-        style7[0].style.backgroundColor = "white";
-        style8[0].style.backgroundColor = "white";
-
-        style0[0].style.pointerEvents = "none";
-        style1[0].style.pointerEvents = "none";
-        style2[0].style.pointerEvents = "auto";
-        style3[0].style.pointerEvents = "none";
-        style4[0].style.pointerEvents = "none";
-        style5[0].style.pointerEvents = "none";
-        style6[0].style.pointerEvents = "none";
-        style7[0].style.pointerEvents = "none";
-        style8[0].style.pointerEvents = "none";
-
-        style0[0].style.opacity = "0.8";
-        style1[0].style.opacity = "0.8";
-        style2[0].style.opacity = "1";
-        style3[0].style.opacity = "0.8";
-        style4[0].style.opacity = "0.8";
-        style5[0].style.opacity = "0.8";
-        style6[0].style.opacity = "0.8";
-        style7[0].style.opacity = "0.8";
-        style8[0].style.opacity = "0.8";
-      } else if (i == 3 && uSquareArray[i] == null) {
-        style3[0].style.backgroundColor = "red";
-        style0[0].style.backgroundColor = "white";
-        style1[0].style.backgroundColor = "white";
-        style2[0].style.backgroundColor = "white";
-        style4[0].style.backgroundColor = "white";
-        style5[0].style.backgroundColor = "white";
-        style6[0].style.backgroundColor = "white";
-        style7[0].style.backgroundColor = "white";
-        style8[0].style.backgroundColor = "white";
-
-        style0[0].style.pointerEvents = "none";
-        style1[0].style.pointerEvents = "none";
-        style2[0].style.pointerEvents = "none";
-        style3[0].style.pointerEvents = "auto";
-        style4[0].style.pointerEvents = "none";
-        style5[0].style.pointerEvents = "none";
-        style6[0].style.pointerEvents = "none";
-        style7[0].style.pointerEvents = "none";
-        style8[0].style.pointerEvents = "none";
-
-        style0[0].style.opacity = "0.8";
-        style1[0].style.opacity = "0.8";
-        style2[0].style.opacity = "0.8";
-        style3[0].style.opacity = "1";
-        style4[0].style.opacity = "0.8";
-        style5[0].style.opacity = "0.8";
-        style6[0].style.opacity = "0.8";
-        style7[0].style.opacity = "0.8";
-        style8[0].style.opacity = "0.8";
-      } else if (i == 4 && uSquareArray[i] == null) {
-        style4[0].style.backgroundColor = "red";
-        style0[0].style.backgroundColor = "white";
-        style1[0].style.backgroundColor = "white";
-        style2[0].style.backgroundColor = "white";
-        style3[0].style.backgroundColor = "white";
-        style5[0].style.backgroundColor = "white";
-        style6[0].style.backgroundColor = "white";
-        style7[0].style.backgroundColor = "white";
-        style8[0].style.backgroundColor = "white";
-
-        style0[0].style.pointerEvents = "none";
-        style1[0].style.pointerEvents = "none";
-        style2[0].style.pointerEvents = "none";
-        style3[0].style.pointerEvents = "none";
-        style4[0].style.pointerEvents = "auto";
-        style5[0].style.pointerEvents = "none";
-        style6[0].style.pointerEvents = "none";
-        style7[0].style.pointerEvents = "none";
-        style8[0].style.pointerEvents = "none";
-
-        style0[0].style.opacity = "0.8";
-        style1[0].style.opacity = "0.8";
-        style2[0].style.opacity = "0.8";
-        style3[0].style.opacity = "0.8";
-        style4[0].style.opacity = "1";
-        style5[0].style.opacity = "0.8";
-        style6[0].style.opacity = "0.8";
-        style7[0].style.opacity = "0.8";
-        style8[0].style.opacity = "0.8";
-      } else if (i == 5 && uSquareArray[i] == null) {
-        style5[0].style.backgroundColor = "red";
-        style0[0].style.backgroundColor = "white";
-        style1[0].style.backgroundColor = "white";
-        style2[0].style.backgroundColor = "white";
-        style3[0].style.backgroundColor = "white";
-        style4[0].style.backgroundColor = "white";
-        style6[0].style.backgroundColor = "white";
-        style7[0].style.backgroundColor = "white";
-        style8[0].style.backgroundColor = "white";
-
-        style0[0].style.pointerEvents = "none";
-        style1[0].style.pointerEvents = "none";
-        style2[0].style.pointerEvents = "none";
-        style3[0].style.pointerEvents = "none";
-        style4[0].style.pointerEvents = "none";
-        style5[0].style.pointerEvents = "auto";
-        style6[0].style.pointerEvents = "none";
-        style7[0].style.pointerEvents = "none";
-        style8[0].style.pointerEvents = "none";
-
-        style0[0].style.opacity = "0.8";
-        style1[0].style.opacity = "0.8";
-        style2[0].style.opacity = "0.8";
-        style3[0].style.opacity = "0.8";
-        style4[0].style.opacity = "0.8";
-        style5[0].style.opacity = "1";
-        style6[0].style.opacity = "0.8";
-        style7[0].style.opacity = "0.8";
-        style8[0].style.opacity = "0.8";
-      } else if (i == 6 && uSquareArray[i] == null) {
-        style6[0].style.backgroundColor = "red";
-        style0[0].style.backgroundColor = "white";
-        style1[0].style.backgroundColor = "white";
-        style2[0].style.backgroundColor = "white";
-        style3[0].style.backgroundColor = "white";
-        style4[0].style.backgroundColor = "white";
-        style5[0].style.backgroundColor = "white";
-        style7[0].style.backgroundColor = "white";
-        style8[0].style.backgroundColor = "white";
-
-        style0[0].style.pointerEvents = "none";
-        style1[0].style.pointerEvents = "none";
-        style2[0].style.pointerEvents = "none";
-        style3[0].style.pointerEvents = "none";
-        style4[0].style.pointerEvents = "none";
-        style5[0].style.pointerEvents = "none";
-        style6[0].style.pointerEvents = "auto";
-        style7[0].style.pointerEvents = "none";
-        style8[0].style.pointerEvents = "none";
-
-        style0[0].style.opacity = "0.8";
-        style1[0].style.opacity = "0.8";
-        style2[0].style.opacity = "0.8";
-        style3[0].style.opacity = "0.8";
-        style4[0].style.opacity = "0.8";
-        style5[0].style.opacity = "0.8";
-        style6[0].style.opacity = "1";
-        style7[0].style.opacity = "0.8";
-        style8[0].style.opacity = "0.8";
-      } else if (i == 7 && uSquareArray[i] == null) {
-        style7[0].style.backgroundColor = "red";
-        style0[0].style.backgroundColor = "white";
-        style1[0].style.backgroundColor = "white";
-        style2[0].style.backgroundColor = "white";
-        style3[0].style.backgroundColor = "white";
-        style4[0].style.backgroundColor = "white";
-        style5[0].style.backgroundColor = "white";
-        style6[0].style.backgroundColor = "white";
-        style8[0].style.backgroundColor = "white";
-
-        style0[0].style.pointerEvents = "none";
-        style1[0].style.pointerEvents = "none";
-        style2[0].style.pointerEvents = "none";
-        style3[0].style.pointerEvents = "none";
-        style4[0].style.pointerEvents = "none";
-        style5[0].style.pointerEvents = "none";
-        style6[0].style.pointerEvents = "none";
-        style7[0].style.pointerEvents = "auto";
-        style8[0].style.pointerEvents = "none";
-
-        style0[0].style.opacity = "0.8";
-        style1[0].style.opacity = "0.8";
-        style2[0].style.opacity = "0.8";
-        style3[0].style.opacity = "0.8";
-        style4[0].style.opacity = "0.8";
-        style5[0].style.opacity = "0.8";
-        style6[0].style.opacity = "0.8";
-        style7[0].style.opacity = "1";
-        style8[0].style.opacity = "0.8";
-      } else if (i == 8 && uSquareArray[i] == null) {
-        style8[0].style.backgroundColor = "red";
-        style0[0].style.backgroundColor = "white";
-        style1[0].style.backgroundColor = "white";
-        style2[0].style.backgroundColor = "white";
-        style3[0].style.backgroundColor = "white";
-        style4[0].style.backgroundColor = "white";
-        style5[0].style.backgroundColor = "white";
-        style6[0].style.backgroundColor = "white";
-        style7[0].style.backgroundColor = "white";
-
-        style0[0].style.pointerEvents = "none";
-        style1[0].style.pointerEvents = "none";
-        style2[0].style.pointerEvents = "none";
-        style3[0].style.pointerEvents = "none";
-        style4[0].style.pointerEvents = "none";
-        style5[0].style.pointerEvents = "none";
-        style6[0].style.pointerEvents = "none";
-        style7[0].style.pointerEvents = "none";
-        style8[0].style.pointerEvents = "auto";
-
-        style0[0].style.opacity = "0.8";
-        style1[0].style.opacity = "0.8";
-        style2[0].style.opacity = "0.8";
-        style3[0].style.opacity = "0.8";
-        style4[0].style.opacity = "0.8";
-        style5[0].style.opacity = "0.8";
-        style6[0].style.opacity = "0.8";
-        style7[0].style.opacity = "0.8";
-        style8[0].style.opacity = "1";
+      if (uSquareArray[i] == null) {
+        modifyGridColor(i);
       } else {
         for (let i = 0; i < x.length; i++) {
           if (uSquareArray[i] == null) {
@@ -461,6 +232,19 @@ const UltimateTicTacToe = () => {
             x[i][0].style.pointerEvents = "auto";
             x[i][0].style.opacity = "1";
           }
+        }
+      }
+    }
+
+    function modifyGridColor(i: number) {
+      x[i][0].style.backgroundColor = "red";
+      x[i][0].style.pointerEvents = "auto";
+      x[i][0].style.opacity = "1";
+      for (let j = 0; j < x.length; j++) {
+        if (j !== i) {
+          x[j][0].style.backgroundColor = "white";
+          x[j][0].style.pointerEvents = "none";
+          x[j][0].style.opacity = "0.8";
         }
       }
     }
@@ -489,46 +273,6 @@ const UltimateTicTacToe = () => {
       </>
     );
   }
-
-  let [
-    getWinB0,
-    getWinB1,
-    getWinB2,
-    getWinB3,
-    getWinB4,
-    getWinB5,
-    getWinB6,
-    getWinB7,
-    getWinB8,
-  ] = [
-    document.getElementsByClassName(
-      "styleWinB0"
-    ) as HTMLCollectionOf<HTMLElement>,
-    document.getElementsByClassName(
-      "styleWinB1"
-    ) as HTMLCollectionOf<HTMLElement>,
-    document.getElementsByClassName(
-      "styleWinB2"
-    ) as HTMLCollectionOf<HTMLElement>,
-    document.getElementsByClassName(
-      "styleWinB3"
-    ) as HTMLCollectionOf<HTMLElement>,
-    document.getElementsByClassName(
-      "styleWinB4"
-    ) as HTMLCollectionOf<HTMLElement>,
-    document.getElementsByClassName(
-      "styleWinB5"
-    ) as HTMLCollectionOf<HTMLElement>,
-    document.getElementsByClassName(
-      "styleWinB6"
-    ) as HTMLCollectionOf<HTMLElement>,
-    document.getElementsByClassName(
-      "styleWinB7"
-    ) as HTMLCollectionOf<HTMLElement>,
-    document.getElementsByClassName(
-      "styleWinB8"
-    ) as HTMLCollectionOf<HTMLElement>,
-  ];
 
   return (
     <>
