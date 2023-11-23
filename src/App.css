@@ -40,8 +40,9 @@ h1{
 
     /* CODE TO MAKE BOARD NOT CHANGE WHEN ZOOMED IN */
     width: 1000px;
-    height: 500px;
+    height: 850px;
     margin-left: 24%; 
+    background-color: red;
 }   
 
 .oneBoard{
@@ -80,12 +81,16 @@ h1{
 
 /* === Ultimate TicTacToe Turn/Reset Text === */
 .startText{
-    text-align: center;
     font-size: 35px;
     padding-top: 10px;
     padding-bottom: 10px;
     color: white;
     font-family: Inter;
+    background-color: green;
+    width: 300px;
+    margin-left: 650px;
+    margin-top: -250px;
+
 }
 
 /* === Ultimate TicTacToe Page Styling === */
@@ -95,10 +100,12 @@ h1{
 }
 
 html{
-    
     background-color: #3D3D3D;
 } 
 
-/* .fullBoard{
+.fullBoard{
     background-color: blue;
-} */
+    padding-right: 200px;
+    height: 450px;
+}
+
