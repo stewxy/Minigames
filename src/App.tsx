@@ -49,6 +49,9 @@ function App() {
         <div className="htmlUTicTacToe">
           <h1 className="mainHeading">Ultimate TicTacToe</h1>
           <UltimateTicTacToe></UltimateTicTacToe>
+          <div className="howToPlaySect">
+            How To Play <br /> <p className="howToPlayInfo">Placeholder</p>
+          </div>
         </div>
       </div>
     </>

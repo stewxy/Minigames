@@ -3,7 +3,7 @@ h1{
 }
 
 .mainHeading{
-    font-size: 100px;
+    font-size: 80px;
     padding-top: 50px;
     color: white;
     font-family: Inter;
@@ -109,3 +109,15 @@ html{
     height: 450px;
 }
 
+.howToPlaySect{
+    color: white;
+    text-align: center;
+    background-color: purple;
+    margin-top: 20px;
+    font-size: 30px;
+    font-family: Inter;
+}
+
+.howToPlayInfo{
+    font-size: 18px;
+}
