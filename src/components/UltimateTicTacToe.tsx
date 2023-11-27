@@ -110,6 +110,7 @@ const UltimateTicTacToe = () => {
 
   function setWinGridText(value: number, squares: any) {
     getWinList[value][0].innerHTML = squares;
+    getWinList[value][0].style.visibility = "visible";
     if (value == temp) {
       for (let i = 0; i < x.length; i++) {
         if (uSquareArray[i] == null) {
