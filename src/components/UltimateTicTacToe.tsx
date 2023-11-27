@@ -113,7 +113,7 @@ const UltimateTicTacToe = () => {
     if (value == temp) {
       for (let i = 0; i < x.length; i++) {
         if (uSquareArray[i] == null) {
-          x[i][0].style.backgroundColor = "red";
+          x[i][0].style.backgroundColor = "#eb2626";
           x[i][0].style.pointerEvents = "auto";
           x[i][0].style.opacity = "1";
         }
@@ -122,14 +122,14 @@ const UltimateTicTacToe = () => {
   }
 
   function modifyGridColor(value: number) {
-    x[value][0].style.backgroundColor = "red";
+    x[value][0].style.backgroundColor = "#eb2626";
     x[value][0].style.pointerEvents = "auto";
     x[value][0].style.opacity = "1";
     for (let j = 0; j < x.length; j++) {
       if (j !== value) {
-        x[j][0].style.backgroundColor = "white";
+        x[j][0].style.backgroundColor = "#393939";
         x[j][0].style.pointerEvents = "none";
-        x[j][0].style.opacity = "0.8";
+        x[j][0].style.opacity = "0.7";
       }
     }
   }
@@ -169,9 +169,9 @@ const UltimateTicTacToe = () => {
       ) {
         uSquareArray[uValue] = squares[a];
         setWinGridText(uValue, squares[a]);
-        x[uValue][0].style.backgroundColor = "white";
+        x[uValue][0].style.backgroundColor = "#393939";
         x[uValue][0].style.pointerEvents = "none";
-        x[uValue][0].style.opacity = "0.8";
+        x[uValue][0].style.opacity = "0.7";
         return squares[a], uValue;
       }
     }
@@ -213,7 +213,7 @@ const UltimateTicTacToe = () => {
       } else {
         for (let i = 0; i < x.length; i++) {
           if (uSquareArray[i] == null) {
-            x[i][0].style.backgroundColor = "red";
+            x[i][0].style.backgroundColor = "#eb2626";
             x[i][0].style.pointerEvents = "auto";
             x[i][0].style.opacity = "1";
           }

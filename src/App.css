@@ -43,11 +43,11 @@ h1{
     width: 1000px;
     height: 850px;
     margin-left: 24%; 
-    background-color: red;
+
 }   
 
 .oneBoard{
-    background: #ffffff2f;
+    background-color: #7e7e7e31;
     display: inline-block;
     padding: 10px;
     border-style: solid;
@@ -62,9 +62,11 @@ h1{
     color: black;
     font-size: 18px;
     
+    
 }
 .Grid:hover{
-    background-color: #D08F53;
+    background-color: #727272;
+    
 }
 
 .u0, .u1, .u2,.u3, .u4, .u5,.u6, .u7, .u8{
@@ -88,7 +90,7 @@ h1{
     padding-bottom: 10px;
     color: white;
     font-family: Inter;
-    background-color: green;
+
     width: 300px;
     margin-left: 650px;
     margin-top: -300px;
@@ -97,16 +99,16 @@ h1{
 
 /* === Ultimate TicTacToe Page Styling === */
 .main{
-    background-color: #3D3D3D;
+    background-color: #1d1d1d;
     
 }
 
 html{
-    background-color: #3D3D3D;
+    background-color: #1d1d1d;
 } 
 
 .fullBoard{
-    background-color: blue;
+
     padding-right: 200px;
     height: 530px;
 }
@@ -114,7 +116,7 @@ html{
 .howToPlaySect{
     color: white;
     text-align: center;
-    background-color: purple;
+
     margin-top: 30px;
     font-size: 30px;
     font-family: Inter;
