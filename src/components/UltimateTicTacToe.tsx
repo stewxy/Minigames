@@ -104,6 +104,10 @@ const UltimateTicTacToe = () => {
     getWinB8,
   ];
 
+  let turnText = document.getElementsByClassName(
+    "innerText"
+  ) as HTMLCollectionOf<HTMLElement>;
+
   function resetBoard() {
     window.location.reload();
   }
@@ -143,14 +147,14 @@ const UltimateTicTacToe = () => {
         uSquareArray[a] === uSquareArray[b] &&
         uSquareArray[a] === uSquareArray[c]
       ) {
-        setWinPopup(uSquareArray[a] + " is the");
+        turnText[0].innerHTML = uSquareArray[a] + " is the Winner!";
         setAlertVisibility(true);
         for (let i = 0; i < x.length; i++) {
           x[i][0].style.pointerEvents = "none";
         }
       } else {
         if (uSquareArray.every((element) => element !== null)) {
-          setWinPopup("There is no");
+          turnText[0].innerHTML = "There is no Winner";
           setAlertVisibility(true);
           for (let i = 0; i < x.length; i++) {
             x[i][0].style.pointerEvents = "none";
@@ -192,18 +196,10 @@ const UltimateTicTacToe = () => {
 
       if (xCounter % 2 == 0) {
         nextSquares[i] = "X";
-        (
-          document.getElementsByClassName(
-            "innerText"
-          ) as HTMLCollectionOf<HTMLElement>
-        )[0].innerHTML = "O's Turn";
+        turnText[0].innerHTML = "O's Turn";
       } else {
         nextSquares[i] = "O";
-        (
-          document.getElementsByClassName(
-            "innerText"
-          ) as HTMLCollectionOf<HTMLElement>
-        )[0].innerHTML = "X's Turn";
+        turnText[0].innerHTML = "X's Turn";
       }
       xCounter++;
       setSquares(nextSquares);
@@ -293,10 +289,17 @@ const UltimateTicTacToe = () => {
           </div>
         </div>
         <div className="startText">
-          {!alertVisible && <p className="innerText">X's Turn</p>}
+          <p className="innerText">X's Turn</p>
           {alertVisible && (
-            <button onClick={resetBoard}>
-              {winPopup + " Winner! (Reset Board)"}
+            // <button onClick={resetBoard} className="resetButton">
+            //   {"(Reset Board)"}
+            // </button>
+            <button
+              type="button"
+              className="btn btn-danger"
+              onClick={resetBoard}
+            >
+              Reset Board
             </button>
           )}
         </div>
