@@ -96,7 +96,7 @@ h1{
     font-family: Inter;
 
     width: 300px;
-    margin-left: 650px;
+    margin-left: 700px;
     margin-top: -300px;
 
 }
@@ -119,10 +119,9 @@ html{
 .howToPlaySect{
     color: white;
     text-align: center;
-
-
     font-size: 30px;
     font-family: Inter;
+    padding-bottom: 10px;
 }
 
 .howToPlayInfo{
