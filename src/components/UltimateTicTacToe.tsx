@@ -18,6 +18,9 @@ function Square({
 const UltimateTicTacToe = () => {
   let gridClicked = 0;
   let xCounter = 0;
+  let resetButtonElement = document.getElementsByClassName(
+    "btn"
+  ) as HTMLCollectionOf<HTMLElement>;
 
   const winLines = [
     [0, 1, 2],
@@ -30,7 +33,6 @@ const UltimateTicTacToe = () => {
     [2, 4, 6],
   ];
   const [uSquare, setUSquare] = useState(Array(9).fill(null));
-  const [resetButtonVisible, setResetButtonVisibility] = useState(false);
   let uSquareArray = [null, null, null, null, null, null, null, null, null];
   let [style0, style1, style2, style3, style4, style5, style6, style7, style8] =
     [
@@ -151,16 +153,31 @@ const UltimateTicTacToe = () => {
         uSquareArray[a] === uSquareArray[c]
       ) {
         turnText[0].innerHTML = uSquareArray[a] + " is the Winner!";
-        setResetButtonVisibility(true);
+
+        resetButtonElement[0].style.visibility = "visible";
         for (let i = 0; i < ultimateSquareStyleList.length; i++) {
           ultimateSquareStyleList[i][0].style.pointerEvents = "none";
+          ultimateSquareStyleList[i][0].style.opacity = "0.7";
+          if (i == a) {
+            squareWinnerStylingList[a][0].style.backgroundColor = "#32a852";
+            ultimateSquareStyleList[a][0].style.opacity = "1";
+          }
+          if (i == b) {
+            squareWinnerStylingList[b][0].style.backgroundColor = "#32a852";
+            ultimateSquareStyleList[b][0].style.opacity = "1";
+          }
+          if (i == c) {
+            squareWinnerStylingList[c][0].style.backgroundColor = "#32a852";
+            ultimateSquareStyleList[c][0].style.opacity = "1";
+          }
         }
       } else {
         if (uSquareArray.every((element) => element !== null)) {
           turnText[0].innerHTML = "Draw!";
-          setResetButtonVisibility(true);
+          resetButtonElement[0].style.visibility = "visible";
           for (let i = 0; i < ultimateSquareStyleList.length; i++) {
             ultimateSquareStyleList[i][0].style.pointerEvents = "none";
+            ultimateSquareStyleList[i][0].style.opacity = "0.7";
           }
         }
       }
@@ -197,11 +214,11 @@ const UltimateTicTacToe = () => {
       const nextSquares = squares.slice();
 
       if (xCounter % 2 == 0) {
-        nextSquares[i] = "ultimateSquareStyleList";
+        nextSquares[i] = "X";
         turnText[0].innerHTML = "O's Turn";
       } else {
         nextSquares[i] = "O";
-        turnText[0].innerHTML = "ultimateSquareStyleList's Turn";
+        turnText[0].innerHTML = "X's Turn";
       }
       xCounter++;
       setSquares(nextSquares);
@@ -291,16 +308,10 @@ const UltimateTicTacToe = () => {
           </div>
         </div>
         <div className="startText">
-          <p className="innerText">ultimateSquareStyleList's Turn</p>
-          {resetButtonVisible && (
-            <button
-              type="button"
-              className="btn btn-danger"
-              onClick={resetBoard}
-            >
-              Reset Board
-            </button>
-          )}
+          <p className="innerText">X's Turn</p>
+          <button type="button" className="btn btn-danger" onClick={resetBoard}>
+            Reset Board
+          </button>
         </div>
       </div>
     </>

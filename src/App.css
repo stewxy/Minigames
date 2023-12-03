@@ -127,3 +127,7 @@ html{
 .howToPlayInfo{
     font-size: 16px;
 }
+
+.btn{
+    visibility: hidden;
+}
