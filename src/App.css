@@ -2,11 +2,13 @@ h1{
     text-align: center;
 }
 
-
-
 .mainHeading{
     font-size: 100px;
     padding-top: 50px;
+    padding-bottom: 35px;
+    color: white;
+    font-family: "Inter", sans-serif;
+
 }
 
 /* === TicTacToe === */
@@ -39,12 +41,13 @@ h1{
     text-align: center;
     /* CODE TO MAKE BOARD NOT CHANGE WHEN ZOOMED IN */
     width: 1000px;
-    height: 500px;
+    height: 850px;
     margin-left: 24%; 
+
 }   
 
 .oneBoard{
-    background: rgba(206, 206, 206, 0.253);
+    background-color: #7e7e7e31;
     display: inline-block;
     padding: 10px;
     border-style: solid;
@@ -52,13 +55,19 @@ h1{
 }
 
 .Grid{
-    width:40px;
-    height: 40px;
-    background-color: lightgray;
+    width:50px;
+    height: 50px;
+    background-color: #D9D9D9;
     vertical-align: top;
     color: black;
+    font-size: 20px;
+    font-weight: bold;
+    
 }
-
+.Grid:hover{
+    background-color: #727272;
+    
+}
 
 .u0, .u1, .u2,.u3, .u4, .u5,.u6, .u7, .u8{
     display: inline-block;
@@ -67,21 +76,59 @@ h1{
 
 .styleWinB0, .styleWinB1, .styleWinB2, .styleWinB3, .styleWinB4, .styleWinB5, .styleWinB6, .styleWinB7, .styleWinB8{
     position: absolute;
-    margin-top: 10px;
-    margin-left: 50px;
-    font-size: 80px;
-    color: red;
-
+    margin-left: 3px;
+    margin-top: 3px;
+    font-size: 100px;
+    color: white;
+    background: grey;
+    width:170px;
+    height:170px;
+    visibility: hidden;
+    font-weight: bold;
 }
 
+/* <div class="boardLabel" style="transform: rotateY(0deg); background: rgb(183, 21, 64);">X</div> */
+/* === Ultimate TicTacToe Turn/Reset Text === */
 .startText{
-    text-align: center;
     font-size: 35px;
     padding-top: 10px;
     padding-bottom: 10px;
+    color: white;
+    font-family: Inter;
+
+    width: 300px;
+    margin-left: 700px;
+    margin-top: -300px;
+
+}
+
+/* === Ultimate TicTacToe Page Styling === */
+.main{
+    background-color: #1d1d1d;
     
 }
 
-/* .main{
-    background-color: green;
-} */
+html{
+    background-color: #1d1d1d;
+} 
+
+.fullBoard{
+    padding-right: 200px;
+    height: 600px;
+}
+
+.howToPlaySect{
+    color: white;
+    text-align: center;
+    font-size: 30px;
+    font-family: Inter;
+    padding-bottom: 20px;
+}
+
+.howToPlayInfo{
+    font-size: 16px;
+}
+
+.btn{
+    visibility: hidden;
+}
