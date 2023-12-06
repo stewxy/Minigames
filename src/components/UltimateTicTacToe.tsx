@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "../App.css";
+import minimax from "./minimax";
 
 function Square({
   value,
@@ -148,6 +149,7 @@ const UltimateTicTacToe = () => {
     for (let i = 0; i < winLines.length; i++) {
       const [a, b, c] = winLines[i];
       if (
+        uSquareArray[a] !== "-" &&
         uSquareArray[a] &&
         uSquareArray[a] === uSquareArray[b] &&
         uSquareArray[a] === uSquareArray[c]
@@ -198,6 +200,14 @@ const UltimateTicTacToe = () => {
         ultimateSquareStyleList[uValue][0].style.pointerEvents = "none";
         ultimateSquareStyleList[uValue][0].style.opacity = "0.7";
         return squares[a], uValue;
+      } else if (
+        squares.every((val: string) => val !== null) &&
+        squares[a] !== squares[b] &&
+        squares[a] !== squares[c]
+      ) {
+        setWinGridText(uValue, "-");
+        squares[a] = "-";
+        uSquareArray[uValue] = squares[a];
       }
     }
   }
