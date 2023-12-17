@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "../App.css";
-import minimax from "./minimax";
+import { minimax } from "./minimax";
 
 function Square({
   value,
@@ -211,11 +211,9 @@ const UltimateTicTacToe = () => {
       }
     }
   }
-
   function SingleBoard({ value, uValue }: { value: number; uValue: number }) {
     const [xIsNext, setXIsNext] = useState(true);
     const [squares, setSquares] = useState(Array(9).fill(null));
-
     function handleClick(i: number) {
       gridClicked = i;
       if (squares[i] != null) {
@@ -246,7 +244,8 @@ const UltimateTicTacToe = () => {
         }
       }
     }
-
+    //console.log(squares);
+    //console.log(minimax(squares));
     calculateWinner(squares, uValue);
     checkUltimateWinner();
     return (

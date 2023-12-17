@@ -1,7 +1,5 @@
 import React from 'react'
 
-const minimax = () => {
-  return (0);
+export function minimax(value:any) {
+    return ("# " + value + " #");
 }
-
-export default minimax
