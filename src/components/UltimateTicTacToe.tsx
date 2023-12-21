@@ -212,7 +212,7 @@ const UltimateTicTacToe = () => {
     }
   }
   function SingleBoard({ value, uValue }: { value: number; uValue: number }) {
-    const [xIsNext, setXIsNext] = useState(true);
+    //const [xIsNext, setXIsNext] = useState(true);
     const [squares, setSquares] = useState(Array(9).fill(null));
     function handleClick(i: number) {
       gridClicked = i;
@@ -227,10 +227,11 @@ const UltimateTicTacToe = () => {
       } else {
         nextSquares[i] = "O";
         turnText[0].innerHTML = "X's Turn";
+        //minimax(squares, 0);
       }
       xCounter++;
       setSquares(nextSquares);
-      setXIsNext(!xIsNext);
+      //setXIsNext(!xIsNext);
 
       if (uSquareArray[i] == null) {
         modifyGridColor(i);
@@ -244,8 +245,7 @@ const UltimateTicTacToe = () => {
         }
       }
     }
-    //console.log(squares);
-    //console.log(minimax(squares));
+
     calculateWinner(squares, uValue);
     checkUltimateWinner();
     return (
