@@ -211,6 +211,10 @@ const UltimateTicTacToe = () => {
       }
     }
   }
+
+  let test = ["O", "O", null, null, null, null, null, null, null];
+  console.log(minimax(test, 0, true));
+
   function SingleBoard({ value, uValue }: { value: number; uValue: number }) {
     //const [xIsNext, setXIsNext] = useState(true);
     const [squares, setSquares] = useState(Array(9).fill(null));
@@ -224,10 +228,10 @@ const UltimateTicTacToe = () => {
       if (xCounter % 2 == 0) {
         nextSquares[i] = "X";
         turnText[0].innerHTML = "O's Turn";
+        //console.log(minimax(squares, 0, true));
       } else {
         nextSquares[i] = "O";
         turnText[0].innerHTML = "X's Turn";
-        //minimax(squares, 0);
       }
       xCounter++;
       setSquares(nextSquares);
