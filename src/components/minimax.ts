@@ -30,19 +30,23 @@ function checkWinner(squares:any){
         ) {
             return (squares[a])
         }
-        return null;
     }
+    //console.log(squares);
+    if(squares.every((e: any) => e !== null)){
+        return "tie";
+    }
+    return null;
 }
 
 let temp = 0;
 
 export function minimax(squares:any, depth:number, isMaximising: boolean){
-    let bestScore = -1000;
+    let bestScore = Number.NEGATIVE_INFINITY;
     let bestMove = -1;
     for(let i=0; i<9; i++){
         if(squares[i] == null){
             squares[i] = "O"
-            let score = algorithm(squares, depth, isMaximising);
+            let score = algorithm(squares, 0, false);
             console.log(score + " score");
             squares[i] = null;
             if(score > bestScore){
@@ -59,39 +63,39 @@ function algorithm(squares:any, depth:number, isMaximising: boolean) {
     // console.log(temp);
     let result = checkWinner(squares);
     if(result !== null){
-        if(result.squares == "O"){
+        if(result == "O"){
             return(1);
         }
-        else if(result.squares == "X"){
+        else if(result == "X"){
             return(-1);
         }
-        else {
-            return 0;
+        else if(result == "tie"){
+            return(0);
         }
     }
     
     //AI (O, MAXIMISER)
     if (isMaximising){
-        let bestScore = -1000;
+        let bestScore = Number.NEGATIVE_INFINITY;
         for(let i=0; i<9; i++){
             if(squares[i] == null){
                 squares[i] = "O"
                 // let score = algorithm(squares, depth+=1, false);
                 // bestScore = Math.max(score, bestScore);
-                bestScore = Math.max(bestScore, algorithm(squares, depth+=1, !isMaximising));
+                bestScore = Math.max(bestScore, algorithm(squares, depth+=1, true));
                 squares[i] = null;
             }
         }
         return bestScore;
     //PLAYER (X, MINIMISER)
     } else {
-        let bestScore = 1000;
+        let bestScore = Number.POSITIVE_INFINITY;
         for(let i=0; i<9; i++){
             if(squares[i] == null){
-                squares[i] = "X"
+                squares[i] = "X" 
                 // let score = algorithm(squares, depth+=1, true);
                 // bestScore = Math.min(score, bestScore);
-                bestScore = Math.min(bestScore, algorithm(squares, depth+=1, !isMaximising));
+                bestScore = Math.min(bestScore, algorithm(squares, depth+=1, false));
                 squares[i] = null;
             }
         }

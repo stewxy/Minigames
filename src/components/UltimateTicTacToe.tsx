@@ -212,7 +212,7 @@ const UltimateTicTacToe = () => {
     }
   }
 
-  let test = ["O", "O", null, null, null, null, null, null, null];
+  let test = ["O", "X", "X", "O", null, null, null, null, null];
   console.log(minimax(test, 0, true));
 
   function SingleBoard({ value, uValue }: { value: number; uValue: number }) {
