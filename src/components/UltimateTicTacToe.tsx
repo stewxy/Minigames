@@ -237,11 +237,12 @@ const UltimateTicTacToe = () => {
 
   function SingleBoard({ uValue }: { uValue: number }) {
     const [squares, setSquares] = useState(Array(9).fill(null));
+    const [xNext, setxNext] = useState(true);
 
     function handleClick(i: number) {
       modifyGridColor(i);
-
       gridClicked = i;
+
       if (squares[i] != null) {
         return;
       }
@@ -251,21 +252,32 @@ const UltimateTicTacToe = () => {
         nextSquares[i] = "X";
         squaresA[uValue][i] = "X";
         turnText[0].innerHTML = "AI's Turn";
-        //ultimateSquareStyleList[i][0].style.pointerEvents = "none";
+        xCounter++;
+        setSquares(nextSquares);
+        // let aiMove = minimax(squaresA[i], 0, true);
+        // console.log(xCounter);
+        // setTimeout(() => {
+        //   handleClick(aiMove);
+        // }, 1000);
+
+        // handleClick(aiMove);
+        // ultimateSquareStyleList[i][0].style.pointerEvents = "none";
       } else {
         nextSquares[i] = "O";
         squaresA[uValue][i] = "O";
         turnText[0].innerHTML = "X's Turn";
-        //ultimateSquareStyleList[i][0].style.pointerEvents = "auto";
+        xCounter++;
+        setSquares(nextSquares);
+        // return;
+        // ultimateSquareStyleList[i][0].style.pointerEvents = "auto";
       }
 
       // let aiMove = minimax(squaresA[i], 0, true);
       // console.log(aiMove);
-      //handleClick(aiMove);
+      // handleClick(aiMove);
 
-      console.log(squaresA);
-      xCounter++;
-      setSquares(nextSquares);
+      // xCounter++;
+      // setSquares(nextSquares);
     }
 
     calculateWinner(squares, uValue);
