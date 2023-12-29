@@ -32,7 +32,7 @@ function checkWinner(squares:any){
         }
     }
     //console.log(squares);
-    if(squares.every((e: any) => e !== null)){
+    if(squares.every((e: any) => e !== "")){
         return "tie";
     }
     return null;
@@ -44,11 +44,11 @@ export function minimax(squares:any, depth:number, isMaximising: boolean){
     let bestScore = Number.NEGATIVE_INFINITY;
     let bestMove = -1;
     for(let i=0; i<9; i++){
-        if(squares[i] == null){
+        if(squares[i] == ""){
             squares[i] = "O"
             let score = algorithm(squares, 0, false);
             console.log(score + " score");
-            squares[i] = null;
+            squares[i] = "";
             if(score > bestScore){
                 bestScore = score;
                 bestMove = i;
@@ -62,7 +62,7 @@ function algorithm(squares:any, depth:number, isMaximising: boolean) {
     // temp+=1
     // console.log(temp);
     let result = checkWinner(squares);
-    if(result !== null){
+    if(result !== ""){
         if(result == "O"){
             return(1);
         }
@@ -78,12 +78,12 @@ function algorithm(squares:any, depth:number, isMaximising: boolean) {
     if (isMaximising){
         let bestScore = Number.NEGATIVE_INFINITY;
         for(let i=0; i<9; i++){
-            if(squares[i] == null){
+            if(squares[i] == ""){
                 squares[i] = "O"
                 // let score = algorithm(squares, depth+=1, false);
                 // bestScore = Math.max(score, bestScore);
                 bestScore = Math.max(bestScore, algorithm(squares, depth+=1, true));
-                squares[i] = null;
+                squares[i] = "";
             }
         }
         return bestScore;
@@ -91,12 +91,12 @@ function algorithm(squares:any, depth:number, isMaximising: boolean) {
     } else {
         let bestScore = Number.POSITIVE_INFINITY;
         for(let i=0; i<9; i++){
-            if(squares[i] == null){
+            if(squares[i] == ""){
                 squares[i] = "X" 
                 // let score = algorithm(squares, depth+=1, true);
                 // bestScore = Math.min(score, bestScore);
                 bestScore = Math.min(bestScore, algorithm(squares, depth+=1, false));
-                squares[i] = null;
+                squares[i] = "";
             }
         }
         return bestScore;

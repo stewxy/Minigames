@@ -212,31 +212,28 @@ const UltimateTicTacToe = () => {
     }
   }
 
-  let test = ["O", "X", "X", "O", null, null, null, null, null];
-  console.log(minimax(test, 0, true));
+  // let test = ["O", "X", "X", "O", null, null, null, null, null];
+  // console.log(minimax(test, 0, true));
+
+  let squaresA = [
+    ["", "", "", "", "", "", "", "", ""],
+    ["", "", "", "", "", "", "", "", ""],
+    ["", "", "", "", "", "", "", "", ""],
+    ["", "", "", "", "", "", "", "", ""],
+    ["", "", "", "", "", "", "", "", ""],
+    ["", "", "", "", "", "", "", "", ""],
+    ["", "", "", "", "", "", "", "", ""],
+    ["", "", "", "", "", "", "", "", ""],
+    ["", "", "", "", "", "", "", "", ""],
+  ];
+  console.log(squaresA);
 
   function SingleBoard({ value, uValue }: { value: number; uValue: number }) {
     //const [xIsNext, setXIsNext] = useState(true);
+
     const [squares, setSquares] = useState(Array(9).fill(null));
+
     function handleClick(i: number) {
-      gridClicked = i;
-      if (squares[i] != null) {
-        return;
-      }
-      const nextSquares = squares.slice();
-
-      if (xCounter % 2 == 0) {
-        nextSquares[i] = "X";
-        turnText[0].innerHTML = "O's Turn";
-        //console.log(minimax(squares, 0, true));
-      } else {
-        nextSquares[i] = "O";
-        turnText[0].innerHTML = "X's Turn";
-      }
-      xCounter++;
-      setSquares(nextSquares);
-      //setXIsNext(!xIsNext);
-
       if (uSquareArray[i] == null) {
         modifyGridColor(i);
       } else {
@@ -248,10 +245,42 @@ const UltimateTicTacToe = () => {
           }
         }
       }
+
+      gridClicked = i;
+      if (squares[i] != null) {
+        return;
+      }
+      const nextSquares = squares.slice();
+
+      if (xCounter % 2 == 0) {
+        nextSquares[i] = "X";
+        squaresA[uValue][i] = "X";
+        turnText[0].innerHTML = "AI's Turn";
+        ultimateSquareStyleList[i][0].style.pointerEvents = "none";
+        //console.log(minimax(squares, 0, true));
+      } else {
+        nextSquares[i] = "O";
+        squaresA[uValue][i] = "O";
+        turnText[0].innerHTML = "X's Turn";
+        ultimateSquareStyleList[i][0].style.pointerEvents = "auto";
+      }
+
+      // let aiMove = minimax(squaresA[i], 0, true);
+      // console.log(aiMove);
+      //handleClick(aiMove);
+
+      console.log(squaresA);
+      xCounter++;
+      setSquares(nextSquares);
+
+      //setXIsNext(!xIsNext);
     }
+    //console.log(squares);
+    //console.log(minimax(squares, 0, true));
 
     calculateWinner(squares, uValue);
     checkUltimateWinner();
+
     return (
       <>
         <div className="oneBoard">
@@ -274,7 +303,7 @@ const UltimateTicTacToe = () => {
       </>
     );
   }
-
+  //console.log(arr);
   return (
     <>
       <div className="fullBoard">
@@ -330,5 +359,4 @@ const UltimateTicTacToe = () => {
     </>
   );
 };
-
 export default UltimateTicTacToe;
