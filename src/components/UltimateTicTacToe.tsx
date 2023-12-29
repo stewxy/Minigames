@@ -33,7 +33,7 @@ const UltimateTicTacToe = () => {
     [0, 4, 8],
     [2, 4, 6],
   ];
-  const [uSquare, setUSquare] = useState(Array(9).fill(null));
+
   let uSquareArray = [null, null, null, null, null, null, null, null, null];
   let [style0, style1, style2, style3, style4, style5, style6, style7, style8] =
     [
@@ -133,14 +133,24 @@ const UltimateTicTacToe = () => {
   }
 
   function modifyGridColor(value: number) {
-    ultimateSquareStyleList[value][0].style.backgroundColor = "#eb2626";
-    ultimateSquareStyleList[value][0].style.pointerEvents = "auto";
-    ultimateSquareStyleList[value][0].style.opacity = "1";
-    for (let j = 0; j < ultimateSquareStyleList.length; j++) {
-      if (j !== value) {
-        ultimateSquareStyleList[j][0].style.backgroundColor = "#393939";
-        ultimateSquareStyleList[j][0].style.pointerEvents = "none";
-        ultimateSquareStyleList[j][0].style.opacity = "0.7";
+    if (uSquareArray[value] == null) {
+      ultimateSquareStyleList[value][0].style.backgroundColor = "#eb2626";
+      ultimateSquareStyleList[value][0].style.pointerEvents = "auto";
+      ultimateSquareStyleList[value][0].style.opacity = "1";
+      for (let j = 0; j < ultimateSquareStyleList.length; j++) {
+        if (j !== value) {
+          ultimateSquareStyleList[j][0].style.backgroundColor = "#393939";
+          ultimateSquareStyleList[j][0].style.pointerEvents = "none";
+          ultimateSquareStyleList[j][0].style.opacity = "0.7";
+        }
+      }
+    } else {
+      for (let i = 0; i < ultimateSquareStyleList.length; i++) {
+        if (uSquareArray[i] == null) {
+          ultimateSquareStyleList[i][0].style.backgroundColor = "#eb2626";
+          ultimateSquareStyleList[i][0].style.pointerEvents = "auto";
+          ultimateSquareStyleList[i][0].style.opacity = "1";
+        }
       }
     }
   }
@@ -212,9 +222,6 @@ const UltimateTicTacToe = () => {
     }
   }
 
-  // let test = ["O", "X", "X", "O", null, null, null, null, null];
-  // console.log(minimax(test, 0, true));
-
   let squaresA = [
     ["", "", "", "", "", "", "", "", ""],
     ["", "", "", "", "", "", "", "", ""],
@@ -228,23 +235,11 @@ const UltimateTicTacToe = () => {
   ];
   console.log(squaresA);
 
-  function SingleBoard({ value, uValue }: { value: number; uValue: number }) {
-    //const [xIsNext, setXIsNext] = useState(true);
-
+  function SingleBoard({ uValue }: { uValue: number }) {
     const [squares, setSquares] = useState(Array(9).fill(null));
 
     function handleClick(i: number) {
-      if (uSquareArray[i] == null) {
-        modifyGridColor(i);
-      } else {
-        for (let i = 0; i < ultimateSquareStyleList.length; i++) {
-          if (uSquareArray[i] == null) {
-            ultimateSquareStyleList[i][0].style.backgroundColor = "#eb2626";
-            ultimateSquareStyleList[i][0].style.pointerEvents = "auto";
-            ultimateSquareStyleList[i][0].style.opacity = "1";
-          }
-        }
-      }
+      modifyGridColor(i);
 
       gridClicked = i;
       if (squares[i] != null) {
@@ -256,13 +251,12 @@ const UltimateTicTacToe = () => {
         nextSquares[i] = "X";
         squaresA[uValue][i] = "X";
         turnText[0].innerHTML = "AI's Turn";
-        ultimateSquareStyleList[i][0].style.pointerEvents = "none";
-        //console.log(minimax(squares, 0, true));
+        //ultimateSquareStyleList[i][0].style.pointerEvents = "none";
       } else {
         nextSquares[i] = "O";
         squaresA[uValue][i] = "O";
         turnText[0].innerHTML = "X's Turn";
-        ultimateSquareStyleList[i][0].style.pointerEvents = "auto";
+        //ultimateSquareStyleList[i][0].style.pointerEvents = "auto";
       }
 
       // let aiMove = minimax(squaresA[i], 0, true);
@@ -272,11 +266,7 @@ const UltimateTicTacToe = () => {
       console.log(squaresA);
       xCounter++;
       setSquares(nextSquares);
-
-      //setXIsNext(!xIsNext);
     }
-    //console.log(squares);
-    //console.log(minimax(squares, 0, true));
 
     calculateWinner(squares, uValue);
     checkUltimateWinner();
@@ -303,50 +293,50 @@ const UltimateTicTacToe = () => {
       </>
     );
   }
-  //console.log(arr);
+
   return (
     <>
       <div className="fullBoard">
         <div className="ultimateRow">
           <div className="u0">
             <div className="styleWinB0"></div>
-            <SingleBoard value={uSquare[0]} uValue={0} />
+            <SingleBoard uValue={0} />
           </div>
           <div className="u1">
             <div className="styleWinB1"></div>
-            <SingleBoard value={uSquare[1]} uValue={1} />
+            <SingleBoard uValue={1} />
           </div>
           <div className="u2">
             <div className="styleWinB2"></div>
-            <SingleBoard value={uSquare[2]} uValue={2} />
+            <SingleBoard uValue={2} />
           </div>
         </div>
         <div className="ultimateRow">
           <div className="u3">
             <div className="styleWinB3"></div>
-            <SingleBoard value={uSquare[3]} uValue={3} />
+            <SingleBoard uValue={3} />
           </div>
           <div className="u4">
             <div className="styleWinB4"></div>
-            <SingleBoard value={uSquare[4]} uValue={4} />
+            <SingleBoard uValue={4} />
           </div>
           <div className="u5">
             <div className="styleWinB5"></div>
-            <SingleBoard value={uSquare[5]} uValue={5} />
+            <SingleBoard uValue={5} />
           </div>
         </div>
         <div className="ultimateRow">
           <div className="u6">
             <div className="styleWinB6"></div>
-            <SingleBoard value={uSquare[6]} uValue={6} />
+            <SingleBoard uValue={6} />
           </div>
           <div className="u7">
             <div className="styleWinB7"></div>
-            <SingleBoard value={uSquare[7]} uValue={7} />
+            <SingleBoard uValue={7} />
           </div>
           <div className="u8">
             <div className="styleWinB8"></div>
-            <SingleBoard value={uSquare[8]} uValue={8} />
+            <SingleBoard uValue={8} />
           </div>
         </div>
         <div className="startText">
