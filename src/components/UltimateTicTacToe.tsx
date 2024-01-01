@@ -1,16 +1,17 @@
 import { useState } from "react";
 import "../App.css";
 import { minimax } from "./minimax";
-
 function Square({
+  id,
   value,
   onSquareClick,
 }: {
-  value: number;
+  id: number;
+  value: any;
   onSquareClick: any;
 }) {
   return (
-    <button className="Grid" onClick={onSquareClick} disabled={false}>
+    <button className={"Grid" + id} onClick={onSquareClick} disabled={false}>
       {value}
     </button>
   );
@@ -233,19 +234,18 @@ const UltimateTicTacToe = () => {
     ["", "", "", "", "", "", "", "", ""],
     ["", "", "", "", "", "", "", "", ""],
   ];
-  console.log(squaresA);
 
   function SingleBoard({ uValue }: { uValue: number }) {
     const [squares, setSquares] = useState(Array(9).fill(null));
-    const [xNext, setxNext] = useState(true);
 
     function handleClick(i: number) {
-      modifyGridColor(i);
-      gridClicked = i;
-
       if (squares[i] != null) {
         return;
       }
+
+      modifyGridColor(i);
+      gridClicked = i;
+
       const nextSquares = squares.slice();
 
       if (xCounter % 2 == 0) {
@@ -254,8 +254,25 @@ const UltimateTicTacToe = () => {
         turnText[0].innerHTML = "AI's Turn";
         xCounter++;
         setSquares(nextSquares);
-        // let aiMove = minimax(squaresA[i], 0, true);
-        // console.log(xCounter);
+        // console.log(squaresA);
+        // (
+        //   document.getElementsByClassName(
+        //     "Grid"
+        //   ) as HTMLCollectionOf<HTMLElement>
+        // )[0].click();
+        let aiMove = minimax(squaresA[i], 0, true);
+        console.log(aiMove + ": ai Move");
+        console.log(xCounter + ": x Counter");
+
+        let t = document
+          .getElementById(i + "")
+          ?.getElementsByClassName(
+            "Grid" + aiMove
+          ) as HTMLCollectionOf<HTMLElement>;
+        t[0].innerHTML = "#";
+        squaresA[i][aiMove] = "#";
+        console.log(squaresA);
+
         // setTimeout(() => {
         //   handleClick(aiMove);
         // }, 1000);
@@ -271,6 +288,7 @@ const UltimateTicTacToe = () => {
         // return;
         // ultimateSquareStyleList[i][0].style.pointerEvents = "auto";
       }
+      //xCounter++;
 
       // let aiMove = minimax(squaresA[i], 0, true);
       // console.log(aiMove);
@@ -286,67 +304,173 @@ const UltimateTicTacToe = () => {
     return (
       <>
         <div className="oneBoard">
-          <div className="squareRow">
-            <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
-            <Square value={squares[1]} onSquareClick={() => handleClick(1)} />
-            <Square value={squares[2]} onSquareClick={() => handleClick(2)} />
+          <div className="squareRow0">
+            <Square
+              id={0}
+              value={squares[0]}
+              onSquareClick={() => handleClick(0)}
+            />
+            <Square
+              id={1}
+              value={squares[1]}
+              onSquareClick={() => handleClick(1)}
+            />
+            <Square
+              id={2}
+              value={squares[2]}
+              onSquareClick={() => handleClick(2)}
+            />
           </div>
-          <div className="squareRow">
-            <Square value={squares[3]} onSquareClick={() => handleClick(3)} />
-            <Square value={squares[4]} onSquareClick={() => handleClick(4)} />
-            <Square value={squares[5]} onSquareClick={() => handleClick(5)} />
+          <div className="squareRow1">
+            <Square
+              id={3}
+              value={squares[3]}
+              onSquareClick={() => handleClick(3)}
+            />
+            <Square
+              id={4}
+              value={squares[4]}
+              onSquareClick={() => handleClick(4)}
+            />
+            <Square
+              id={5}
+              value={squares[5]}
+              onSquareClick={() => handleClick(5)}
+            />
           </div>
-          <div className="squareRow">
-            <Square value={squares[6]} onSquareClick={() => handleClick(6)} />
-            <Square value={squares[7]} onSquareClick={() => handleClick(7)} />
-            <Square value={squares[8]} onSquareClick={() => handleClick(8)} />
+          <div className="squareRow2">
+            <Square
+              id={6}
+              value={squares[6]}
+              onSquareClick={() => handleClick(6)}
+            />
+            <Square
+              id={7}
+              value={squares[7]}
+              onSquareClick={() => handleClick(7)}
+            />
+            <Square
+              id={8}
+              value={squares[8]}
+              onSquareClick={() => handleClick(8)}
+            />
           </div>
         </div>
       </>
     );
   }
 
+  // function SingleBoard({ uValue }: { uValue: number }) {
+  //   const [squares, setSquares] = useState(Array(9).fill(null));
+
+  //   function handleClick(i: number) {
+  //     modifyGridColor(i);
+  //     gridClicked = i;
+
+  //     if (squares[i] != null) {
+  //       return;
+  //     }
+  //     const nextSquares = squares.slice();
+
+  //     if (xCounter % 2 == 0) {
+  //       nextSquares[i] = "X";
+  //       squaresA[uValue][i] = "X";
+  //       turnText[0].innerHTML = "AI's Turn";
+  //       xCounter++;
+  //       setSquares(nextSquares);
+  //       // let aiMove = minimax(squaresA[i], 0, true);
+  //       // console.log(xCounter);
+  //       // setTimeout(() => {
+  //       //   handleClick(aiMove);
+  //       // }, 1000);
+
+  //       // handleClick(aiMove);
+  //       // ultimateSquareStyleList[i][0].style.pointerEvents = "none";
+  //     } else {
+  //       nextSquares[i] = "O";
+  //       squaresA[uValue][i] = "O";
+  //       turnText[0].innerHTML = "X's Turn";
+  //       xCounter++;
+  //       setSquares(nextSquares);
+  //       // return;
+  //       // ultimateSquareStyleList[i][0].style.pointerEvents = "auto";
+  //     }
+
+  //     // let aiMove = minimax(squaresA[i], 0, true);
+  //     // console.log(aiMove);
+  //     // handleClick(aiMove);
+
+  //     // xCounter++;
+  //     // setSquares(nextSquares);
+  //   }
+
+  //   calculateWinner(squares, uValue);
+  //   checkUltimateWinner();
+
+  //   return (
+  //     <>
+  //       <div className="oneBoard">
+  //         <div className="squareRow">
+  //           <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
+  //           <Square value={squares[1]} onSquareClick={() => handleClick(1)} />
+  //           <Square value={squares[2]} onSquareClick={() => handleClick(2)} />
+  //         </div>
+  //         <div className="squareRow">
+  //           <Square value={squares[3]} onSquareClick={() => handleClick(3)} />
+  //           <Square value={squares[4]} onSquareClick={() => handleClick(4)} />
+  //           <Square value={squares[5]} onSquareClick={() => handleClick(5)} />
+  //         </div>
+  //         <div className="squareRow">
+  //           <Square value={squares[6]} onSquareClick={() => handleClick(6)} />
+  //           <Square value={squares[7]} onSquareClick={() => handleClick(7)} />
+  //           <Square value={squares[8]} onSquareClick={() => handleClick(8)} />
+  //         </div>
+  //       </div>
+  //     </>
+  //   );
+  // }
+
   return (
     <>
       <div className="fullBoard">
         <div className="ultimateRow">
-          <div className="u0">
+          <div className="u0" id="0">
             <div className="styleWinB0"></div>
             <SingleBoard uValue={0} />
           </div>
-          <div className="u1">
+          <div className="u1" id="1">
             <div className="styleWinB1"></div>
             <SingleBoard uValue={1} />
           </div>
-          <div className="u2">
+          <div className="u2" id="2">
             <div className="styleWinB2"></div>
             <SingleBoard uValue={2} />
           </div>
         </div>
         <div className="ultimateRow">
-          <div className="u3">
+          <div className="u3" id="3">
             <div className="styleWinB3"></div>
             <SingleBoard uValue={3} />
           </div>
-          <div className="u4">
+          <div className="u4" id="4">
             <div className="styleWinB4"></div>
             <SingleBoard uValue={4} />
           </div>
-          <div className="u5">
+          <div className="u5" id="5">
             <div className="styleWinB5"></div>
             <SingleBoard uValue={5} />
           </div>
         </div>
         <div className="ultimateRow">
-          <div className="u6">
+          <div className="u6" id="6">
             <div className="styleWinB6"></div>
             <SingleBoard uValue={6} />
           </div>
-          <div className="u7">
+          <div className="u7" id="7">
             <div className="styleWinB7"></div>
             <SingleBoard uValue={7} />
           </div>
-          <div className="u8">
+          <div className="u8" id="8">
             <div className="styleWinB8"></div>
             <SingleBoard uValue={8} />
           </div>
