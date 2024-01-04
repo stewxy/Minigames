@@ -239,7 +239,12 @@ const UltimateTicTacToe = () => {
     const [squares, setSquares] = useState(Array(9).fill(null));
 
     function handleClick(i: number) {
+      // console.log("i: " + i, "uValue: " + uValue);
+      // console.log(xCounter);
       if (squares[i] != null) {
+        return;
+      }
+      if (squaresA[uValue][i] !== "") {
         return;
       }
 
@@ -249,50 +254,30 @@ const UltimateTicTacToe = () => {
       const nextSquares = squares.slice();
 
       if (xCounter % 2 == 0) {
+        ultimateSquareStyleList[i][0].style.pointerEvents = "none";
         nextSquares[i] = "X";
         squaresA[uValue][i] = "X";
         turnText[0].innerHTML = "AI's Turn";
         xCounter++;
         setSquares(nextSquares);
-        // console.log(squaresA);
-        // (
-        //   document.getElementsByClassName(
-        //     "Grid"
-        //   ) as HTMLCollectionOf<HTMLElement>
-        // )[0].click();
-        let aiMove = minimax(squaresA[i], 0, true);
-        console.log(aiMove + ": ai Move");
-        console.log(xCounter + ": x Counter");
 
-        let t = document
+        let aiMove = minimax(squaresA[i], 0, true);
+        let aiMoveGrid = document
           .getElementById(i + "")
           ?.getElementsByClassName(
             "Grid" + aiMove
           ) as HTMLCollectionOf<HTMLElement>;
-        t[0].innerHTML = "#";
-        squaresA[i][aiMove] = "#";
+
+        setTimeout(() => {
+          aiMoveGrid[0].innerHTML = "O";
+          turnText[0].innerHTML = "X's Turn";
+          ultimateSquareStyleList[i][0].style.pointerEvents = "auto";
+        }, 500);
+
+        squaresA[i][aiMove] = "O";
         console.log(squaresA);
-
-        // setTimeout(() => {
-        //   handleClick(aiMove);
-        // }, 1000);
-
-        // handleClick(aiMove);
-        // ultimateSquareStyleList[i][0].style.pointerEvents = "none";
-      } else {
-        nextSquares[i] = "O";
-        squaresA[uValue][i] = "O";
-        turnText[0].innerHTML = "X's Turn";
         xCounter++;
-        setSquares(nextSquares);
-        // return;
-        // ultimateSquareStyleList[i][0].style.pointerEvents = "auto";
       }
-      //xCounter++;
-
-      // let aiMove = minimax(squaresA[i], 0, true);
-      // console.log(aiMove);
-      // handleClick(aiMove);
 
       // xCounter++;
       // setSquares(nextSquares);
