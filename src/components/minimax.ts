@@ -41,13 +41,14 @@ function checkWinner(squares:any){
 let temp = 0;
 
 export function minimax(squares:any, depth:number, isMaximising: boolean){
+    console.log(squares);
     let bestScore = Number.NEGATIVE_INFINITY;
     let bestMove = -1;
     for(let i=0; i<9; i++){
         if(squares[i] == ""){
             squares[i] = "O"
             let score = algorithm(squares, 0, false);
-            console.log(score + " score");
+            //console.log(score + " score");
             squares[i] = "";
             if(score > bestScore){
                 bestScore = score;

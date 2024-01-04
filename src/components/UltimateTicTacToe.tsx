@@ -198,6 +198,7 @@ const UltimateTicTacToe = () => {
   }
 
   function calculateWinner(squares: any, uValue: number) {
+    console.log(squares, uValue);
     for (let i = 0; i < winLines.length; i++) {
       const [a, b, c] = winLines[i];
       if (
@@ -212,7 +213,7 @@ const UltimateTicTacToe = () => {
         ultimateSquareStyleList[uValue][0].style.opacity = "0.7";
         return squares[a], uValue;
       } else if (
-        squares.every((val: string) => val !== null) &&
+        squares.every((val: string) => val !== null && val !== "") &&
         squares[a] !== squares[b] &&
         squares[a] !== squares[c]
       ) {
@@ -239,8 +240,6 @@ const UltimateTicTacToe = () => {
     const [squares, setSquares] = useState(Array(9).fill(null));
 
     function handleClick(i: number) {
-      // console.log("i: " + i, "uValue: " + uValue);
-      // console.log(xCounter);
       if (squares[i] != null) {
         return;
       }
@@ -260,30 +259,69 @@ const UltimateTicTacToe = () => {
         turnText[0].innerHTML = "AI's Turn";
         xCounter++;
         setSquares(nextSquares);
+        calculateWinner(squares, uValue);
 
-        let aiMove = minimax(squaresA[i], 0, true);
-        let aiMoveGrid = document
-          .getElementById(i + "")
-          ?.getElementsByClassName(
-            "Grid" + aiMove
-          ) as HTMLCollectionOf<HTMLElement>;
-
+        console.log(uSquareArray);
         setTimeout(() => {
-          aiMoveGrid[0].innerHTML = "O";
-          turnText[0].innerHTML = "X's Turn";
-          ultimateSquareStyleList[i][0].style.pointerEvents = "auto";
+          if (uSquareArray[0] !== null) {
+            console.log("LMAO");
+          }
         }, 500);
 
-        squaresA[i][aiMove] = "O";
-        console.log(squaresA);
-        xCounter++;
+        let newI = 0;
+        if (uSquareArray[i] !== null) {
+          for (let j = 0; j < uSquareArray.length; j++) {
+            if (uSquareArray[j] == null) {
+              newI = j;
+              let aiMove = minimax(squaresA[newI], 0, true);
+              let aiMoveGrid = document
+                .getElementById(newI + "")
+                ?.getElementsByClassName(
+                  "Grid" + aiMove
+                ) as HTMLCollectionOf<HTMLElement>;
+
+              setTimeout(() => {
+                aiMoveGrid[0].innerHTML = "O";
+                turnText[0].innerHTML = "X's Turn";
+                ultimateSquareStyleList[newI][0].style.pointerEvents = "auto";
+                modifyGridColor(aiMove);
+              }, 500);
+
+              squaresA[newI][aiMove] = "O";
+              xCounter++;
+              calculateWinner(squaresA[newI], newI);
+              return;
+            }
+          }
+        } else {
+          console.log("HI");
+          let aiMove = minimax(squaresA[i], 0, true);
+          let aiMoveGrid = document
+            .getElementById(i + "")
+            ?.getElementsByClassName(
+              "Grid" + aiMove
+            ) as HTMLCollectionOf<HTMLElement>;
+
+          setTimeout(() => {
+            aiMoveGrid[0].innerHTML = "O";
+            turnText[0].innerHTML = "X's Turn";
+            ultimateSquareStyleList[i][0].style.pointerEvents = "auto";
+            modifyGridColor(aiMove);
+          }, 500);
+
+          squaresA[i][aiMove] = "O";
+          xCounter++;
+          calculateWinner(squaresA[uValue], uValue);
+          console.log("i: " + i, "uValue: " + uValue);
+        }
       }
 
       // xCounter++;
       // setSquares(nextSquares);
     }
 
-    calculateWinner(squares, uValue);
+    //calculateWinner(squares, uValue);
+    //calculateWinner(squaresA[uValue], uValue);
     checkUltimateWinner();
 
     return (
