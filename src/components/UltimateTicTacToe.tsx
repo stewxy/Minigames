@@ -206,6 +206,7 @@ const UltimateTicTacToe = () => {
         squares[a] === squares[b] &&
         squares[a] === squares[c]
       ) {
+        console.log("WINNER");
         uSquareArray[uValue] = squares[a];
         setWinGridText(uValue, squares[a]);
         ultimateSquareStyleList[uValue][0].style.backgroundColor = "#393939";
@@ -240,6 +241,7 @@ const UltimateTicTacToe = () => {
     const [squares, setSquares] = useState(Array(9).fill(null));
 
     function handleClick(i: number) {
+      console.log("instance");
       if (squares[i] != null) {
         return;
       }
@@ -259,15 +261,14 @@ const UltimateTicTacToe = () => {
         turnText[0].innerHTML = "AI's Turn";
         xCounter++;
         setSquares(nextSquares);
-        calculateWinner(squares, uValue);
+        //calculateWinner(squares, uValue);
+        calculateWinner(squaresA[uValue], uValue);
 
-        console.log(uSquareArray);
-        setTimeout(() => {
-          if (uSquareArray[0] !== null) {
-            console.log("LMAO");
-          }
-        }, 500);
-
+        // setTimeout(() => {
+        //   if (uSquareArray[0] !== null) {
+        //     console.log("LMAO");
+        //   }
+        // }, 500);
         let newI = 0;
         if (uSquareArray[i] !== null) {
           for (let j = 0; j < uSquareArray.length; j++) {
@@ -289,12 +290,13 @@ const UltimateTicTacToe = () => {
 
               squaresA[newI][aiMove] = "O";
               xCounter++;
+              console.log(squaresA);
               calculateWinner(squaresA[newI], newI);
               return;
             }
           }
         } else {
-          console.log("HI");
+          console.log("hi");
           let aiMove = minimax(squaresA[i], 0, true);
           let aiMoveGrid = document
             .getElementById(i + "")
@@ -311,8 +313,8 @@ const UltimateTicTacToe = () => {
 
           squaresA[i][aiMove] = "O";
           xCounter++;
-          calculateWinner(squaresA[uValue], uValue);
-          console.log("i: " + i, "uValue: " + uValue);
+          console.log(squaresA[i] + "ai");
+          calculateWinner(squaresA[i], i);
         }
       }
 
