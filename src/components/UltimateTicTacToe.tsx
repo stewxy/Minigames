@@ -205,7 +205,6 @@ const UltimateTicTacToe = () => {
   }
 
   function calculateWinner(squares: any, uValue: number) {
-    console.log(squares, uValue);
     for (let i = 0; i < winLines.length; i++) {
       const [a, b, c] = winLines[i];
       if (
@@ -213,7 +212,6 @@ const UltimateTicTacToe = () => {
         squares[a] === squares[b] &&
         squares[a] === squares[c]
       ) {
-        console.log("WINNER");
         uSquareArray[uValue] = squares[a];
         setWinGridText(uValue, squares[a]);
         ultimateSquareStyleList[uValue][0].style.backgroundColor = "#393939";
@@ -248,7 +246,6 @@ const UltimateTicTacToe = () => {
     const [squares, setSquares] = useState(Array(9).fill(null));
 
     function handleClick(i: number) {
-      console.log("instance");
       if (squares[i] != null) {
         return;
       }
@@ -265,17 +262,12 @@ const UltimateTicTacToe = () => {
         ultimateSquareStyleList[i][0].style.pointerEvents = "none";
         nextSquares[i] = "X";
         squaresA[uValue][i] = "X";
-        turnText[0].innerHTML = "AI's Turn";
+        turnText[0].innerHTML = "Ai's Turn";
         xCounter++;
         setSquares(nextSquares);
-        //calculateWinner(squares, uValue);
+
         calculateWinner(squaresA[uValue], uValue);
 
-        // setTimeout(() => {
-        //   if (uSquareArray[0] !== null) {
-        //     console.log("LMAO");
-        //   }
-        // }, 500);
         let newI = 0;
         if (checkUltimateWinner() == true) {
           return;
@@ -306,15 +298,15 @@ const UltimateTicTacToe = () => {
 
               squaresA[newI][aiMove] = "O";
               xCounter++;
-              console.log(squaresA);
+
               setTimeout(() => {
                 calculateWinner(squaresA[newI], newI);
               }, 500);
+
               return;
             }
           }
         } else {
-          console.log("hi");
           let aiMove = minimax(squaresA[i], 0, true);
           let aiMoveGrid = document
             .getElementById(i + "")
@@ -334,19 +326,14 @@ const UltimateTicTacToe = () => {
 
           squaresA[i][aiMove] = "O";
           xCounter++;
-          console.log(squaresA[i] + "ai");
+
           setTimeout(() => {
             calculateWinner(squaresA[i], i);
           }, 500);
         }
       }
-
-      // xCounter++;
-      // setSquares(nextSquares);
     }
 
-    //calculateWinner(squares, uValue);
-    //calculateWinner(squaresA[uValue], uValue);
     checkUltimateWinner();
 
     return (
@@ -407,76 +394,6 @@ const UltimateTicTacToe = () => {
       </>
     );
   }
-
-  // function SingleBoard({ uValue }: { uValue: number }) {
-  //   const [squares, setSquares] = useState(Array(9).fill(null));
-
-  //   function handleClick(i: number) {
-  //     modifyGridColor(i);
-  //     gridClicked = i;
-
-  //     if (squares[i] != null) {
-  //       return;
-  //     }
-  //     const nextSquares = squares.slice();
-
-  //     if (xCounter % 2 == 0) {
-  //       nextSquares[i] = "X";
-  //       squaresA[uValue][i] = "X";
-  //       turnText[0].innerHTML = "AI's Turn";
-  //       xCounter++;
-  //       setSquares(nextSquares);
-  //       // let aiMove = minimax(squaresA[i], 0, true);
-  //       // console.log(xCounter);
-  //       // setTimeout(() => {
-  //       //   handleClick(aiMove);
-  //       // }, 1000);
-
-  //       // handleClick(aiMove);
-  //       // ultimateSquareStyleList[i][0].style.pointerEvents = "none";
-  //     } else {
-  //       nextSquares[i] = "O";
-  //       squaresA[uValue][i] = "O";
-  //       turnText[0].innerHTML = "X's Turn";
-  //       xCounter++;
-  //       setSquares(nextSquares);
-  //       // return;
-  //       // ultimateSquareStyleList[i][0].style.pointerEvents = "auto";
-  //     }
-
-  //     // let aiMove = minimax(squaresA[i], 0, true);
-  //     // console.log(aiMove);
-  //     // handleClick(aiMove);
-
-  //     // xCounter++;
-  //     // setSquares(nextSquares);
-  //   }
-
-  //   calculateWinner(squares, uValue);
-  //   checkUltimateWinner();
-
-  //   return (
-  //     <>
-  //       <div className="oneBoard">
-  //         <div className="squareRow">
-  //           <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
-  //           <Square value={squares[1]} onSquareClick={() => handleClick(1)} />
-  //           <Square value={squares[2]} onSquareClick={() => handleClick(2)} />
-  //         </div>
-  //         <div className="squareRow">
-  //           <Square value={squares[3]} onSquareClick={() => handleClick(3)} />
-  //           <Square value={squares[4]} onSquareClick={() => handleClick(4)} />
-  //           <Square value={squares[5]} onSquareClick={() => handleClick(5)} />
-  //         </div>
-  //         <div className="squareRow">
-  //           <Square value={squares[6]} onSquareClick={() => handleClick(6)} />
-  //           <Square value={squares[7]} onSquareClick={() => handleClick(7)} />
-  //           <Square value={squares[8]} onSquareClick={() => handleClick(8)} />
-  //         </div>
-  //       </div>
-  //     </>
-  //   );
-  // }
 
   return (
     <>
