@@ -165,7 +165,11 @@ const UltimateTicTacToe = () => {
         uSquareArray[a] === uSquareArray[b] &&
         uSquareArray[a] === uSquareArray[c]
       ) {
-        turnText[0].innerHTML = uSquareArray[a] + " is the Winner!";
+        if (uSquareArray[a] == "O") {
+          turnText[0].innerHTML = "The Bot Wins!";
+        } else {
+          turnText[0].innerHTML = uSquareArray[a] + " is the Winner!";
+        }
 
         resetButtonElement[0].style.visibility = "visible";
         for (let i = 0; i < ultimateSquareStyleList.length; i++) {
@@ -184,6 +188,7 @@ const UltimateTicTacToe = () => {
             ultimateSquareStyleList[c][0].style.opacity = "1";
           }
         }
+        return true;
       } else {
         if (uSquareArray.every((element) => element !== null)) {
           turnText[0].innerHTML = "Draw!";
@@ -192,9 +197,11 @@ const UltimateTicTacToe = () => {
             ultimateSquareStyleList[i][0].style.pointerEvents = "none";
             ultimateSquareStyleList[i][0].style.opacity = "0.7";
           }
+          return true;
         }
       }
     }
+    return false;
   }
 
   function calculateWinner(squares: any, uValue: number) {
@@ -270,6 +277,9 @@ const UltimateTicTacToe = () => {
         //   }
         // }, 500);
         let newI = 0;
+        if (checkUltimateWinner() == true) {
+          return;
+        }
         if (uSquareArray[i] !== null) {
           for (let j = 0; j < uSquareArray.length; j++) {
             if (uSquareArray[j] == null) {
@@ -280,9 +290,15 @@ const UltimateTicTacToe = () => {
                 ?.getElementsByClassName(
                   "Grid" + aiMove
                 ) as HTMLCollectionOf<HTMLElement>;
+              if (checkUltimateWinner() == true) {
+                return;
+              }
 
               setTimeout(() => {
                 aiMoveGrid[0].innerHTML = "O";
+                if (checkUltimateWinner() == true) {
+                  return;
+                }
                 turnText[0].innerHTML = "X's Turn";
                 ultimateSquareStyleList[newI][0].style.pointerEvents = "auto";
                 modifyGridColor(aiMove);
@@ -291,7 +307,9 @@ const UltimateTicTacToe = () => {
               squaresA[newI][aiMove] = "O";
               xCounter++;
               console.log(squaresA);
-              calculateWinner(squaresA[newI], newI);
+              setTimeout(() => {
+                calculateWinner(squaresA[newI], newI);
+              }, 500);
               return;
             }
           }
@@ -306,6 +324,9 @@ const UltimateTicTacToe = () => {
 
           setTimeout(() => {
             aiMoveGrid[0].innerHTML = "O";
+            if (checkUltimateWinner() == true) {
+              return;
+            }
             turnText[0].innerHTML = "X's Turn";
             ultimateSquareStyleList[i][0].style.pointerEvents = "auto";
             modifyGridColor(aiMove);
@@ -314,7 +335,9 @@ const UltimateTicTacToe = () => {
           squaresA[i][aiMove] = "O";
           xCounter++;
           console.log(squaresA[i] + "ai");
-          calculateWinner(squaresA[i], i);
+          setTimeout(() => {
+            calculateWinner(squaresA[i], i);
+          }, 500);
         }
       }
 
