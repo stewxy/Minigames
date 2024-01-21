@@ -21,12 +21,18 @@ const Layout = () => {
         </ul>
       </nav>
       <div className="selectionContainer">
-        <div className="tttImageContainer">
-          <img className="tttStyle" src={ttt} alt="ttt" />
-        </div>
-        <div className="utttImageContainer">
-          <img className="utttStyle" src={uttt} alt="uttt"></img>
-        </div>
+        <a href={"/TicTacToePage"}>
+          <div className="tttImageContainer">
+            <img className="tttStyle" src={ttt} alt="ttt" />
+            <div className="tttText">TicTacToe</div>
+          </div>
+        </a>
+        <a href={"/UltimateTicTacToePage"}>
+          <div className="utttImageContainer">
+            <img className="utttStyle" src={uttt} alt="uttt"></img>
+            <div className="utttText">Ultimate TicTacToe</div>
+          </div>
+        </a>
       </div>
       <Outlet />
     </>

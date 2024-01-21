@@ -147,37 +147,73 @@ html{
 }
 
 .selectionContainer{
-    background-color: purple;
+    background-color: #1d1d1d;
     height:700px
     
 }
 
 .tttImageContainer{
-    background-color: red;
-    width: 500px;
-    height: 500px;
+    background-color: #3d3d3d;
+    width: 480px;
+    height: 530px;
     display:inline-block;
-    margin-left: 100px;
+    margin-left: 420px;
     margin-top: 100px;
+    cursor: pointer;
+    border-radius: 25px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: white;
+    
 }
+.tttImageContainer:hover > .tttStyle{
+    transform: scale(1.1);
+}
+
 .tttStyle{
-    margin-left: 100px;
+    margin-left: 90px;
     margin-top: 100px;
     width:300px;
     height:300px;
+    transition: transform .3s ease-out;
+}
+
+.tttText{
+    text-align: center;
+    margin-top: 30px;
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
 }
 
 .utttImageContainer{
-    background-color: green;
-    width: 500px;
-    height: 500px;
+    background-color: #3d3d3d;
+    width: 480px;
+    height: 530px;
     display:inline-block;
     margin-left: 100px;
-    margin-top: 100px;
+    margin-top: 90px;
+    cursor: pointer;
+    border-radius: 25px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: white;
 }
+.utttImageContainer:hover > .utttStyle{
+    transform: scale(1.1);
+}
+
 .utttStyle{
-    margin-left: 100px;
+    margin-left: 90px;
     margin-top: 100px;
     width:300px;
     height:300px;
+    transition: transform .3s ease-out;
 }
+.utttText{
+    text-align: center;
+    margin-top: 30px;
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+}   
