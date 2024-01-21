@@ -145,3 +145,39 @@ html{
 .btn{
     visibility: hidden;
 }
+
+.selectionContainer{
+    background-color: purple;
+    height:700px
+    
+}
+
+.tttImageContainer{
+    background-color: red;
+    width: 500px;
+    height: 500px;
+    display:inline-block;
+    margin-left: 100px;
+    margin-top: 100px;
+}
+.tttStyle{
+    margin-left: 100px;
+    margin-top: 100px;
+    width:300px;
+    height:300px;
+}
+
+.utttImageContainer{
+    background-color: green;
+    width: 500px;
+    height: 500px;
+    display:inline-block;
+    margin-left: 100px;
+    margin-top: 100px;
+}
+.utttStyle{
+    margin-left: 100px;
+    margin-top: 100px;
+    width:300px;
+    height:300px;
+}
