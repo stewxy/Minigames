@@ -148,7 +148,8 @@ html{
 
 .selectionContainer{
     background-color: #1d1d1d;
-    height:700px
+    height:700px;
+    visibility: visible;
     
 }
 
