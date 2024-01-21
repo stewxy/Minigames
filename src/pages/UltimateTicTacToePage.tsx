@@ -1,21 +1,11 @@
-import { useState } from "react";
-import Alert from "./components/Alert";
-import Button from "./components/Button";
-import "./App.css";
-import TicTacToe from "./components/TicTacToe";
-import AllBoards from "./components/AllBoards";
-import UltimateTicTacToe from "./components/UltimateTicTacToe";
-import UltimateTicTacToePage from "./pages/UltimateTicTacToePage";
-import TicTacToePage from "./pages/TicTacToePage";
+import React from "react";
+import UltimateTicTacToe from "../components/UltimateTicTacToe";
+import "../App.css";
 
-import { ReactDOM } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Layout from "./pages/Layout";
-
-function App() {
+const UltimateTicTacToePage = () => {
   return (
     <>
-      {/* <div className="main">
+      <div className="main">
         <div className="htmlUTicTacToe">
           <h1 className="mainHeading">Ultimate TicTacToe</h1>
           <UltimateTicTacToe></UltimateTicTacToe>
@@ -35,19 +25,9 @@ function App() {
             </p>
           </div>
         </div>
-      </div> */}
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route
-              path="UltimateTicTacToePage"
-              element={<UltimateTicTacToePage />}
-            />
-            <Route path="TicTacToePage" element={<TicTacToePage />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
+      </div>
     </>
   );
-}
-export default App;
+};
+
+export default UltimateTicTacToePage;

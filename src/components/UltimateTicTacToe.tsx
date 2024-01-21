@@ -272,6 +272,8 @@ const UltimateTicTacToe = () => {
         if (checkUltimateWinner() == true) {
           return;
         }
+        //NEED TO CHANGE THIS IF CONDITION, THIS IS A "PLACEHOLDER" SINCE THE ALGORITHM ONLY WORKS FOR REGULAR TICTACTOE
+        //When X wins on a board, AI moves on the next available board starting from board 0
         if (uSquareArray[i] !== null) {
           for (let j = 0; j < uSquareArray.length; j++) {
             if (uSquareArray[j] == null) {
