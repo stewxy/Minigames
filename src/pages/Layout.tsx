@@ -30,19 +30,26 @@ const Layout = () => {
           <Alert onClose={() => setAlertVisibility(false)}>My Alert</Alert>
         )} */}
       {linksVisible && (
-        <div className="selectionContainer">
-          <Link to="/TicTacToePage">
-            <div className="tttImageContainer" onClick={() => changeStyle()}>
-              <img className="tttStyle" src={ttt} alt="ttt" />
-              <div className="tttText">TicTacToe</div>
+        <div className="main">
+          <div className="selectionContainer">
+            <Link to="/TicTacToePage">
+              <div className="tttImageContainer" onClick={() => changeStyle()}>
+                <img className="tttStyle" src={ttt} alt="ttt" />
+                <div className="tttText">TicTacToe</div>
+              </div>
+            </Link>
+            <Link to="/UltimateTicTacToePage">
+              <div className="utttImageContainer" onClick={() => changeStyle()}>
+                <img className="utttStyle" src={uttt} alt="uttt"></img>
+                <div className="utttText">Ultimate TicTacToe</div>
+              </div>
+            </Link>
+            <div className="layoutInfoSect">
+              Note: Currently, TicTacToe only features a single-player mode
+              where the player plays against a bot. Ultimate TicTacToe only
+              features a local same device mode.{" "}
             </div>
-          </Link>
-          <Link to="/UltimateTicTacToePage">
-            <div className="utttImageContainer" onClick={() => changeStyle()}>
-              <img className="utttStyle" src={uttt} alt="uttt"></img>
-              <div className="utttText">Ultimate TicTacToe</div>
-            </div>
-          </Link>
+          </div>
         </div>
       )}
       <Outlet />

@@ -14,7 +14,12 @@ const TicTacToePage = () => {
           <TicTacToe></TicTacToe>
           <div className="howToPlaySect">
             How To Play <br />
-            <p className="howToPlayInfo">Placeholder.</p>
+            <p className="howToPlayInfo">
+              X starts. X and O players take turns selecting a grid to place
+              their respective symbol on the board. The first player to place 3
+              of their symbols in a row, vertically, horizontally or diagonally
+              wins.
+            </p>
           </div>
         </div>
       </div>

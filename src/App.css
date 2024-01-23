@@ -28,12 +28,13 @@ h1{
 
 .container{
     width: 300px !important;
-    margin-top: 100px;
+    margin-top: 10px;
 }
 
 .resetButtonCont{
     text-align: center;
     font-size: 35px;
+    color: white;
 }
 
 /* === Ultimate TicTacToe === */
@@ -148,8 +149,10 @@ html{
 
 .selectionContainer{
     background-color: #1d1d1d;
+    width:1920px;
     height:700px;
     visibility: visible;
+    
     
 }
 
@@ -236,4 +239,10 @@ html{
 .backButton:hover{
     background-color: #696969;
     color: white;
+}
+
+.layoutInfoSect{
+    color: white;
+    text-align: center;
+    margin-top: 80px;
 }
