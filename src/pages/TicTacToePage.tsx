@@ -6,7 +6,9 @@ const TicTacToePage = () => {
   return (
     <>
       <div className="main">
-        <a href={"/"}>Back to Home</a>
+        <a href="/">
+          <button className="backButton">Back</button>
+        </a>
         <div className="htmlUTicTacToe">
           <h1 className="mainHeading">TicTacToe</h1>
           <TicTacToe></TicTacToe>

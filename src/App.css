@@ -218,3 +218,22 @@ html{
     font-weight: bold;
     color: white;
 }   
+
+.backButton{
+    background-color: #1d1d1d;
+    color:#696969;
+    width: 120px;
+    height: 40px;
+    display: inline-block;
+    margin-top: 10px;
+    margin-left: 20px;
+    border-radius: 5px;
+    border-style: solid;
+    border-color: #696969;
+    transition: .2s ease-in;
+}
+
+.backButton:hover{
+    background-color: #696969;
+    color: white;
+}
