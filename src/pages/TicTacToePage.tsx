@@ -1,5 +1,6 @@
 import React from "react";
 import TicTacToe from "../components/TicTacToe";
+import TicTacToeAI from "../components/TicTacToeAI";
 import "../App.css";
 
 const TicTacToePage = () => {
@@ -11,7 +12,7 @@ const TicTacToePage = () => {
         </a>
         <div className="htmlUTicTacToe">
           <h1 className="mainHeading">TicTacToe</h1>
-          <TicTacToe></TicTacToe>
+          <TicTacToeAI></TicTacToeAI>
           <div className="howToPlaySect">
             How To Play <br />
             <p className="howToPlayInfo">

@@ -35,8 +35,32 @@ h1{
     text-align: center;
     font-size: 35px;
     color: white;
+    margin-top: 10px;
+    height: 50px;
 }
 
+.resetButton{
+    border-radius: 10px;
+    transition: transform .2s ease-in;
+}
+
+.resetButton:hover{
+    transform: scale(1.05);
+    background-color: white;
+}
+
+.howToPlaySect{
+    color: white;
+    text-align: center;
+    font-size: 30px;
+    font-family: Inter;
+    padding-bottom: 20px;
+    padding-top: 30px;
+}
+
+.howToPlayInfo{
+    font-size: 16px;
+}
 /* === Ultimate TicTacToe === */
 .htmlUTicTacToe{
     text-align: center;
@@ -131,17 +155,7 @@ html{
     height: 600px;
 }
 
-.howToPlaySect{
-    color: white;
-    text-align: center;
-    font-size: 30px;
-    font-family: Inter;
-    padding-bottom: 20px;
-}
 
-.howToPlayInfo{
-    font-size: 16px;
-}
 
 .btn{
     visibility: hidden;

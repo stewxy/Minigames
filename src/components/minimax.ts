@@ -41,7 +41,6 @@ function checkWinner(squares:any){
 let temp = 0;
 
 export function minimax(squares:any, depth:number, isMaximising: boolean){
-    console.log(squares);
     let bestScore = Number.NEGATIVE_INFINITY;
     let bestMove = -1;
     for(let i=0; i<9; i++){
@@ -83,7 +82,7 @@ function algorithm(squares:any, depth:number, isMaximising: boolean) {
                 squares[i] = "O"
                 // let score = algorithm(squares, depth+=1, false);
                 // bestScore = Math.max(score, bestScore);
-                bestScore = Math.max(bestScore, algorithm(squares, depth+=1, true));
+                bestScore = Math.max(bestScore, algorithm(squares, depth+=1, false));
                 squares[i] = "";
             }
         }
@@ -96,7 +95,7 @@ function algorithm(squares:any, depth:number, isMaximising: boolean) {
                 squares[i] = "X" 
                 // let score = algorithm(squares, depth+=1, true);
                 // bestScore = Math.min(score, bestScore);
-                bestScore = Math.min(bestScore, algorithm(squares, depth+=1, false));
+                bestScore = Math.min(bestScore, algorithm(squares, depth+=1, true));
                 squares[i] = "";
             }
         }
