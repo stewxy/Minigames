@@ -1,4 +1,3 @@
-import React from "react";
 import UltimateTicTacToe from "../components/UltimateTicTacToe";
 import "../App.css";
 
@@ -26,6 +25,9 @@ const UltimateTicTacToePage = () => {
               win the game, a player must win 3 "regular" TicTacToe games that
               line up vertically, horizontally or diagonally (like regular
               TicTacToe).
+              <br />
+              Note: Players can currently only verse against other players on
+              the same device.
             </p>
           </div>
         </div>

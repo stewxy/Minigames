@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import TicTacToe from "../components/TicTacToe";
 import TicTacToeAI from "../components/TicTacToeAI";
 import "../App.css";
@@ -19,7 +19,8 @@ const TicTacToePage = () => {
               X starts. X and O players take turns selecting a grid to place
               their respective symbol on the board. The first player to place 3
               of their symbols in a row, vertically, horizontally or diagonally
-              wins.
+              wins. <br />
+              Note: Players can currently only verse an unbeatable AI.
             </p>
           </div>
         </div>

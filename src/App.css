@@ -37,16 +37,22 @@ h1{
     color: white;
     margin-top: 10px;
     height: 50px;
+
 }
 
 .resetButton{
     border-radius: 10px;
+    border-color: #696969;
+    border-style: solid;
     transition: transform .2s ease-in;
+    background-color: #474747;
+    color: white;
 }
 
 .resetButton:hover{
     transform: scale(1.05);
-    background-color: white;
+    background-color: #696969;
+    color: white;
 }
 
 .howToPlaySect{

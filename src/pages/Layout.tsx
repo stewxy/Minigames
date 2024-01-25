@@ -1,34 +1,16 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Outlet, Link } from "react-router-dom";
 import ttt from "../images/ttt.png";
 import uttt from "../images/uttt.png";
-let temp = true;
 
 const Layout = () => {
   const [linksVisible, setLinksVisible] = useState(true);
   function changeStyle() {
     setLinksVisible(false);
-    // let x = document.getElementsByClassName(
-    //   "selectionContainer"
-    // ) as HTMLCollectionOf<HTMLElement>;
-    // x[0].style.visibility = "hidden";
-    // x[0].style.height = "0px";
-    // console.log("x");
   }
-
-  // function changeStyle() {
-  //   temp = false;
-  //   setLinksVisible(false);
-  //   if (linksVisible == false) {
-  //   }
-  // }
-  // console.log(temp, linksVisible);
 
   return (
     <>
-      {/* {alertVisible && (
-          <Alert onClose={() => setAlertVisibility(false)}>My Alert</Alert>
-        )} */}
       {linksVisible && (
         <div className="main">
           <div className="selectionContainer">

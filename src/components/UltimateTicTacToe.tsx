@@ -309,9 +309,15 @@ const UltimateTicTacToe = () => {
         </div>
         <div className="startText">
           <p className="innerText">X's Turn</p>
-          <button type="button" className="btn btn-danger" onClick={resetBoard}>
-            Reset Board
-          </button>
+          <a href="/UltimateTicTacToePage">
+            <button
+              type="button"
+              className="btn btn-danger"
+              onClick={resetBoard}
+            >
+              Reset Board
+            </button>
+          </a>
         </div>
       </div>
     </>
