@@ -12,9 +12,9 @@ const UltimateTicTacToePage = () => {
         <div className="htmlUTicTacToe">
           <h1 className="mainHeading">Ultimate TicTacToe</h1>
           <UltimateTicTacToe></UltimateTicTacToe>
-          <div className="howToPlaySect">
+          <div className="howToPlaySectUTTT">
             How To Play <br />
-            <p className="howToPlayInfo">
+            <div className="howToPlayInfoUTTT">
               X starts. Each Ultimate TicTacToe grid contains a regular game of
               TicTacToe. For the first action, every grid is available. When a
               player selects a grid, the following player must make their next
@@ -30,7 +30,7 @@ const UltimateTicTacToePage = () => {
                 Note: Players can currently only verse against other players on
                 the same device.
               </div>
-            </p>
+            </div>
           </div>
         </div>
       </div>

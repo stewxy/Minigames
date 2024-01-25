@@ -55,7 +55,7 @@ h1{
     color: white;
 }
 
-.howToPlaySect{
+.howToPlaySectTTT{
     color: white;
     text-align: center;
     font-size: 30px;
@@ -64,7 +64,19 @@ h1{
     padding-top: 30px;
 }
 
-.howToPlayInfo{
+.howToPlayInfoTTT{
+    font-size: 16px;
+}
+.howToPlaySectUTTT{
+    color: white;
+    text-align: center;
+    font-size: 30px;
+    font-family: Inter;
+    padding-bottom: 20px;
+    padding-top: 10px;
+}
+
+.howToPlayInfoUTTT{
     font-size: 16px;
 }
 /* === Ultimate TicTacToe === */

@@ -26,9 +26,9 @@ const TicTacToePage = () => {
         <div className="htmlUTicTacToe">
           <h1 className="mainHeading">TicTacToe</h1>
           <TicTacToeAI></TicTacToeAI>
-          <div className="howToPlaySect">
+          <div className="howToPlaySectTTT">
             How To Play <br />
-            <p className="howToPlayInfo">
+            <div className="howToPlayInfoTTT">
               X starts. X and O players take turns selecting a grid to place
               their respective symbol on the board. The first player to place 3
               of their symbols in a row, vertically, horizontally or diagonally
@@ -37,7 +37,7 @@ const TicTacToePage = () => {
                 Note: Players can currently only verse an unbeatable AI. AI
                 moves immediately so it's always X's turn.
               </div>
-            </p>
+            </div>
           </div>
         </div>
       </div>
