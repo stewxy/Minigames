@@ -28,14 +28,57 @@ h1{
 
 .container{
     width: 300px !important;
-    margin-top: 100px;
+    margin-top: 10px;
 }
 
 .resetButtonCont{
     text-align: center;
     font-size: 35px;
+    color: white;
+    margin-top: 10px;
+    height: 50px;
+
 }
 
+.resetButton{
+    border-radius: 10px;
+    border-color: #696969;
+    border-style: solid;
+    transition: transform .2s ease-in;
+    background-color: #474747;
+    color: white;
+}
+
+.resetButton:hover{
+    transform: scale(1.05);
+    background-color: #696969;
+    color: white;
+}
+
+.howToPlaySectTTT{
+    color: white;
+    text-align: center;
+    font-size: 30px;
+    font-family: Inter;
+    padding-bottom: 20px;
+    padding-top: 30px;
+}
+
+.howToPlayInfoTTT{
+    font-size: 16px;
+}
+.howToPlaySectUTTT{
+    color: white;
+    text-align: center;
+    font-size: 30px;
+    font-family: Inter;
+    padding-bottom: 20px;
+    padding-top: 10px;
+}
+
+.howToPlayInfoUTTT{
+    font-size: 16px;
+}
 /* === Ultimate TicTacToe === */
 .htmlUTicTacToe{
     text-align: center;
@@ -65,9 +108,22 @@ h1{
     
 }
 .Grid:hover{
-    background-color: #727272;
+    background-color: #727272;  
+}
+.Grid0, .Grid1, .Grid2, .Grid3, .Grid4, .Grid5, .Grid6, .Grid7, .Grid8 {
+    width:50px;
+    height: 50px;
+    background-color: #D9D9D9;
+    vertical-align: top;
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
     
 }
+.Grid0:hover, .Grid1:hover, .Grid2:hover, .Grid3:hover, .Grid4:hover, .Grid5:hover, .Grid6:hover, .Grid7:hover, .Grid8:hover {
+    background-color: #727272;  
+}
+
 
 .u0, .u1, .u2,.u3, .u4, .u5,.u6, .u7, .u8{
     display: inline-block;
@@ -117,18 +173,112 @@ html{
     height: 600px;
 }
 
-.howToPlaySect{
-    color: white;
-    text-align: center;
-    font-size: 30px;
-    font-family: Inter;
-    padding-bottom: 20px;
-}
 
-.howToPlayInfo{
-    font-size: 16px;
-}
 
 .btn{
     visibility: hidden;
+}
+
+.selectionContainer{
+    background-color: #1d1d1d;
+    width:1920px;
+    height:700px;
+    visibility: visible;
+    
+    
+}
+
+.tttImageContainer{
+    background-color: #3d3d3d;
+    width: 480px;
+    height: 530px;
+    display:inline-block;
+    margin-left: 420px;
+    margin-top: 100px;
+    cursor: pointer;
+    border-radius: 25px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: white;
+    
+}
+.tttImageContainer:hover > .tttStyle{
+    transform: scale(1.1);
+}
+
+.tttStyle{
+    margin-left: 90px;
+    margin-top: 100px;
+    width:300px;
+    height:300px;
+    transition: transform .3s ease-out;
+}
+
+.tttText{
+    text-align: center;
+    margin-top: 30px;
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+}
+
+.utttImageContainer{
+    background-color: #3d3d3d;
+    width: 480px;
+    height: 530px;
+    display:inline-block;
+    margin-left: 100px;
+    margin-top: 90px;
+    cursor: pointer;
+    border-radius: 25px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: white;
+}
+.utttImageContainer:hover > .utttStyle{
+    transform: scale(1.1);
+}
+
+.utttStyle{
+    margin-left: 90px;
+    margin-top: 100px;
+    width:300px;
+    height:300px;
+    transition: transform .3s ease-out;
+}
+.utttText{
+    text-align: center;
+    margin-top: 30px;
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+}   
+
+.backButton{
+    background-color: #1d1d1d;
+    color:#696969;
+    width: 120px;
+    height: 40px;
+    display: inline-block;
+    margin-top: 10px;
+    margin-left: 20px;
+    border-radius: 5px;
+    border-style: solid;
+    border-color: #696969;
+    transition: .2s ease-in;
+}
+
+.backButton:hover{
+    background-color: #696969;
+    color: white;
+}
+
+.layoutInfoSect{
+    color: white;
+    text-align: center;
+    margin-top: 80px;
+}
+
+.noteText{
+    font-style: italic;
 }
