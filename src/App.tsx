@@ -9,13 +9,13 @@ import UltimateTicTacToePage from "./pages/UltimateTicTacToePage";
 import TicTacToePage from "./pages/TicTacToePage";
 
 import { ReactDOM } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, HashRouter, Routes, Route } from "react-router-dom";
 import Layout from "./pages/Layout";
 
 function App() {
   return (
     <>
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
           <Route path="/" element={<Layout />} />
           <Route
@@ -24,7 +24,7 @@ function App() {
           />
           <Route path="TicTacToePage" element={<TicTacToePage />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </>
   );
 }
