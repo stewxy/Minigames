@@ -1,9 +1,22 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import TicTacToe from "../components/TicTacToe";
 import TicTacToeAI from "../components/TicTacToeAI";
 import "../App.css";
+import { useNavigate } from "react-router-dom";
 
 const TicTacToePage = () => {
+  // let navigate = useNavigate();
+
+  // if (
+  //   (window.performance.getEntries()[0] as PerformanceNavigationTiming).type ===
+  //   "reload"
+  // ) {
+  //   useEffect(() => {
+  //     navigate("/");
+  //     console.log("x");
+  //   });
+  // }
+
   return (
     <>
       <div className="main">

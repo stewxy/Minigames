@@ -17,13 +17,12 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route
-              path="UltimateTicTacToePage"
-              element={<UltimateTicTacToePage />}
-            />
-            <Route path="TicTacToePage" element={<TicTacToePage />} />
-          </Route>
+          <Route path="/" element={<Layout />} />
+          <Route
+            path="UltimateTicTacToePage"
+            element={<UltimateTicTacToePage />}
+          />
+          <Route path="TicTacToePage" element={<TicTacToePage />} />
         </Routes>
       </BrowserRouter>
     </>

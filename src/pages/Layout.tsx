@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Outlet, Link } from "react-router-dom";
 import ttt from "../images/ttt.png";
 import uttt from "../images/uttt.png";
+import { useNavigate } from "react-router-dom";
 
 const Layout = () => {
   const [linksVisible, setLinksVisible] = useState(true);
