@@ -28,9 +28,11 @@ const Layout = () => {
               </div>
             </Link>
             <div className="layoutInfoSect">
-              Note: Currently, TicTacToe only features a single-player mode
-              where the player plays against a bot. Ultimate TicTacToe only
-              features a local same device mode.{" "}
+              <div className="noteText">
+                Note: Currently, TicTacToe only features a single-player mode
+                where the player plays against an unbeatable bot. Ultimate
+                TicTacToe only features a local same device mode.
+              </div>
             </div>
           </div>
         </div>

@@ -266,3 +266,7 @@ html{
     text-align: center;
     margin-top: 80px;
 }
+
+.noteText{
+    font-style: italic;
+}

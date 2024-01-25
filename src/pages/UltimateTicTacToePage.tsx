@@ -25,9 +25,11 @@ const UltimateTicTacToePage = () => {
               win the game, a player must win 3 "regular" TicTacToe games that
               line up vertically, horizontally or diagonally (like regular
               TicTacToe).
-              <br />
-              Note: Players can currently only verse against other players on
-              the same device.
+              <br /> <br />
+              <div className="noteText">
+                Note: Players can currently only verse against other players on
+                the same device.
+              </div>
             </p>
           </div>
         </div>
