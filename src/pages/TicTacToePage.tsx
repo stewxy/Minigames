@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import TicTacToe from "../components/TicTacToe";
 import TicTacToeAI from "../components/TicTacToeAI";
 import "../App.css";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const TicTacToePage = () => {
   // let navigate = useNavigate();
@@ -20,9 +20,9 @@ const TicTacToePage = () => {
   return (
     <>
       <div className="main">
-        <a href="/">
+        <Link to="/">
           <button className="backButton">Back</button>
-        </a>
+        </Link>
         <div className="htmlUTicTacToe">
           <h1 className="mainHeading">TicTacToe</h1>
           <TicTacToeAI></TicTacToeAI>
