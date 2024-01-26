@@ -1,13 +1,14 @@
 import UltimateTicTacToe from "../components/UltimateTicTacToe";
 import "../App.css";
+import { Link } from "react-router-dom";
 
 const UltimateTicTacToePage = () => {
   return (
     <>
       <div className="main">
-        <a href="/">
+        <Link to="/">
           <button className="backButton">Back</button>
-        </a>
+        </Link>
 
         <div className="htmlUTicTacToe">
           <h1 className="mainHeading">Ultimate TicTacToe</h1>
