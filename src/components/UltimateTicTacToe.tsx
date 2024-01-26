@@ -132,14 +132,24 @@ const UltimateTicTacToe = () => {
   }
 
   function modifyGridColor(value: number) {
-    ultimateSquareStyleList[value][0].style.backgroundColor = "#eb2626";
-    ultimateSquareStyleList[value][0].style.pointerEvents = "auto";
-    ultimateSquareStyleList[value][0].style.opacity = "1";
-    for (let j = 0; j < ultimateSquareStyleList.length; j++) {
-      if (j !== value) {
-        ultimateSquareStyleList[j][0].style.backgroundColor = "#393939";
-        ultimateSquareStyleList[j][0].style.pointerEvents = "none";
-        ultimateSquareStyleList[j][0].style.opacity = "0.7";
+    if (uSquareArray[value] == null) {
+      ultimateSquareStyleList[value][0].style.backgroundColor = "#eb2626";
+      ultimateSquareStyleList[value][0].style.pointerEvents = "auto";
+      ultimateSquareStyleList[value][0].style.opacity = "1";
+      for (let j = 0; j < ultimateSquareStyleList.length; j++) {
+        if (j !== value) {
+          ultimateSquareStyleList[j][0].style.backgroundColor = "#393939";
+          ultimateSquareStyleList[j][0].style.pointerEvents = "none";
+          ultimateSquareStyleList[j][0].style.opacity = "0.7";
+        }
+      }
+    } else {
+      for (let i = 0; i < ultimateSquareStyleList.length; i++) {
+        if (uSquareArray[i] == null) {
+          ultimateSquareStyleList[i][0].style.backgroundColor = "#eb2626";
+          ultimateSquareStyleList[i][0].style.pointerEvents = "auto";
+          ultimateSquareStyleList[i][0].style.opacity = "1";
+        }
       }
     }
   }
@@ -148,11 +158,16 @@ const UltimateTicTacToe = () => {
     for (let i = 0; i < winLines.length; i++) {
       const [a, b, c] = winLines[i];
       if (
+        uSquareArray[a] !== "-" &&
         uSquareArray[a] &&
         uSquareArray[a] === uSquareArray[b] &&
         uSquareArray[a] === uSquareArray[c]
       ) {
-        turnText[0].innerHTML = uSquareArray[a] + " is the Winner!";
+        if (uSquareArray[a] == "O") {
+          turnText[0].innerHTML = "The Bot Wins!";
+        } else {
+          turnText[0].innerHTML = uSquareArray[a] + " is the Winner!";
+        }
 
         resetButtonElement[0].style.visibility = "visible";
         for (let i = 0; i < ultimateSquareStyleList.length; i++) {
@@ -171,6 +186,7 @@ const UltimateTicTacToe = () => {
             ultimateSquareStyleList[c][0].style.opacity = "1";
           }
         }
+        return true;
       } else {
         if (uSquareArray.every((element) => element !== null)) {
           turnText[0].innerHTML = "Draw!";
@@ -179,9 +195,11 @@ const UltimateTicTacToe = () => {
             ultimateSquareStyleList[i][0].style.pointerEvents = "none";
             ultimateSquareStyleList[i][0].style.opacity = "0.7";
           }
+          return true;
         }
       }
     }
+    return false;
   }
 
   function calculateWinner(squares: any, uValue: number) {
@@ -198,6 +216,14 @@ const UltimateTicTacToe = () => {
         ultimateSquareStyleList[uValue][0].style.pointerEvents = "none";
         ultimateSquareStyleList[uValue][0].style.opacity = "0.7";
         return squares[a], uValue;
+      } else if (
+        squares.every((val: string) => val !== null && val !== "") &&
+        squares[a] !== squares[b] &&
+        squares[a] !== squares[c]
+      ) {
+        setWinGridText(uValue, "-");
+        squares[a] = "-";
+        uSquareArray[uValue] = squares[a];
       }
     }
   }
