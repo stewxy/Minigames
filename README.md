@@ -14,6 +14,7 @@ An Independent project I started to challenge myself and improve my skills in Re
 
 ## Ideas for Future Implementations <br />
 - Selectable difficulties for both TicTacToe and Ultimate TicTacToe games. (Easy, Medium, Hard)
+- Make app mobile friendly.
 
 ## Running this project locally
 ```
