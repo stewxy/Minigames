@@ -184,8 +184,6 @@ html{
     width:1920px;
     height:700px;
     visibility: visible;
-    
-    
 }
 
 .tttImageContainer{
@@ -281,4 +279,48 @@ html{
 
 .noteText{
     font-style: italic;
+}
+
+@media only screen and (max-width: 480px) {
+    .tttStyle{
+        width:150px;
+        height:150px;
+        margin-left: 65px;
+        margin-top: 60px;
+    }
+    .tttImageContainer{
+        width: 280px;
+        height: 330px;
+        margin-left: 60px;
+        margin-top: 60px;
+    }
+    .tttText{
+        font-size: 28px;
+    }
+
+    .utttStyle{
+        width:150px;
+        height:150px;
+        margin-left: 65px;
+        margin-top: 60px;
+    }
+    .utttImageContainer{
+        width: 280px;
+        height: 330px;
+        margin-left: 60px;
+        margin-top: 60px;
+    }
+    .utttText{
+        font-size: 28px;
+    }
+
+    .selectionContainer{
+        width:400px;
+    }
+    .layoutInfoSect{
+        width: 360px;
+        padding-left: 40px;
+        margin-top: 50px;
+        padding-bottom: 10px;
+    }
 }
