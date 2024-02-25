@@ -336,5 +336,37 @@ html{
         font-size: 12px;
     }
 
+    .fullBoard{
+        width: 400px;
+        height: 400px;
+        padding-right: 0px;
+    }
+    .Grid{
+        width: 30px;
+        height: 30px;
+        font-size: 15px;
+    }
+    
+    .howToPlaySectUTTT{
+        font-size: 20px;
+        margin-top: 80px;
+    }   
+    .howToPlayInfoUTTT{
+        font-size: 12px;
+    }
+    .styleWinB0, .styleWinB1, .styleWinB2, .styleWinB3, .styleWinB4, .styleWinB5, .styleWinB6, .styleWinB7, .styleWinB8{
+        width: 110px;
+        height: 110px;
+        font-size: 70px;
+    }
 
+    .startText{
+        font-size: 35px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    
+        width: 300px;
+        margin-left: 50px;   
+        margin-top: 0px;
+    }
 }
