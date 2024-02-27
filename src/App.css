@@ -326,11 +326,11 @@ html{
     }
     .utttHeading{
         font-size: 35px;
-        margin-left: -15%;
+        margin-left: 0%;
     }
     .htmlUTicTacToe{
         width: 400px;
-        margin-left: 15%; 
+        margin-left: 0%; 
     }
     .htmlTicTacToe{
         width: 400px;
@@ -351,6 +351,7 @@ html{
         width: 350px;
         height: 350px;
         padding-right: 0px;
+        margin-left: 5%;
     }
     .Grid{
         width: 30px;
@@ -361,7 +362,9 @@ html{
     .howToPlaySectUTTT{
         font-size: 20px;
         margin-top: 150px;
-        margin-right: 15%;
+        width: 350px;
+        margin-right: 0%;
+        margin-left: 6%;
     }   
     .howToPlayInfoUTTT{
         font-size: 12px;
