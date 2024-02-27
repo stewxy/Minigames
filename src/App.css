@@ -357,7 +357,7 @@ html{
         width: 30px;
         height: 30px;
         font-size: 15px;
-        text-align: center; 
+        padding-left: 0px; 
     }
     
     .howToPlaySectUTTT{
@@ -371,7 +371,7 @@ html{
         font-size: 12px;
     }
     .styleWinB0, .styleWinB1, .styleWinB2, .styleWinB3, .styleWinB4, .styleWinB5, .styleWinB6, .styleWinB7, .styleWinB8{
-        width: 112px;
+        width: 115px;
         height: 110px;
         font-size: 70px;
     }
