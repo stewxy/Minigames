@@ -164,7 +164,7 @@ const UltimateTicTacToe = () => {
         uSquareArray[a] === uSquareArray[c]
       ) {
         if (uSquareArray[a] == "O") {
-          turnText[0].innerHTML = "The Bot Wins!";
+          turnText[0].innerHTML = "O is the Winner!";
         } else {
           turnText[0].innerHTML = uSquareArray[a] + " is the Winner!";
         }
