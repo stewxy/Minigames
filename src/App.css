@@ -348,10 +348,10 @@ html{
     }
 
     .fullBoard{
-        width: 350px;
-        height: 350px;
+        width: 400px;
+        height: 400px;
         padding-right: 0px;
-        margin-left: 5%;
+        margin-left: 0%;
     }
     .Grid{
         width: 30px;
@@ -361,7 +361,7 @@ html{
     
     .howToPlaySectUTTT{
         font-size: 20px;
-        margin-top: 150px;
+        margin-top: 100px;
         width: 350px;
         margin-right: 0%;
         margin-left: 6%;
@@ -381,7 +381,7 @@ html{
         padding-bottom: 10px;
     
         width: 300px;
-        margin-left: 25px;   
+        margin-left: 53px;   
         margin-top: 0px;
     }
 }
