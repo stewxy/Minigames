@@ -11,7 +11,7 @@ const UltimateTicTacToePage = () => {
         </Link>
 
         <div className="htmlUTicTacToe">
-          <h1 className="mainHeading">Ultimate TicTacToe</h1>
+          <h1 className="utttHeading">Ultimate TicTacToe</h1>
           <UltimateTicTacToe></UltimateTicTacToe>
           <div className="howToPlaySectUTTT">
             How To Play <br />

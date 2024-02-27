@@ -2,7 +2,7 @@ h1{
     text-align: center;
 }
 
-.mainHeading{
+.mainHeading, .utttHeading{
     font-size: 100px;
     padding-top: 50px;
     padding-bottom: 35px;
@@ -80,13 +80,12 @@ h1{
     font-size: 16px;
 }
 /* === Ultimate TicTacToe === */
-.htmlUTicTacToe{
+.htmlUTicTacToe, .htmlTicTacToe{
     text-align: center;
     /* CODE TO MAKE BOARD NOT CHANGE WHEN ZOOMED IN */
     width: 1000px;
     height: 850px;
     margin-left: 24%; 
-
 }   
 
 .oneBoard{
@@ -325,20 +324,32 @@ html{
     .mainHeading{
         font-size: 50px;
     }
+    .utttHeading{
+        font-size: 35px;
+        margin-left: -15%;
+    }
     .htmlUTicTacToe{
         width: 400px;
-        margin-left: 2%; 
+        margin-left: 15%; 
+    }
+    .htmlTicTacToe{
+        width: 400px;
+        margin-left: 1%; 
     }
     .howToPlaySectTTT{
         font-size: 20px;
+        margin-top: 10px;
     }
     .howToPlayInfoTTT{
         font-size: 12px;
     }
+    .resetButton{
+        font-size: 20px;
+    }
 
     .fullBoard{
-        width: 400px;
-        height: 400px;
+        width: 350px;
+        height: 350px;
         padding-right: 0px;
     }
     .Grid{
@@ -349,7 +360,8 @@ html{
     
     .howToPlaySectUTTT{
         font-size: 20px;
-        margin-top: 80px;
+        margin-top: 150px;
+        margin-right: 15%;
     }   
     .howToPlayInfoUTTT{
         font-size: 12px;
@@ -361,12 +373,12 @@ html{
     }
 
     .startText{
-        font-size: 35px;
+        font-size: 30px;
         padding-top: 10px;
         padding-bottom: 10px;
     
         width: 300px;
-        margin-left: 50px;   
+        margin-left: 25px;   
         margin-top: 0px;
     }
 }

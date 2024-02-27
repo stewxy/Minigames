@@ -23,7 +23,7 @@ const TicTacToePage = () => {
         <Link to="/">
           <button className="backButton">Back</button>
         </Link>
-        <div className="htmlUTicTacToe">
+        <div className="htmlTicTacToe">
           <h1 className="mainHeading">TicTacToe</h1>
           <TicTacToeAI></TicTacToeAI>
           <div className="howToPlaySectTTT">
